@@ -47,7 +47,7 @@ if ( !empty($ced) )
 					<th> Nombres y Apellidos</th>
 					<th> Parentesco </th>
 				</tr>
-				"
+				";
 
 
 			foreach ( $benef_arr as $beneficiario )
@@ -59,11 +59,11 @@ if ( !empty($ced) )
 				echo "
 				<tr> 
 					<td>" . $cedula . "</td>
-					<td> $nombre </td>
-					<td> $parentesco </td>
-				</tr>"	
+					<td>" . $nombre . "</td>
+					<td>" . $parentesco . "</td>
+				</tr>";	
 			}
-			echo "</table>"
+			echo "</table>";
 
 
                 //$hashced = substr(hash_hmac('sha256', $ced, md5(microtime())), 0, 32);
