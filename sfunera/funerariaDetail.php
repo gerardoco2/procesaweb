@@ -40,14 +40,30 @@ if ( !empty($ced) )
 	{
 
 			$benef_arr = file(trim($filas));
+			echo "
+			<table>
+				<tr>
+					<th> Cedula </th>
+					<th> Nombres y Apellidos</th>
+					<th> Parentesco </th>
+				</tr>
+				"
+
 
 			foreach ( $benef_arr as $beneficiario )
 			{
 				//echo $beneficiario . "<br>";
-				list($tipo, $cedula, $nombre, $tipo_be) = explode(";", $beneficiario);
-				echo $nombre . "<br>" ;
-			}
+				list($tipo, $cedula, $nombre, $parentesco) = explode(";", $beneficiario);
+				//echo $nombre . "<br>" ;
 
+				echo "
+				<tr> 
+					<td>" . $cedula . "</td>
+					<td> $nombre </td>
+					<td> $parentesco </td>
+				</tr>"	
+			}
+			echo "</table>"
 
 
                 //$hashced = substr(hash_hmac('sha256', $ced, md5(microtime())), 0, 32);
