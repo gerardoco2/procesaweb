@@ -43,7 +43,9 @@ if ( !empty($ced) )
 
 			foreach ( $benef_arr as $beneficiario )
 			{
-				echo $beneficiario . "<br>";
+				//echo $beneficiario . "<br>";
+				list($tipo, $cedula, $nombre, $tipo_be) = explode(";", $beneficiario);
+				echo $nombre . "<br>"
 			}
 
 
