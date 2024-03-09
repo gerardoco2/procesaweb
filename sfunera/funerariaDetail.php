@@ -40,7 +40,9 @@ if ( !empty($ced) )
 	{
 
 			$benef_arr = file(trim($filas));
+			
 			echo "
+			<h1> Listado de sus Beneficiarios Registrados en el Servicio Funerario </h1>
 			<table>
 				<tr>
 					<th> Cedula </th>
@@ -49,12 +51,9 @@ if ( !empty($ced) )
 				</tr>
 				";
 
-
 			foreach ( $benef_arr as $beneficiario )
 			{
-				//echo $beneficiario . "<br>";
 				list($tipo, $cedula, $nombre, $parentesco) = explode(";", $beneficiario);
-				//echo $nombre . "<br>" ;
 
 				echo "
 				<tr> 
