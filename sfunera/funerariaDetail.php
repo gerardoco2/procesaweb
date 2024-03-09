@@ -45,7 +45,7 @@ if ( !empty($ced) )
 			{
 				//echo $beneficiario . "<br>";
 				list($tipo, $cedula, $nombre, $tipo_be) = explode(";", $beneficiario);
-				echo $nombre . "<br>"
+				echo $nombre . "<br>" ;
 			}
 
 
