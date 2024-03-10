@@ -76,7 +76,7 @@ if ( !empty($ced) )
 				<tr> 
 					<td>" . $cedula . "</td>
 					<td>" . $nombre . "</td>
-					<td>" . ($parentesco == 'A') ? "ASOCIADO CAPUNEFM" : $parentesco ;  "</td>
+					<td>" . $parentesco  . "</td>
 				</tr>";	
 			}
 			echo "</table>";
