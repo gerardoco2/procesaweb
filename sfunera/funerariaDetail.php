@@ -60,6 +60,7 @@ if ( !empty($ced) )
 				}
 				</style>
 			<h3> Listado de sus Beneficiarios Registrados en el Servicio Funerario </h3>
+			<br>
 			<table>
 				<tr>
 					<th> Cedula </th>
