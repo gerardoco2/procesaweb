@@ -59,7 +59,7 @@ if ( !empty($ced) )
 				background-color: #dddddd;
 				}
 				</style>
-			<h1> Listado de sus Beneficiarios Registrados en el Servicio Funerario </h1>
+			<h3> Listado de sus Beneficiarios Registrados en el Servicio Funerario </h3>
 			<table>
 				<tr>
 					<th> Cedula </th>
