@@ -87,6 +87,7 @@ if ( !empty($ced) )
 
 			<style>
 			.container {
+				margin-top: 60px;
 				float: left;
 				flex-direction: row;
 			  }
