@@ -83,23 +83,155 @@ if ( !empty($ced) )
 			echo "</table>";
 
 
-                //$hashced = substr(hash_hmac('sha256', $ced, md5(microtime())), 0, 32);
-                //copy($filas, $dirw . $hashced . ".pdf");
-                //$updf = JURI::base() . "pdfs/" . $hashced . ".pdf";
-				//unlink( $filas );
-		
-//                echo "{pdf=" . $updf . "|100%|500}";
+			echo '
 
-            /*    echo "<center>
-                        <object width='100%' height='480' internalinstanceid='25' type='application/pdf' 
-                                data='" . $updf . "'>
-							<iframe src='" . $updf . "' style='border: none;' height='100%' width='100%'>
-							Este navegador no soporta lector de PDF. Por favor descargue el estado de cuenta mediante: <a href='" . $updf . "'>Descargar PDF</a>
-							</iframe>
-                        </object>
-                </center>
-                ";
-*/
+			<style>
+			.container {
+				float: left;
+				flex-direction: row;
+			  }
+			  
+			  .front-side {
+				float: left;
+				height: 300px;
+				width: 550px;
+				border: 1px solid black;
+			  }
+			  .logo {
+				text-align: center;
+			  }
+			  .body {
+				text-align: center;
+			  }
+			  .body p {
+				font-weight: 700;
+				font-size: 12px;
+				letter-spacing: 1px
+			  }
+			  
+			  .body > .title {
+				fonr-weight: 800;
+			  }
+			  
+			  .footer img {
+				width: 200px
+			  }
+			  
+			  .affiliate-info {
+				display: flex;
+				justify-content: space-around;
+			  }
+			  
+			  .affiliate-info  p {
+				margin: 0;
+			  }
+			  
+			  .benef-container {
+				height: 16px;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				margin-left: 30px;
+				margin-right: 30px
+			  }
+			  
+			  table {
+				font-family: arial, sans-serif;
+				border-collapse: collapse;
+				width: 90%;
+				margin: 0 auto;
+			  }
+			  
+			  td, th {
+				text-align: left;
+				padding: 4px;
+				font-size: 12px
+			  }
+			  
+			  tr:nth-child(even) {
+				background-color: #dddddd;
+			  }
+			</style>
+			<div>
+
+<div class="container">
+<div class="front-side">
+  <div class="logo">
+	<img src="https://capunefm.com/images/logocapunefm.png" alt="">
+  </div>
+	<div class="body">
+	  <p>CAJA DE AHORROS DEL PERSONAL DE LA <br>
+	  UNIVERSIDAD NACIONAL EXPERIMENTAL <br>
+		FRANCISCO DE MIRANDA
+	  CAPUNEFM</p>
+
+	  <div class="title">
+		<h3>CARNET DE AFILIACION</h3>
+	  </div>
+	  <div class="titular">
+		<h4>GERARDO COLINA</h4>
+	  </div>
+   <div class="footer">
+	<img src="https://www.necropolisfuneral.com/assets/img/logo_necrolpolis-footer.png" alt="">
+  </div>   
+	</div>
+
+</div>
+
+<div class="front-side">
+  <div class="logo">
+	<img src="https://capunefm.com/images/logocapunefm.png" alt="">
+  </div>
+  <div class="affiliate-info">
+	<div class="name">
+	  <p>Nombres y Apellidos del Afiliado:</p>
+	  Gerardo Colina
+	</div>
+	<div class="id">
+	  <p>Cedula:</p>
+	  20569539
+	</div>
+  </div>
+	<div class="body">
+	  
+
+	  <div class="beneficiaries">
+		<div class="benef-title">Carga Familiar</div>
+		
+
+		<table>
+		  <tr>
+			<td>Juan Colina</td>
+			<td>9503183</td>
+			<td>Padre</td>
+		  </tr>
+			<tr>
+			  <td>Angelica Colina Quintero</td>
+			  <td>18479854</td>
+			  <td>Hermana</td>
+			</tr>
+			<tr>
+			  <td>Nelis  Quintero</td>
+			  <td>18479854</td>
+			  <td>Mama</td>
+			</tr>
+		  
+			 <tr>
+			  <td>Nelis  Quintero</td>
+			  <td>18479854</td>
+			  <td>Mama</td>
+			</tr>
+		</table>
+	  </div>
+
+	</div>
+
+</div>  
+</div>
+
+			</div>
+			';
+
                 remover_antiguos($dirw);
 	}
 	else
