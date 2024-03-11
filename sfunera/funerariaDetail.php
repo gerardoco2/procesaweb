@@ -98,9 +98,12 @@ if ( !empty($ced) )
 				width: 550px;
 				border: 1px solid black;
 			  }
-			  .front-side .logo {
-				text-align: center;
+			  .logo ,  .footer{
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
 			  }
+
 			  .body {
 				text-align: center;
 			  }
