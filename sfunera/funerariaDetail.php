@@ -98,7 +98,7 @@ if ( !empty($ced) )
 				width: 550px;
 				border: 1px solid black;
 			  }
-			  .logo {
+			  .front-side .logo {
 				text-align: center;
 			  }
 			  .body {
@@ -145,12 +145,8 @@ if ( !empty($ced) )
 			  
 			  td, th {
 				text-align: left;
-				padding: 4px;
+				padding: 2px;
 				font-size: 12px
-			  }
-			  
-			  tr:nth-child(even) {
-				background-color: #dddddd;
 			  }
 			</style>
 			<div>
