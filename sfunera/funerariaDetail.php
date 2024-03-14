@@ -169,7 +169,7 @@ if ( !empty($ced) )
 		<h3>CARNET DE AFILIACION</h3>
 	  </div>
 	  <div class="titular">
-		<h4>'.  $benef_arr[0] . '</h4>
+		<h4>'. list($tipo, $cedula, $nombre, $parentesco) = explode(";", $benef_arr[0]); $nombre; . '</h4>
 	  </div>
    <div class="footer">
 	<img src="https://www.necropolisfuneral.com/assets/img/logo_necrolpolis-footer.png" alt="">
