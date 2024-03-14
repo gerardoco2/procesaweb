@@ -86,8 +86,8 @@ if ( !empty($ced) )
 
 
 
-			list($tipo, $cedula, $bene_afiiliado, $parentesco) = explode(";", $benef_arr[0]); 
-			
+			list($tipo, $cedula_afil, $bene_afiiliado, $parentesco) = explode(";", $benef_arr[0]); 
+
 			echo '
 
 			<style>
@@ -190,11 +190,11 @@ if ( !empty($ced) )
   <div class="affiliate-info">
 	<div class="name">
 	  <p>Nombres y Apellidos del Afiliado:</p>
-	  Gerardo Colina
+	 '. $bene_afiiliado .'
 	</div>
 	<div class="id">
 	  <p>Cedula:</p>
-	  20569539
+	  '. $cedula_afil .'
 	</div>
   </div>
 	<div class="body">
@@ -204,28 +204,20 @@ if ( !empty($ced) )
 		<div class="benef-title">Carga Familiar</div>
 		
 
-		<table>
-		  <tr>
-			<td>Juan Colina</td>
-			<td>9503183</td>
-			<td>Padre</td>
-		  </tr>
+		<table>';
+
+		for ($x = 1; $x <= sizeof($benef_arr); $x++) {
+			list($tipo, $cedula, $beneficiario, $parentesco) = explode(";", $benef_arr[x]);
+			echo '
 			<tr>
-			  <td>Angelica Colina Quintero</td>
-			  <td>18479854</td>
-			  <td>Hermana</td>
+				<td>'. $beneficiario .'</td>
+				<td>'. $cedula .'</td>
+				<td>'. $parentesco .'</td>
 			</tr>
-			<tr>
-			  <td>Nelis  Quintero</td>
-			  <td>18479854</td>
-			  <td>Mama</td>
-			</tr>
-		  
-			 <tr>
-			  <td>Nelis  Quintero</td>
-			  <td>18479854</td>
-			  <td>Mama</td>
-			</tr>
+			';
+		}
+
+		echo '
 		</table>
 	  </div>
 
