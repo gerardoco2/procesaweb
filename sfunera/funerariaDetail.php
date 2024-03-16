@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . "/vendor/autoload.php";
+require "../vendor/autoload.php";
 
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
