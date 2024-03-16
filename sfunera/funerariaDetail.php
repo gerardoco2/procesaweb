@@ -1,12 +1,10 @@
 <?php
 
+require_once "../dompdf/autoload.inc.php";
 
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
 global $app, $_SERVER;
-
-require("/vendor/autoload.php");
-
 
 
 // retrieve user instance
