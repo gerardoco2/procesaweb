@@ -1,0 +1,12 @@
+{
+    "name": "root/phps",
+    "authors": [
+        {
+            "name": "gerardoco2",
+            "email": "gerardocolina@gmail.com"
+        }
+    ],
+    "require": {
+        "dompdf/dompdf": "^2.0"
+    }
+}
