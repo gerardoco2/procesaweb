@@ -1,6 +1,6 @@
 <?php
 
-require_once "../dompdf/autoload.inc.php";
+//require_once "../dompdf/autoload.inc.php";
 
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
