@@ -22,6 +22,7 @@ use Dompdf\Dompdf;
 $dompdf = new Dompdf();
 $dompdf->loadHtml('hello world');
 
+$stream = true;
 // (Optional) Setup the paper size and orientation
 $dompdf->setPaper('A4', 'landscape');
 
