@@ -248,7 +248,7 @@ if ( !empty($ced) )
 			
 				// instantiate and use the dompdf class
 				$dompdf = new Dompdf([
-					"chroot" => __DIR__
+					"chroot" => $docr
 				]);
 				$dompdf->loadHtml($html);
 
