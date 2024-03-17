@@ -29,7 +29,18 @@ $dompdf->setPaper('A4', 'landscape');
 $dompdf->render();
 
 // Output the generated PDF to Browser
-$dompdf->stream();
+//$dompdf->stream();
+
+if ($stream) {
+	ob_end_clean();
+$pdf->stream("billing_invoice.pdf", array("Attachment" => 0));
+
+} else {
+return $pdf->output();
+}
+
+die();
+
 
 ////////////////////////////////////
 
