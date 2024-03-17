@@ -16,26 +16,13 @@ $docr = $_SERVER['DOCUMENT_ROOT'];
 require_once($docr . '/phps/gestarchivo.php');
 
 require_once($docr . '/phps/dompdf/autoload.inc.php');
+// reference the Dompdf namespace
+use Dompdf\Dompdf;
 
 ////////////////////////////////////
 
 
 
-// reference the Dompdf namespace
-use Dompdf\Dompdf;
-
-// instantiate and use the dompdf class
-$dompdf = new Dompdf();
-$dompdf->loadHtml('hello world');
-
-// (Optional) Setup the paper size and orientation
-$dompdf->setPaper('A4', 'landscape');
-
-// Render the HTML as PDF
-$dompdf->render();
-
-// Output the generated PDF to Browser
-$dompdf->stream();
 
 
 if ( !empty($ced) )
@@ -113,8 +100,7 @@ if ( !empty($ced) )
 
 			list($tipo, $cedula_afil, $bene_afiiliado, $parentesco) = explode(";", $benef_arr[0]); 
 
-			echo '
-
+			$carnetHtml = '
 			<style>
 			.container {
 				margin-top: 60px;
@@ -184,75 +170,97 @@ if ( !empty($ced) )
 			</style>
 			<div>
 
-<div class="container">
-<div class="front-side">
-  <div class="logo">
-	<img src="https://capunefm.com/images/logocapunefm.png" alt="">
-  </div>
-	<div class="body">
-	  <p>CAJA DE AHORROS DEL PERSONAL DE LA <br>
-	  UNIVERSIDAD NACIONAL EXPERIMENTAL <br>
-		FRANCISCO DE MIRANDA
-	  CAPUNEFM</p>
+				<div class="container">
+				<div class="front-side">
+				<div class="logo">
+					<img src="https://capunefm.com/images/logocapunefm.png" alt="">
+				</div>
+					<div class="body">
+					<p>CAJA DE AHORROS DEL PERSONAL DE LA <br>
+					UNIVERSIDAD NACIONAL EXPERIMENTAL <br>
+						FRANCISCO DE MIRANDA
+					CAPUNEFM</p>
 
-	  <div class="title">
-		<h3>CARNET DE AFILIACION</h3>
-	  </div>
-	  <div class="titular">
-		<h4>'. $bene_afiiliado  . '</h4>
-	  </div>
-   <div class="footer">
-	<img src="https://www.necropolisfuneral.com/assets/img/logo_necrolpolis-footer.png" alt="">
-  </div>   
-	</div>
+					<div class="title">
+						<h3>CARNET DE AFILIACION</h3>
+					</div>
+					<div class="titular">
+						<h4>'. $bene_afiiliado  . '</h4>
+					</div>
+				<div class="footer">
+					<img src="https://www.necropolisfuneral.com/assets/img/logo_necrolpolis-footer.png" alt="">
+				</div>   
+					</div>
 
-</div>
+				</div>
 
-<div class="front-side">
-  <div class="logo">
-	<img src="https://capunefm.com/images/logocapunefm.png" alt="">
-  </div>
-  <div class="affiliate-info">
-	<div class="name">
-	  <p>Nombres y Apellidos del Afiliado:</p>
-	 '. $bene_afiiliado .'
-	</div>
-	<div class="id">
-	  <p>Cedula:</p>
-	  '. $cedula_afil .'
-	</div>
-  </div>
-	<div class="body">
-	  
+				<div class="front-side">
+				<div class="logo">
+					<img src="https://capunefm.com/images/logocapunefm.png" alt="">
+				</div>
+				<div class="affiliate-info">
+					<div class="name">
+					<p>Nombres y Apellidos del Afiliado:</p>
+					'. $bene_afiiliado .'
+					</div>
+					<div class="id">
+					<p>Cedula:</p>
+					'. $cedula_afil .'
+					</div>
+				</div>
+					<div class="body">
+					
 
-	  <div class="beneficiaries">
-		<div class="benef-title">Carga Familiar</div>
-		
+					<div class="beneficiaries">
+						<div class="benef-title">Carga Familiar</div>
+						
 
-		<table>';
+						<table>';
 
-		for ($x = 1; $x <= sizeof($benef_arr); $x++) {
-			list($tipo, $cedula, $beneficiario, $parentesco) = explode(";", $benef_arr[$x]);
-			echo '
-			<tr>
-				<td>'. $beneficiario .'</td>
-				<td>'. $cedula .'</td>
-				<td>'. $parentesco .'</td>
-			</tr>
-			';
-		};
+						for ($x = 1; $x <= sizeof($benef_arr); $x++) {
+							list($tipo, $cedula, $beneficiario, $parentesco) = explode(";", $benef_arr[$x]);
+							echo '
+							<tr>
+								<td>'. $beneficiario .'</td>
+								<td>'. $cedula .'</td>
+								<td>'. $parentesco .'</td>
+							</tr>
+							';
+						};
 
-		echo '
-		</table>
-	  </div>
+						echo '
+						</table>
+					</div>
 
-	</div>
+					</div>
 
-</div>  
-</div>
+				</div>  
+				</div>
 
 			</div>
 			';
+
+			echo $carnetHtml;
+
+			function generaCarnetPdf($html) {
+				// reference the Dompdf namespace
+				use Dompdf\Dompdf;
+			
+				// instantiate and use the dompdf class
+				$dompdf = new Dompdf();
+				$dompdf->loadHtml($html);
+			
+				// (Optional) Setup the paper size and orientation
+				//$dompdf->setPaper('A4', 'landscape');
+			
+				// Render the HTML as PDF
+				$dompdf->render();
+			
+				// Output the generated PDF to Browser
+				$dompdf->stream("carnet.pdf", ["Attachment" => 0]);
+			}
+			
+			generaCarnetPdf($carnetHtml);
 
                 remover_antiguos($dirw);
 	}
