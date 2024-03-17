@@ -1,4 +1,7 @@
 <?php
+require_once($docr . '/phps/dompdf/autoload.inc.php');
+// reference the Dompdf namespace
+use Dompdf\Dompdf;
 
 
 defined( '_JEXEC' ) or die( 'Restricted access' );
@@ -15,9 +18,6 @@ $nom = ($my->id) ? $my->name : "No identificado"; // usuario de la sesion activa
 $docr = $_SERVER['DOCUMENT_ROOT'];
 require_once($docr . '/phps/gestarchivo.php');
 
-require_once($docr . '/phps/dompdf/autoload.inc.php');
-// reference the Dompdf namespace
-use Dompdf\Dompdf;
 
 ////////////////////////////////////
 
