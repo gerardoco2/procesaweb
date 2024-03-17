@@ -250,7 +250,7 @@ if ( !empty($ced) )
 				$dompdf = new Dompdf([
 					"chroot" => $docr
 				]);
-				$dompdf->loadHtml($html);
+				$dompdf->loadHtml('<img src="logocapunefm.png" alt="">');
 
 				$stream = true;
 				// (Optional) Setup the paper size and orientation
