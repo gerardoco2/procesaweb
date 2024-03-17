@@ -254,7 +254,7 @@ if ( !empty($ced) )
 			
 				// Render the HTML as PDF
 				$dompdf->render();
-			
+				ob_end_clean();
 				// Output the generated PDF to Browser
 				$dompdf->stream("carnet.pdf", ["Attachment" => 0]);
 			}
