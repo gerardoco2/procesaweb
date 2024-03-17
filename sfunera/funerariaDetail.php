@@ -248,7 +248,7 @@ if ( !empty($ced) )
 			
 				// instantiate and use the dompdf class
 				$dompdf = new Dompdf();
-				$dompdf->loadHtml('hello world');
+				$dompdf->loadHtml($html);
 
 				$stream = true;
 				// (Optional) Setup the paper size and orientation
