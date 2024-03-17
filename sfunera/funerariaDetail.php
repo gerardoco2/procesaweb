@@ -174,7 +174,7 @@ if ( !empty($ced) )
 				<div class="container">
 				<div class="front-side">
 				<div class="logo">
-					<img src="https://capunefm.com/images/logocapunefm.png" alt="">
+					<img src="./logocapunefm.png" alt="">
 				</div>
 					<div class="body">
 					<p>CAJA DE AHORROS DEL PERSONAL DE LA <br>
