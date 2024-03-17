@@ -18,29 +18,6 @@ require_once($docr . '/phps/dompdf/autoload.inc.php');
 // reference the Dompdf namespace
 use Dompdf\Dompdf;
 
-// instantiate and use the dompdf class
-$dompdf = new Dompdf();
-$dompdf->loadHtml('hello world');
-
-$stream = true;
-// (Optional) Setup the paper size and orientation
-$dompdf->setPaper('A4', 'landscape');
-
-// Render the HTML as PDF
-$dompdf->render();
-
-// Output the generated PDF to Browser
-//$dompdf->stream();
-
-if ($stream) {
-	ob_end_clean();
-$dompdf->stream("billing_invoice.pdf", array("Attachment" => 0));
-
-} else {
-return $dompdf->output();
-}
-
-die();
 
 
 ////////////////////////////////////
@@ -48,7 +25,7 @@ die();
 
 
 
-/*
+
 if ( !empty($ced) )
 {
 	$dirw = "/home/web/jcapunefm/pdfs/";
@@ -271,16 +248,28 @@ if ( !empty($ced) )
 			
 				// instantiate and use the dompdf class
 				$dompdf = new Dompdf();
-				$dompdf->loadHtml($html);
-			
+				$dompdf->loadHtml('hello world');
+
+				$stream = true;
 				// (Optional) Setup the paper size and orientation
-				//$dompdf->setPaper('A4', 'landscape');
-			
+				$dompdf->setPaper('A4', 'landscape');
+
 				// Render the HTML as PDF
 				$dompdf->render();
-				ob_end_clean();
+
 				// Output the generated PDF to Browser
-				$dompdf->stream("carnet.pdf", ["Attachment" => 0]);
+				//$dompdf->stream();
+
+				if ($stream) {
+					ob_end_clean();
+					$dompdf->stream("carnet.pdf", array("Attachment" => 0));
+
+				} else {
+				return $dompdf->output();
+				}
+
+				die();
+
 			}
 			
 			generaCarnetPdf($carnetHtml);
@@ -299,5 +288,5 @@ if ( !empty($ced) )
 	}
 
 } // fin - al consultar un asociado
-*/
+
 ?>
