@@ -33,10 +33,10 @@ $dompdf->render();
 
 if ($stream) {
 	ob_end_clean();
-$pdf->stream("billing_invoice.pdf", array("Attachment" => 0));
+$dompdf->stream("billing_invoice.pdf", array("Attachment" => 0));
 
 } else {
-return $pdf->output();
+return $dompdf->output();
 }
 
 die();
