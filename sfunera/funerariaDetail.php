@@ -103,7 +103,7 @@ if ( !empty($ced) )
 
 			list($tipo, $cedula_afil, $bene_afiiliado, $parentesco) = explode(";", $benef_arr[0]); 
 
-			$carnetHtml = '
+			echo '
 			<style>
 			.container {
 				margin-top: 60px;
@@ -243,7 +243,7 @@ if ( !empty($ced) )
 			</div>
 			';
 
-			echo $carnetHtml;
+			/*echo $carnetHtml;
 
 			function generaCarnetPdf($html) {
 
@@ -275,7 +275,7 @@ if ( !empty($ced) )
 				die();
 
 			}
-			
+			*/
 			//generaCarnetPdf($carnetHtml);
 
                 remover_antiguos($dirw);
