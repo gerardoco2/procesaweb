@@ -19,7 +19,8 @@ require_once($docr . '/phps/dompdf/autoload.inc.php');
 use Dompdf\Dompdf;
 
 
-echo $docr;
+echo $docr . "<br>";
+
 echo __DIR__;
 ////////////////////////////////////
 
