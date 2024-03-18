@@ -19,9 +19,9 @@ require_once($docr . '/phps/dompdf/autoload.inc.php');
 use Dompdf\Dompdf;
 
 
-echo $docr . "<br>";
+//echo $docr . "<br>";
 
-echo __DIR__;
+//echo __DIR__;
 ////////////////////////////////////
 
 
@@ -276,7 +276,7 @@ if ( !empty($ced) )
 
 			}
 			
-			generaCarnetPdf($carnetHtml);
+			//generaCarnetPdf($carnetHtml);
 
                 remover_antiguos($dirw);
 	}
