@@ -250,7 +250,7 @@ if ( !empty($ced) )
 			
 				// instantiate and use the dompdf class
 				$dompdf = new Dompdf([
-					"chroot" => $docr
+					"chroot" => __DIR__
 				]);
 				$dompdf->loadHtml('<img src="logocapunefm.png" alt="">');
 
