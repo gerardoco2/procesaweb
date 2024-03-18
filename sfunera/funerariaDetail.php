@@ -20,6 +20,7 @@ use Dompdf\Dompdf;
 
 
 echo $docr;
+echo __DIR__;
 ////////////////////////////////////
 
 
