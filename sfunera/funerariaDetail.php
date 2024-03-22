@@ -102,7 +102,7 @@ if ( !empty($ced) )
 			echo '<h3 style="margin: 20px; ">Descarga tu Carnet del servicio funerario aqui </h3> ';
 
 			list($tipo, $cedula_afil, $bene_afiiliado, $parentesco) = explode(";", $benef_arr[0]); 
-			echo  __DIR__ . 'logocapunefm.png' ;
+			echo  __DIR__ . '/sfunera/logocapunefm.png' ;
 			echo '
 			<style>
 			.container {
