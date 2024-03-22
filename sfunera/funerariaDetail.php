@@ -252,9 +252,9 @@ if ( !empty($ced) )
 			
 				// instantiate and use the dompdf class
 				$dompdf = new Dompdf([
-					"chroot" => __DIR__
+					"chroot" => URI::base() 
 				]);
-				$dompdf->loadHtml('<img src="' . JURI::base() . 'images/stories/capunefm/iconcapunefm.png" alt="">');
+				$dompdf->loadHtml('<img src="' . JURI::base() . 'images/stories/capunefm/iconcapunefm.png alt="">');
 
 				$stream = true;
 				// (Optional) Setup the paper size and orientation
