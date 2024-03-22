@@ -246,7 +246,7 @@ if ( !empty($ced) )
 			</div>
 			';
 
-			echo $carnetHtml;
+			//echo $carnetHtml;
 
 			function generaCarnetPdf($html) {
 
