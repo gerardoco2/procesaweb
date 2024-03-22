@@ -279,7 +279,7 @@ if ( !empty($ced) )
 
 			}
 			
-			generaCarnetPdf($carnetHtml);
+			//generaCarnetPdf($carnetHtml);
 
                 remover_antiguos($dirw);
 	}
