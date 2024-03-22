@@ -171,7 +171,9 @@ if ( !empty($ced) )
 				font-size: 12px
 			  }
 			</style>
-			<div>
+
+
+' . __DIR__ . 'logocapunefm.png' '			<div>
 
 				<div class="container">
 				<div class="front-side">
