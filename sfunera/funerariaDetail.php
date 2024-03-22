@@ -255,7 +255,7 @@ if ( !empty($ced) )
 
 				// instantiate and use the dompdf class
 				$dompdf = new Dompdf($options);
-				$dompdf->loadHtml('<img src="' . JURI::base() . '/images/stories/capunefm/iconcapunefm.png alt="">');
+				$dompdf->loadHtml($carnetHtml);
 
 				$stream = true;
 				// (Optional) Setup the paper size and orientation
