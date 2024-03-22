@@ -105,7 +105,7 @@ if ( !empty($ced) )
 			echo  '<img src="/logocapunefm.png"'.'>' ;
 			echo '<img src="' . JURI::base() . 'images/stories/capunefm/iconcapunefm.png />';
 
-			echo '
+			$carnetHtml = '
 			<style>
 			.container {
 				margin-top: 60px;
@@ -245,7 +245,7 @@ if ( !empty($ced) )
 			</div>
 			';
 
-			/*echo $carnetHtml;
+			echo $carnetHtml;
 
 			function generaCarnetPdf($html) {
 
@@ -254,7 +254,7 @@ if ( !empty($ced) )
 				$dompdf = new Dompdf([
 					"chroot" => __DIR__
 				]);
-				$dompdf->loadHtml('<img src="logocapunefm.png" alt="">');
+				$dompdf->loadHtml('<img src="' . JURI::base() . 'images/stories/capunefm/iconcapunefm.png" alt="">');
 
 				$stream = true;
 				// (Optional) Setup the paper size and orientation
@@ -277,8 +277,8 @@ if ( !empty($ced) )
 				die();
 
 			}
-			*/
-			//generaCarnetPdf($carnetHtml);
+			
+			generaCarnetPdf($carnetHtml);
 
                 remover_antiguos($dirw);
 	}
