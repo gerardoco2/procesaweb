@@ -103,6 +103,8 @@ if ( !empty($ced) )
 
 			list($tipo, $cedula_afil, $bene_afiiliado, $parentesco) = explode(";", $benef_arr[0]); 
 			echo  '<img src="/logocapunefm.png"'.'>' ;
+			echo '<img src="' . JURI::base() . '"images/stories/capunefm/iconcapunefm.png />';
+
 			echo '
 			<style>
 			.container {
