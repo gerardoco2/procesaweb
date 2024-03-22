@@ -221,7 +221,7 @@ if ( !empty($ced) )
 
 						<table>' .
 
-						<?php for ($x = 1; $x <= sizeof($benef_arr); $x++) {
+						for ($x = 1; $x <= sizeof($benef_arr); $x++) {
 							list($tipo, $cedula, $beneficiario, $parentesco) = explode(";", $benef_arr[$x]);
 							echo '
 							<tr>
@@ -230,7 +230,9 @@ if ( !empty($ced) )
 								<td>'. $parentesco .'</td>
 							</tr>
 							';
-						} ?> .'
+						};
+
+						echo '
 						</table>
 					</div>
 
