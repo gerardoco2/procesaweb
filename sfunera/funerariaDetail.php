@@ -252,7 +252,7 @@ if ( !empty($ced) )
 			
 				// instantiate and use the dompdf class
 				$dompdf = new Dompdf([
-					"chroot" => URI::base() 
+					"chroot" => JURI::base() 
 				]);
 				$dompdf->loadHtml('<img src="' . JURI::base() . 'images/stories/capunefm/iconcapunefm.png alt="">');
 
