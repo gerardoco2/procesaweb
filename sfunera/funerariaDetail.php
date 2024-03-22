@@ -17,6 +17,7 @@ require_once($docr . '/phps/gestarchivo.php');
 require_once($docr . '/phps/dompdf/autoload.inc.php');
 // reference the Dompdf namespace
 use Dompdf\Dompdf;
+use Dompdf\Options;
 
 
 //echo $docr . "<br>";
@@ -249,12 +250,12 @@ if ( !empty($ced) )
 
 			function generaCarnetPdf($html) {
 
-			
+				$options = new Options();
+				$options->set('isRemoteEnabled', TRUE);
+
 				// instantiate and use the dompdf class
-				$dompdf = new Dompdf([
-					"chroot" => JURI::base() 
-				]);
-				$dompdf->loadHtml('<img src="' . JURI::base() . 'images/stories/capunefm/iconcapunefm.png alt="">');
+				$dompdf = new Dompdf($options);
+				$dompdf->loadHtml('<img src="https://capunefm.com/images/logocapunefm.png" alt="">');
 
 				$stream = true;
 				// (Optional) Setup the paper size and orientation
