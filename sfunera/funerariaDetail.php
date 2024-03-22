@@ -219,7 +219,7 @@ if ( !empty($ced) )
 						<div class="benef-title">Carga Familiar</div>
 						
 
-						<table>' .
+						<table>' 
 
 						for ($x = 1; $x <= sizeof($benef_arr); $x++) {
 							list($tipo, $cedula, $beneficiario, $parentesco) = explode(";", $benef_arr[$x]);
