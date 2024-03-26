@@ -3,7 +3,7 @@
             .container {
             margin-top: 60px;
             display: inline-block; /* Display inline-block to allow elements next to it */
-            width: 550px; /* Set container width */
+            width: 100%; /* Set container width */
             }
 
             /* Front side */
