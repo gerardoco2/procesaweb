@@ -281,6 +281,20 @@ if ( !empty($ced) )
 					.footer img {
 					width: 150px;
 					}
+					/* Body */
+					.body {
+					text-align: center;
+					}
+		
+					.body p {
+					font-weight: 700;
+					font-size: 12px;
+					letter-spacing: 1px;
+					}
+		
+					.body > .title {
+					font-weight: 800;
+					}
 				</style>
 				<div>
 
