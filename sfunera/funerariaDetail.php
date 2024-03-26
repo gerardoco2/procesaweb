@@ -266,7 +266,7 @@ if ( !empty($ced) )
 				.front-side {
 				float: left;
 				height: 300px;
-				width: 50%; /* Set width to 100% to fill container */
+				width: 500px; /* Set width to 100% to fill container */
 				border: 1px solid black;
 				}
 	
@@ -274,7 +274,8 @@ if ( !empty($ced) )
 				.logo,
 				.footer {
 				text-align: center; /* Center content horizontally */
-				padding-top: 10px; /* Add top padding */
+				padding-top: 5px; /* Add top padding */
+				margin-bottom: 5px;
 				}
 	
 				.footer img {
@@ -338,87 +339,60 @@ if ( !empty($ced) )
 				.clearfix {
 					clear: both;
 				}
-			</style>
-	
+				</style>
 				<div>
-	
-					<div class="container">
-						<div class="front-side">
-							<div class="logo">
-								<img src="https://capunefm.com/images/logocapunefm.png" alt="">
-							</div>
-							<div class="body">
-								<p>CAJA DE AHORROS DEL PERSONAL DE LA <br>
-								UNIVERSIDAD NACIONAL EXPERIMENTAL <br>
-								FRANCISCO DE MIRANDA CAPUNEFM</p>
-	
-								<div class="title">
-									<h3>CARNET DE AFILIACION</h3>
-								</div>
-								<div class="titular">
-									<h4> GERARDO COLINA </h4>
-								</div>
-								<div class="footer">
-									<img src="https://www.necropolisfuneral.com/assets/img/logo_necrolpolis-footer.png" alt="">
-								</div>   
-							</div>
-	
-						</div>
-	
-						<div class="front-side">
-							<div class="logo">
-								<img src="https://capunefm.com/images/logocapunefm.png" alt="">
-							</div>
-							<div class="affiliate-info">
-								<div class="name">
-								<p>Nombres y Apellidos del Afiliado:</p>
-								Gerardo Colina
-								</div>
-								<div class="id">
-								<p>Cedula:</p>
-								20569539
-								</div>
-							</div>
-							<div class="body">
-							
-	
-								<div class="beneficiaries">
-									<div class="benef-title">Carga Familiar</div>
-									<table>
-										<tr>
-											<td>Nelis Quintero</td>
-											<td>7484589</td>
-											<td>Madre</td>
-										</tr>
-										<tr>
-											<td>Juan Colina</td>
-											<td>9503183</td>
-											<td>Padre</td>
-										</tr>
-										<tr>
-											<td>Juan Colina</td>
-											<td>9503183</td>
-											<td>Padre</td>
-										</tr>
-										<tr>
-											<td>Juan Colina</td>
-											<td>9503183</td>
-											<td>Padre</td>
-										</tr>
-										<tr>
-											<td>Juan Colina</td>
-											<td>9503183</td>
-											<td>Padre</td>
-										</tr>
-									</table>
-								</div>
-	
-							</div>
-	
-						</div>  
-					</div>
-					<div class="clearfix"></div>
+
+				<div class="container">
+                    <div class="front-side">
+                        <div class="logo">
+                            <img src="https://capunefm.com/images/logocapunefm.png" alt="">
+                        </div>
+                        <div class="body">
+                            <p>CAJA DE AHORROS DEL PERSONAL DE LA <br>
+                            UNIVERSIDAD NACIONAL EXPERIMENTAL <br>
+                            FRANCISCO DE MIRANDA CAPUNEFM</p>
+
+                            <div class="title">
+                                <h3>CARNET DE AFILIACION</h3>
+                            </div>
+                            <div class="titular">
+                                <h4>'. $bene_afiiliado  . '</h4>
+                            </div>
+                            <div class="footer">
+                                <img src="https://www.necropolisfuneral.com/assets/img/logo_necrolpolis-footer.png" alt="">
+                            </div>   
+                        </div>
+
+                    </div>
+
+                    <div class="front-side">
+                        <div class="logo">
+                            <img src="https://capunefm.com/images/logocapunefm.png" alt="">
+                        </div>
+                        <div class="affiliate-info">
+                            <div class="name">
+                            <p>Nombres y Apellidos del Afiliado:</p>
+                            Gerardo Colina
+                            </div>
+                            <div class="id">
+                            <p>Cedula:</p>
+                            20569539
+                            </div>
+                        </div>
+                        <div class="body">
+                        
+
+                            <div class="beneficiaries">
+                                <div class="benef-title">Carga Familiar</div>
+                                
+                            </div>
+
+                        </div>
+
+                    </div>  
 				</div>
+                <div class="clearfix"></div>
+			</div>
 				');
 
 				$stream = true;
