@@ -10,7 +10,7 @@
             .front-side {
             float: left;
             height: 300px;
-            width: 100%; /* Set width to 100% to fill container */
+            width: 50%; /* Set width to 100% to fill container */
             border: 1px solid black;
             }
 
