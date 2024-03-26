@@ -356,7 +356,7 @@ if ( !empty($ced) )
 									<h3>CARNET DE AFILIACION</h3>
 								</div>
 								<div class="titular">
-									<h4>'. $bene_afiiliado  . '</h4>
+									<h4>' GERARDO COLINA '</h4>
 								</div>
 								<div class="footer">
 									<img src="https://www.necropolisfuneral.com/assets/img/logo_necrolpolis-footer.png" alt="">
