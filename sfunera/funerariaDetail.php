@@ -277,7 +277,11 @@ if ( !empty($ced) )
 					padding-top: 5px; /* Add top padding */
 					margin-bottom: 5px;
 					}
-		
+					
+					.logo img {
+						width: 250px;
+					}
+					
 					.footer img {
 					width: 150px;
 					}
