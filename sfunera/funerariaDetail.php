@@ -281,7 +281,7 @@ if ( !empty($ced) )
 					.logo img {
 						width: 250px;
 					}
-					
+
 					.footer img {
 					width: 150px;
 					}
@@ -383,7 +383,7 @@ if ( !empty($ced) )
 
 				$stream = true;
 				// (Optional) Setup the paper size and orientation
-				$dompdf->setPaper('Letter', 'portrait');
+				$dompdf->setPaper('A4', 'portrait');
 
 				// Render the HTML as PDF
 				$dompdf->render();
