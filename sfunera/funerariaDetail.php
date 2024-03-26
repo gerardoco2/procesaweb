@@ -265,8 +265,8 @@ if ( !empty($ced) )
 					/* Front side */
 					.front-side {
 					float: left;
-					height: 150px;
-					width: 300px; /* Set width to 100% to fill container */
+					height: 250px;
+					width: 350px; /* Set width to 100% to fill container */
 					border: 1px solid black;
 					}
 		
