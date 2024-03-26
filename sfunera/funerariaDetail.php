@@ -254,6 +254,34 @@ if ( !empty($ced) )
 				// instantiate and use the dompdf class
 				$dompdf = new Dompdf($options);
 				$dompdf->loadHtml('
+				<style>
+					/* Container */
+					.container {
+					margin-top: 60px;
+					display: inline-block; /* Display inline-block to allow elements next to it */
+					width: 100%; /* Set container width */
+					}
+		
+					/* Front side */
+					.front-side {
+					float: left;
+					height: 300px;
+					width: 500px; /* Set width to 100% to fill container */
+					border: 1px solid black;
+					}
+		
+					/* Logo and footer */
+					.logo,
+					.footer {
+					text-align: center; /* Center content horizontally */
+					padding-top: 5px; /* Add top padding */
+					margin-bottom: 5px;
+					}
+		
+					.footer img {
+					width: 200px;
+					}
+				</style>
 				<div>
 
 				<div class="container">
