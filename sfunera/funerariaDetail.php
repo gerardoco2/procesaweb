@@ -279,7 +279,7 @@ if ( !empty($ced) )
 					}
 		
 					.footer img {
-					width: 200px;
+					width: 150px;
 					}
 				</style>
 				<div>
@@ -365,7 +365,7 @@ if ( !empty($ced) )
 
 				$stream = true;
 				// (Optional) Setup the paper size and orientation
-				//$dompdf->setPaper('A4', 'landscape');
+				$dompdf->setPaper('Letter', 'portrait');
 
 				// Render the HTML as PDF
 				$dompdf->render();
