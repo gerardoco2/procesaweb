@@ -57,7 +57,7 @@
             .benef-container {
             height: 16px;
             display: table; /* Display as a table for even spacing */
-            width: 50%; /* Span full width */
+            width: 100%; /* Span full width */
             margin: 0 auto; /* Center horizontally */
             }
 

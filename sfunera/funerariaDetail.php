@@ -254,7 +254,85 @@ if ( !empty($ced) )
 				// instantiate and use the dompdf class
 				$dompdf = new Dompdf($options);
 				$dompdf->loadHtml('
-				
+				<div>
+
+				<div class="container">
+                    <div class="front-side">
+                        <div class="logo">
+                            <img src="https://capunefm.com/images/logocapunefm.png" alt="">
+                        </div>
+                        <div class="body">
+                            <p>CAJA DE AHORROS DEL PERSONAL DE LA <br>
+                            UNIVERSIDAD NACIONAL EXPERIMENTAL <br>
+                            FRANCISCO DE MIRANDA CAPUNEFM</p>
+
+                            <div class="title">
+                                <h3>CARNET DE AFILIACION</h3>
+                            </div>
+                            <div class="titular">
+                                <h4>'. $bene_afiiliado  . '</h4>
+                            </div>
+                            <div class="footer">
+                                <img src="https://www.necropolisfuneral.com/assets/img/logo_necrolpolis-footer.png" alt="">
+                            </div>   
+                        </div>
+
+                    </div>
+
+                    <div class="front-side">
+                        <div class="logo">
+                            <img src="https://capunefm.com/images/logocapunefm.png" alt="">
+                        </div>
+                        <div class="affiliate-info">
+                            <div class="name">
+                            <p>Nombres y Apellidos del Afiliado:</p>
+                            Gerardo Colina
+                            </div>
+                            <div class="id">
+                            <p>Cedula:</p>
+                            20569539
+                            </div>
+                        </div>
+                        <div class="body">
+                        
+
+                            <div class="beneficiaries">
+                                <div class="benef-title">Carga Familiar</div>
+                                <table>
+                                    <tr>
+                                        <td>Nelis Quintero</td>
+                                        <td>7484589</td>
+                                        <td>Madre</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Juan Colina</td>
+                                        <td>9503183</td>
+                                        <td>Padre</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Juan Colina</td>
+                                        <td>9503183</td>
+                                        <td>Padre</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Juan Colina</td>
+                                        <td>9503183</td>
+                                        <td>Padre</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Juan Colina</td>
+                                        <td>9503183</td>
+                                        <td>Padre</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+
+                    </div>  
+				</div>
+                <div class="clearfix"></div>
+			</div>
 				');
 
 				$stream = true;
