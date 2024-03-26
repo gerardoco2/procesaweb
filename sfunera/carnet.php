@@ -79,6 +79,9 @@
             padding: 2px;
             font-size: 12px;
             }
+            .clearfix {
+                clear: both;
+            }
 		</style>
 
 			<div>
@@ -158,5 +161,5 @@
 
                     </div>  
 				</div>
-
+                <div class="clearfix"></div>
 			</div>
