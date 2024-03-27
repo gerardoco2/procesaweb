@@ -197,4 +197,38 @@ use Dompdf\Options;
 			</div>
             ';
 
+            function generaCarnetPdf($html) {
+
+				$options = new Options();
+				$options->set('isRemoteEnabled', TRUE);
+
+				// instantiate and use the dompdf class
+				$dompdf = new Dompdf($options);
+				$dompdf->loadHtml($html);
+
+				$stream = true;
+				// (Optional) Setup the paper size and orientation
+				$dompdf->setPaper('A4', 'landscape');
+
+				// Render the HTML as PDF
+				$dompdf->render();
+
+				// Output the generated PDF to Browser
+				//$dompdf->stream();
+
+				if ($stream) {
+					ob_end_clean();
+					$dompdf->stream("carnet.pdf", array("Attachment" => 0));
+
+				} else {
+				return $dompdf->output();
+				}
+
+				die();
+
+			}
+
+            generaCarnetPdf($html);
+			
+
 ?>
