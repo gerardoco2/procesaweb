@@ -305,6 +305,7 @@ if ( !empty($ced) )
 
 					.titular > p {
 					font-size: 14px;
+					margin-bottom: 0;
 					}
 
 					table {
