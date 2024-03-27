@@ -1,4 +1,26 @@
-            <style>
+<?php             
+         
+         
+defined( '_JEXEC' ) or die( 'Restricted access' );
+
+global $app, $_SERVER;
+
+
+// retrieve user instance
+$my =& JFactory::getUser();
+
+$ced = ($my->id) ? $my->username : ""; // usuario de la sesion activa
+$nom = ($my->id) ? $my->name : "No identificado"; // usuario de la sesion activa
+
+$docr = $_SERVER['DOCUMENT_ROOT'];
+require_once($docr . '/phps/gestarchivo.php');
+require_once($docr . '/phps/dompdf/autoload.inc.php');
+// reference the Dompdf namespace
+use Dompdf\Dompdf;
+use Dompdf\Options;
+
+
+          $html ='  <style>
 					/* Container */
 					.container {
 					margin-top: 60px;
@@ -95,7 +117,7 @@
                             <div class="footer">
                                 <img src="https://www.necropolisfuneral.com/assets/img/logo_necrolpolis-footer.png" alt="">
                               <p>
-                                telefonos: 0412-169-76-20 / 0412-664-73-20 / 0412-411-79-82 
+                                Telefonos: 0412-169-76-20 / 0412-664-73-20 / 0412-411-79-82 
                               </p>
                             </div>   
                         </div>
@@ -173,3 +195,6 @@
 				</div>
                 <div class="clearfix"></div>
 			</div>
+            ';
+
+?>
