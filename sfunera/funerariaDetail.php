@@ -101,8 +101,24 @@ if ( !empty($ced) )
 // CARNET EMPIEZA AQUI
 
 			echo '<h3 style="margin: 20px; ">Descarga tu Carnet del servicio funerario aqui </h3> ';
-
+			
 			list($tipo, $cedula_afil, $bene_afiiliado, $parentesco) = explode(";", $benef_arr[0]); 
+			$form = '
+			<form action="carnet.php" method="post">
+				<input type="hidden" id="nombre_afiliado" name="nombre_afiliado" value="'. $bene_afiiliado .'">
+				<input type="hidden" id="cedula_afiliado" name="cedula_afiliado" value="'. $cedula_afil .'"> ';
+			for ($i=1; $i < sizeof($benef_arr); $i++) { 
+				list($tipo, $cedula, $beneficiario, $parentesco) = explode(";", $benef_arr[$i]);
+				$form .= '<input type="hidden" id="nombre_benef" name="nombre_benef['i']" value="'. $beneficiario .'"> ';
+				$form .= '<input type="hidden" id="nombre_benef" name="nombre_benef['i']" value="'. $parentesco .'"> ';
+				$form .= '<input type="hidden" id="nombre_benef" name="nombre_benef['i']" value="'. $cedula .'"> ';
+			}
+
+			$form .= '
+			<button type="submit">Descargar Carnet</button>
+			</form>';
+			
+			echo $form;
 
 			echo '
 			<style>
