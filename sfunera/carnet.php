@@ -142,59 +142,93 @@ use Dompdf\Options;
                            <table>
                              <tr>
                                <td style="text-align: center" colspan="3">Carga Familiar</td>
-                             </tr>
-                             <tr>
-                               <td>'. $_POST["nombre_benef-1"] .'</td>
-                               <td>'. $_POST["cedula_benef-1"] .'</td>
-                               <td>'. $_POST["parentesco_benef-1"] .'</td>
-                             </tr>
-                             <tr>
-                               <td>'. $_POST["nombre_benef-2"] .'</td>
-                               <td>'. $_POST["cedula_benef-2"] .'</td>
-                               <td>'. $_POST["parentesco_benef-2"] .'</td>
-                             </tr>
-                             <tr>
-                               <td>'. $_POST["nombre_benef-3"] .'</td>
-                               <td>'. $_POST["cedula_benef-3"] .'</td>
-                               <td>'. $_POST["parentesco_benef-3"] .'</td>
-                             </tr>
-                             <tr>
-                               <td>'. $_POST["nombre_benef-4"] .'</td>
-                               <td>'. $_POST["cedula_benef-4"] .'</td>
-                               <td>'. $_POST["parentesco_benef-4"] .'</td>
-                             </tr>
-                             <tr>
-                               <td>'. $_POST["nombre_benef-5"] .'</td>
-                               <td>'. $_POST["cedula_benef-5"] .'</td>
-                               <td>'. $_POST["parentesco_benef-5"] .'</td>
-                             </tr>
-                             <tr>
-                               <td>'. $_POST["nombre_benef-6"] .'</td>
-                               <td>'. $_POST["cedula_benef-6"] .'</td>
-                               <td>'. $_POST["parentesco_benef-6"] .'</td>
-                             </tr>
-                             <tr>
-                               <td>'. $_POST["nombre_benef-7"] .'</td>
-                               <td>'. $_POST["cedula_benef-7"] .'</td>
-                               <td>'. $_POST["parentesco_benef-7"] .'</td>
-                             </tr>
-                             <tr>
-                               <td>'. $_POST["nombre_benef-8"] .'</td>
-                               <td>'. $_POST["cedula_benef-8"] .'</td>
-                               <td>'. $_POST["parentesco_benef-8"] .'</td>
-                             </tr>
-                             <tr>
-                                <td>'. $_POST["nombre_benef-9"] .'</td>
-                                <td>'. $_POST["cedula_benef-9"] .'</td>
-                                <td>'. $_POST["parentesco_benef-9"] .'</td>
-                             </tr>
-                             <tr>
-                               <td>'. $_POST["nombre_benef-10"] .'</td>
-                               <td>'. $_POST["cedula_benef-10"] .'</td>
-                               <td>'. $_POST["parentesco_benef-10"] .'</td>
-                             </tr>
-                           </table>
+                             </tr>';
 
+                            if($_POST["nombre_benef-1"] != "") {
+                                $html .= '
+                                    <tr>
+                                        <td>'. $_POST["nombre_benef-1"] .'</td>
+                                        <td>'. $_POST["cedula_benef-1"] .'</td>
+                                        <td>'. $_POST["parentesco_benef-1"] .'</td>
+                                    </tr>';
+                            }
+                             
+                            if($_POST["nombre_benef-2"] != "") {
+                                $html .= '
+                                    <tr>
+                                        <td>'. $_POST["nombre_benef-2"] .'</td>
+                                        <td>'. $_POST["cedula_benef-2"] .'</td>
+                                        <td>'. $_POST["parentesco_benef-2"] .'</td>
+                                    </tr>';
+                            }
+
+                            if($_POST["nombre_benef-3"] != "") {
+                                $html .= '
+                                    <tr>
+                                        <td>'. $_POST["nombre_benef-3"] .'</td>
+                                        <td>'. $_POST["cedula_benef-3"] .'</td>
+                                        <td>'. $_POST["parentesco_benef-3"] .'</td>
+                                    </tr>';
+                            }
+
+                            if($_POST["nombre_benef-4"] != "") {
+                                $html .= '
+                                    <tr>
+                                        <td>'. $_POST["nombre_benef-4"] .'</td>
+                                        <td>'. $_POST["cedula_benef-4"] .'</td>
+                                        <td>'. $_POST["parentesco_benef-4"] .'</td>
+                                    </tr>';
+                            }
+                            if($_POST["nombre_benef-5"] != "") {
+                                $html .= '
+                                    <tr>
+                                        <td>'. $_POST["nombre_benef-5"] .'</td>
+                                        <td>'. $_POST["cedula_benef-5"] .'</td>
+                                        <td>'. $_POST["parentesco_benef-5"] .'</td>
+                                    </tr>';
+                            }
+                            if($_POST["nombre_benef-6"] != "") {
+                                $html .= '
+                                    <tr>
+                                        <td>'. $_POST["nombre_benef-6"] .'</td>
+                                        <td>'. $_POST["cedula_benef-6"] .'</td>
+                                        <td>'. $_POST["parentesco_benef-6"] .'</td>
+                                    </tr>';
+                            }
+                            if($_POST["nombre_benef-7"] != "") {
+                                $html .= '
+                                    <tr>
+                                        <td>'. $_POST["nombre_benef-7"] .'</td>
+                                        <td>'. $_POST["cedula_benef-7"] .'</td>
+                                        <td>'. $_POST["parentesco_benef-7"] .'</td>
+                                    </tr>';
+                            }
+                            if($_POST["nombre_benef-8"] != "") {
+                                $html .= '
+                                    <tr>
+                                        <td>'. $_POST["nombre_benef-8"] .'</td>
+                                        <td>'. $_POST["cedula_benef-8"] .'</td>
+                                        <td>'. $_POST["parentesco_benef-8"] .'</td>
+                                    </tr>';
+                            }
+                            if($_POST["nombre_benef-9"] != "") {
+                                $html .= '
+                                    <tr>
+                                        <td>'. $_POST["nombre_benef-9"] .'</td>
+                                        <td>'. $_POST["cedula_benef-9"] .'</td>
+                                        <td>'. $_POST["parentesco_benef-9"] .'</td>
+                                    </tr>';
+                            }
+                            if($_POST["nombre_benef-10"] != "") {
+                                $html .= '
+                                    <tr>
+                                        <td>'. $_POST["nombre_benef-10"] .'</td>
+                                        <td>'. $_POST["cedula_benef-10"] .'</td>
+                                        <td>'. $_POST["parentesco_benef-10"] .'</td>
+                                    </tr>';
+                            }
+                             
+                        $html .=  ' </table>
                         </div>
                     </div>  
 				</div>
