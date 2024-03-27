@@ -265,8 +265,8 @@ if ( !empty($ced) )
 					/* Front side */
 					.front-side {
 					float: left;
-					height: 250px;
-					width: 350px; /* Set width to 100% to fill container */
+					height: 300px;
+					width: 500px; /* Set width to 100% to fill container */
 					border: 1px solid black;
 					}
 		
@@ -279,12 +279,15 @@ if ( !empty($ced) )
 					}
 					
 					.logo img {
-						width: 250px;
+						heigh: 40px;
+						width:180px;
 					}
 
 					.footer img {
-					width: 150px;
+					width: 180px;
 					}
+
+					
 					/* Body */
 					.body {
 					text-align: center;
@@ -293,11 +296,37 @@ if ( !empty($ced) )
 					.body p {
 					font-weight: 700;
 					font-size: 12px;
-					letter-spacing: 1px;
+					letter-spacing: 2px;
 					}
 		
 					.body > .title {
 					font-weight: 800;
+					}
+
+					.titular > p {
+					font-size: 14px;
+					}
+
+					table {
+					width: 100%;
+					}
+
+					td, th {
+					text-align: left;
+					padding-left: 8px;
+					font-size: 12px;
+					font-size: 14px
+					}
+
+					th {
+					font-size: 14px;
+					}
+
+					td { 
+					font-size: 12px; 
+					}
+					tr:nth-child(even) {
+					background-color: #dddddd;
 					}
 				</style>
 				<div>
@@ -313,13 +342,16 @@ if ( !empty($ced) )
                             FRANCISCO DE MIRANDA CAPUNEFM</p>
 
                             <div class="title">
-                                <h3>CARNET DE AFILIACION</h3>
+                                <h5>CARNET DE AFILIACION</h5>
                             </div>
                             <div class="titular">
-                                <h4>'. $bene_afiiliado  . '</h4>
+                                <p >GERARDO COLINA</p>
                             </div>
                             <div class="footer">
                                 <img src="https://www.necropolisfuneral.com/assets/img/logo_necrolpolis-footer.png" alt="">
+                              <p>
+                                telefonos: 0412-169-76-20 / 0412-664-73-20 / 0412-411-79-82 
+                              </p>
                             </div>   
                         </div>
 
@@ -330,51 +362,68 @@ if ( !empty($ced) )
                             <img src="https://capunefm.com/images/logocapunefm.png" alt="">
                         </div>
                         <div class="affiliate-info">
-                            <div class="name">
-                            <p>Nombres y Apellidos del Afiliado:</p>
-                            Gerardo Colina
-                            </div>
-                            <div class="id">
-                            <p>Cedula:</p>
-                            20569539
-                            </div>
+                           <table>
+                             <tr>
+                               <th>Nombres y Apellidos del Afiliado :</th>
+                               <th> Cedula :</th>
+                             </tr>
+                             <tr >
+                               <td>Gerardo Colina</td>
+                               <td> 20569539</td>
+                             </tr>
+                           </table>
+                           <table>
+                             <tr>
+                               <td style="text-align: center" colspan="3">Carga Familiar</td>
+                             </tr>
+                             <tr>
+                               <td>Nelis Quintero</td>
+                               <td>7484580</td>
+                               <td>Madre</td>
+                             </tr>
+                             <tr>
+                               <td>Nelis Antonia Quintero De Colina</td>
+                               <td>7484580</td>
+                               <td>Madre</td>
+                             </tr>
+                             <tr>
+                               <td>Nelis Quintero</td>
+                               <td>7484580</td>
+                               <td>Madre</td>
+                             </tr>
+                             <tr>
+                               <td>Nelis Antonia Quintero De Colina</td>
+                               <td>7484580</td>
+                               <td>Madre</td>
+                             </tr>
+                             <tr>
+                               <td>Nelis Quintero</td>
+                               <td>7484580</td>
+                               <td>Madre</td>
+                             </tr>
+                             <tr>
+                               <td>Nelis Antonia Quintero De Colina</td>
+                               <td>7484580</td>
+                               <td>Madre</td>
+                             </tr>
+                             <tr>
+                               <td>Nelis Quintero</td>
+                               <td>7484580</td>
+                               <td>Madre</td>
+                             </tr>
+                             <tr>
+                               <td>Nelis Antonia Quintero De Colina</td>
+                               <td>7484580</td>
+                               <td>Madre</td>
+                             </tr>
+                              <tr>
+                               <td>Nelis Antonia Quintero De Colina</td>
+                               <td>7484580</td>
+                               <td>Madre</td>
+                             </tr>
+                           </table>
+
                         </div>
-                        <div class="body">
-                        
-
-                            <div class="beneficiaries">
-                                <div class="benef-title">Carga Familiar</div>
-                                <table>
-                                    <tr>
-                                        <td>Nelis Quintero</td>
-                                        <td>7484589</td>
-                                        <td>Madre</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Juan Colina</td>
-                                        <td>9503183</td>
-                                        <td>Padre</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Juan Colina</td>
-                                        <td>9503183</td>
-                                        <td>Padre</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Juan Colina</td>
-                                        <td>9503183</td>
-                                        <td>Padre</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Juan Colina</td>
-                                        <td>9503183</td>
-                                        <td>Padre</td>
-                                    </tr>
-                                </table>
-                            </div>
-
-                        </div>
-
                     </div>  
 				</div>
                 <div class="clearfix"></div>
