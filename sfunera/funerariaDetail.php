@@ -109,9 +109,9 @@ if ( !empty($ced) )
 				<input type="hidden" id="cedula_afiliado" name="cedula_afiliado" value="'. $cedula_afil .'"> ';
 			for ($i=1; $i < sizeof($benef_arr); $i++) { 
 				list($tipo, $cedula, $beneficiario, $parentesco) = explode(";", $benef_arr[$i]);
-				$form .= '<input type="hidden" id="nombre_benef" name="nombre_benef['.$i.']" value="'. $beneficiario .'"> ';
-				$form .= '<input type="hidden" id="parentesco_benef" name="parentesco_benef['.$i.']" value="'. $parentesco .'"> ';
-				$form .= '<input type="hidden" id="cedula_benef" name="cedula_benef['.$i.']" value="'. $cedula .'"> ';
+				$form .= '<input type="hidden" id="nombre_benef" name="nombre_benef-'.$i.'" value="'. $beneficiario .'"> ';
+				$form .= '<input type="hidden" id="parentesco_benef" name="parentesco_benef-'.$i.'" value="'. $parentesco .'"> ';
+				$form .= '<input type="hidden" id="cedula_benef" name="cedula_benef-'.$i.'" value="'. $cedula .'"> ';
 			}
 
 			$form .= '

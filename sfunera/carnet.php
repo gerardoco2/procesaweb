@@ -144,7 +144,7 @@ use Dompdf\Options;
                                <td style="text-align: center" colspan="3">Carga Familiar</td>
                              </tr>
                              <tr>
-                               <td>'. $_POST["nombre_benef[1]"] .'</td>
+                               <td>'. $_POST["nombre_benef-1"] .'</td>
                                <td>7484580</td>
                                <td>Madre</td>
                              </tr>
