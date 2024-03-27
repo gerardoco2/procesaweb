@@ -135,8 +135,8 @@ use Dompdf\Options;
                                <th> Cedula :</th>
                              </tr>
                              <tr >
-                               <td>Gerardo Colina</td>
-                               <td> 20569539</td>
+                               <td>'. $_POST["nombre_afiliado"] .'</td>
+                               <td>'. $_POST["cedula_afiliado"] .'</td>
                              </tr>
                            </table>
                            <table>
@@ -144,7 +144,7 @@ use Dompdf\Options;
                                <td style="text-align: center" colspan="3">Carga Familiar</td>
                              </tr>
                              <tr>
-                               <td>Nelis Quintero</td>
+                               <td>'. $_POST["nombre_benef[1]"] .'</td>
                                <td>7484580</td>
                                <td>Madre</td>
                              </tr>
