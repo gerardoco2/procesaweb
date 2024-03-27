@@ -1,90 +1,80 @@
-        <style>
-            /* Container */
-            .container {
-            margin-top: 60px;
-            display: inline-block; /* Display inline-block to allow elements next to it */
-            width: 100%; /* Set container width */
-            }
+                <style>
+					/* Container */
+					.container {
+					margin-top: 60px;
+					display: inline-block; /* Display inline-block to allow elements next to it */
+					width: 100%; /* Set container width */
+					}
+		
+					/* Front side */
+					.front-side {
+					float: left;
+					height: 300px;
+					width: 500px; /* Set width to 100% to fill container */
+					border: 1px solid black;
+					}
+		
+					/* Logo and footer */
+					.logo,
+					.footer {
+					text-align: center; /* Center content horizontally */
+					padding-top: 5px; /* Add top padding */
+					margin-bottom: 5px;
+					}
+					
+					.logo img {
+						heigh: 40px;
+						width:180px;
+					}
 
-            /* Front side */
-            .front-side {
-            float: left;
-            height: 300px;
-            width: 50%; /* Set width to 100% to fill container */
-            border: 1px solid black;
-            }
+					.footer img {
+					width: 180px;
+					}
 
-            /* Logo and footer */
-            .logo,
-            .footer {
-            text-align: center; /* Center content horizontally */
-            padding-top: 10px; /* Add top padding */
-            }
+					
+					/* Body */
+					.body {
+					text-align: center;
+					}
+		
+					.body p {
+					font-weight: 700;
+					font-size: 12px;
+					letter-spacing: 2px;
+					}
+		
+					.body > .title {
+					font-weight: 800;
+					}
 
-            .footer img {
-            width: 200px;
-            }
+					.titular > p {
+					font-size: 14px;
+					margin-bottom: 0;
+					}
 
-            /* Body */
-            .body {
-            text-align: center;
-            }
+					table {
+					width: 100%;
+					}
 
-            .body p {
-            font-weight: 700;
-            font-size: 12px;
-            letter-spacing: 1px;
-            }
+					td, th {
+					text-align: left;
+					padding-left: 8px;
+					font-size: 12px;
+					font-size: 14px
+					}
 
-            .body > .title {
-            font-weight: 800;
-            }
+					th {
+					font-size: 14px;
+					}
 
-            /* Affiliate information */
-            .affiliate-info {
-            display: table; /* Display as a table for even spacing */
-            width: 100%; /* Span full width */
-            margin: 0 auto; /* Center horizontally */
-            }
-
-            .affiliate-info p {
-            margin: 0;
-            display: table-cell; /* Display as table cells */
-            vertical-align: middle; /* Vertically align content in the middle */
-            }
-
-            /* Benefits container */
-            .benef-container {
-            height: 16px;
-            display: table; /* Display as a table for even spacing */
-            width: 100%; /* Span full width */
-            margin: 0 auto; /* Center horizontally */
-            }
-
-            .benef-container > p {
-            display: table-cell; /* Display as table cells */
-            vertical-align: middle; /* Vertically align content in the middle */
-            }
-
-            /* Table styles */
-            table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%; /* Set table width to 100% of its container */
-            margin: 0 auto; /* Center horizontally */
-            }
-
-            td, th {
-            text-align: left;
-            padding: 2px;
-            font-size: 12px;
-            }
-            .clearfix {
-                clear: both;
-            }
-		</style>
-
-			<div>
+					td { 
+					font-size: 12px; 
+					}
+					tr:nth-child(even) {
+					background-color: #dddddd;
+					}
+				</style>
+				<div>
 
 				<div class="container">
                     <div class="front-side">
@@ -97,13 +87,16 @@
                             FRANCISCO DE MIRANDA CAPUNEFM</p>
 
                             <div class="title">
-                                <h3>CARNET DE AFILIACION</h3>
+                                <h5>CARNET DE AFILIACION</h5>
                             </div>
                             <div class="titular">
-                                <h4>'. $bene_afiiliado  . '</h4>
+                                <p >GERARDO COLINA</p>
                             </div>
                             <div class="footer">
                                 <img src="https://www.necropolisfuneral.com/assets/img/logo_necrolpolis-footer.png" alt="">
+                              <p>
+                                telefonos: 0412-169-76-20 / 0412-664-73-20 / 0412-411-79-82 
+                              </p>
                             </div>   
                         </div>
 
@@ -114,51 +107,68 @@
                             <img src="https://capunefm.com/images/logocapunefm.png" alt="">
                         </div>
                         <div class="affiliate-info">
-                            <div class="name">
-                            <p>Nombres y Apellidos del Afiliado:</p>
-                            Gerardo Colina
-                            </div>
-                            <div class="id">
-                            <p>Cedula:</p>
-                            20569539
-                            </div>
+                           <table>
+                             <tr>
+                               <th>Nombres y Apellidos del Afiliado :</th>
+                               <th> Cedula :</th>
+                             </tr>
+                             <tr >
+                               <td>Gerardo Colina</td>
+                               <td> 20569539</td>
+                             </tr>
+                           </table>
+                           <table>
+                             <tr>
+                               <td style="text-align: center" colspan="3">Carga Familiar</td>
+                             </tr>
+                             <tr>
+                               <td>Nelis Quintero</td>
+                               <td>7484580</td>
+                               <td>Madre</td>
+                             </tr>
+                             <tr>
+                               <td>Nelis Antonia Quintero De Colina</td>
+                               <td>7484580</td>
+                               <td>Madre</td>
+                             </tr>
+                             <tr>
+                               <td>Nelis Quintero</td>
+                               <td>7484580</td>
+                               <td>Madre</td>
+                             </tr>
+                             <tr>
+                               <td>Nelis Antonia Quintero De Colina</td>
+                               <td>7484580</td>
+                               <td>Madre</td>
+                             </tr>
+                             <tr>
+                               <td>Nelis Quintero</td>
+                               <td>7484580</td>
+                               <td>Madre</td>
+                             </tr>
+                             <tr>
+                               <td>Nelis Antonia Quintero De Colina</td>
+                               <td>7484580</td>
+                               <td>Madre</td>
+                             </tr>
+                             <tr>
+                               <td>Nelis Quintero</td>
+                               <td>7484580</td>
+                               <td>Madre</td>
+                             </tr>
+                             <tr>
+                               <td>Nelis Antonia Quintero De Colina</td>
+                               <td>7484580</td>
+                               <td>Madre</td>
+                             </tr>
+                              <tr>
+                               <td>Nelis Antonia Quintero De Colina</td>
+                               <td>7484580</td>
+                               <td>Madre</td>
+                             </tr>
+                           </table>
+
                         </div>
-                        <div class="body">
-                        
-
-                            <div class="beneficiaries">
-                                <div class="benef-title">Carga Familiar</div>
-                                <table>
-                                    <tr>
-                                        <td>Nelis Quintero</td>
-                                        <td>7484589</td>
-                                        <td>Madre</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Juan Colina</td>
-                                        <td>9503183</td>
-                                        <td>Padre</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Juan Colina</td>
-                                        <td>9503183</td>
-                                        <td>Padre</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Juan Colina</td>
-                                        <td>9503183</td>
-                                        <td>Padre</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Juan Colina</td>
-                                        <td>9503183</td>
-                                        <td>Padre</td>
-                                    </tr>
-                                </table>
-                            </div>
-
-                        </div>
-
                     </div>  
 				</div>
                 <div class="clearfix"></div>
