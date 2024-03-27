@@ -112,7 +112,7 @@ use Dompdf\Options;
                                 <h5>CARNET DE AFILIACION</h5>
                             </div>
                             <div class="titular">
-                                <p >GERARDO COLINA</p>
+                                <p > '. $_POST["nombre_afiliado"] .'</p>
                             </div>
                             <div class="footer">
                                 <img src="https://www.necropolisfuneral.com/assets/img/logo_necrolpolis-footer.png" alt="">
