@@ -115,7 +115,7 @@ if ( !empty($ced) )
 			}
 
 			$form .= '
-			<button type="submit">Descargar Carnet</button>
+			<button class="btn btn-primary" type="submit">Descargar Carnet</button>
 			</form>';
 			
 			echo $form;
