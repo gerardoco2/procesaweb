@@ -42,11 +42,13 @@ if ( $tip === "Registered" || $tip === "Guest" )
 
 	$ejec = exec($raiz . $rdir . "ejec_pvx_sfunera_reporte 2>&1");
 
-    $file = $raiz . $rdir . "REPORTE_FUNERA_AFIBENE.PDF";
+    $file = $raiz . $rdir . "REPORTE_FUNERA_AFIBENE.pdf";
 
 	if ( file_exists($file) )
 	{
-	
+		copy($file, $dirw . $hashced . ".pdf");
+                $updf = JURI::base() . "pdfs/" . $hashced . ".pdf";
+                unlink( $filas );
                // $updf = JURI::base() . "pdfs/" . $hashced . ".pdf";
                 //$updf = JURI::base() . "pdfs/" . $hashced . ".pdf";
                 //unlink( $filas );
