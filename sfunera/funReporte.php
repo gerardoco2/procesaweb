@@ -47,8 +47,8 @@ echo $file ;
 	if ( file_exists($file) )
 	{
         echo "entramos al if";
-		//copy($file, $dirw . $hashced . ".pdf");
-          //      $updf = JURI::base() . "pdfs/" . $hashced . ".pdf";
+		copy($file, $dirw);
+             $updf = JURI::base() . "pdfs/REPORTE_FUNERA_AFIBENE.pdf";
             //    unlink( $filas );
                // $updf = JURI::base() . "pdfs/" . $hashced . ".pdf";
                 //$updf = JURI::base() . "pdfs/" . $hashced . ".pdf";
@@ -57,8 +57,8 @@ echo $file ;
 
                 echo "<center>
                         <object width='100%' height='480' internalinstanceid='25' type='application/pdf' 
-                                data='" . $file . "'>
-<iframe src='" . $file . "' style='border: none;' height='100%' width='100%'>
+                                data='" . $updf . "'>
+<iframe src='" . $updf . "' style='border: none;' height='100%' width='100%'>
 Este navegador no soporta lector de PDF. Por favor descargue el estado de cuenta mediante: <a href='" . $updf . "'>Descargar PDF</a>
 </iframe>
 			</object>
