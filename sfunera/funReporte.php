@@ -27,7 +27,7 @@ if ( $tip === "Registered" || $tip === "Guest" )
 	$raiz = "/srv/www/htdocs";
 	$rdir = "/";
 	$file = $raiz . $rdir . "REPORTE_FUNERA_AFIBENE.PDF";
-
+/*
 	if ( file_exists($file) ){
 		unlink( $file );
 	}
@@ -38,7 +38,7 @@ if ( $tip === "Registered" || $tip === "Guest" )
 	$filas = $raiz . $rdir . $ced . "_EDOCTA.pdf"; // archivo resultante
 	if ( file_exists($filas) ) {
 		unlink( $filas );
-	}
+	}*/
 
 	$ejec = exec($raiz . $rdir . "ejec_pvx_sfunera_reporte 2>&1");
 
