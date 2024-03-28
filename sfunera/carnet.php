@@ -95,6 +95,7 @@ use Dompdf\Options;
 
                     .carga {
                         margin:0 10px;
+                        padding : 4px;
                     }
 
 					td { 
