@@ -104,7 +104,7 @@ if ( !empty($ced) )
 			
 			list($tipo, $cedula_afil, $bene_afiiliado, $parentesco) = explode(";", $benef_arr[0]); 
 			$form = '
-			<form action="https://capunefm.com/index.php/carnet" method="post">
+			<form action="index.php/carnet" method="post">
 				<input type="hidden" id="nombre_afiliado" name="nombre_afiliado" value="'. $bene_afiiliado .'">
 				<input type="hidden" id="cedula_afiliado" name="cedula_afiliado" value="'. $cedula_afil .'"> ';
 			for ($i=1; $i < sizeof($benef_arr); $i++) { 
