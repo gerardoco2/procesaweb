@@ -37,18 +37,12 @@ if ( $tip === "Registered" || $tip === "Guest" )
     
 		copy($file, $dirw . "REPORTE.pdf");
              $updf = JURI::base() . "pdfs/REPORTE.pdf";
-            //    unlink( $filas );
-               // $updf = JURI::base() . "pdfs/" . $hashced . ".pdf";
-                //$updf = JURI::base() . "pdfs/" . $hashced . ".pdf";
-                //unlink( $filas );
-//		echo "{pdf=" . $updf . "|100%|500}";
-        echo $updf;
                 echo "<center>
                         <object width='100%' height='600' internalinstanceid='25' type='application/pdf' 
                                 data='" . $updf . "'>
-<iframe src='" . $updf . "' style='border: none;' height='100%' width='100%'>
-Este navegador no soporta lector de PDF. Por favor descargue el estado de cuenta mediante: <a href='" . $updf . "'>Descargar PDF</a>
-</iframe>
+            <iframe src='" . $updf . "' style='border: none;' height='100%' width='100%'>
+            Este navegador no soporta lector de PDF. Por favor descargue el estado de cuenta mediante: <a href='" . $updf . "'>Descargar PDF</a>
+            </iframe>
 			</object>
 		</center>
 		";
