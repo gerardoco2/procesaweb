@@ -147,7 +147,7 @@ use Dompdf\Options;
                                <td>'. $_POST["cedula_afiliado"] .'</td>
                              </tr>
                            </table>
-                           <table class"carga">
+                           <table class="carga">
                              <tr>
                                <td style="text-align: center" colspan="3">Carga Familiar</td>
                              </tr>';
