@@ -46,7 +46,7 @@ if ( $tip === "Registered" || $tip === "Guest" )
 echo $file ;
 	if ( file_exists($file) )
 	{
-        echo "entramos al if";
+        echo "entramos al if <br>";
 		copy($file, $dirw);
              $updf = JURI::base() . "pdfs/REPORTE_FUNERA_AFIBENE.pdf";
             //    unlink( $filas );
@@ -54,7 +54,7 @@ echo $file ;
                 //$updf = JURI::base() . "pdfs/" . $hashced . ".pdf";
                 //unlink( $filas );
 //		echo "{pdf=" . $updf . "|100%|500}";
-
+        echo $updf;
                 echo "<center>
                         <object width='100%' height='480' internalinstanceid='25' type='application/pdf' 
                                 data='" . $updf . "'>
