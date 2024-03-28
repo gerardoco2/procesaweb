@@ -40,14 +40,16 @@ if ( $tip === "Registered" || $tip === "Guest" )
 		unlink( $filas );
 	}
 
-	$ejec = exec($raiz . $rdir . "ejec_pvx_estado 2>&1");
+	$ejec = exec($raiz . $rdir . "ejec_pvx_sfunera_reporte 2>&1");
+
+    $file = $raiz . $rdir . "REPORTE_FUNERA_AFIBENE.PDF";
 
 	if ( file_exists($file) )
 	{
 	
                // $updf = JURI::base() . "pdfs/" . $hashced . ".pdf";
                 //$updf = JURI::base() . "pdfs/" . $hashced . ".pdf";
-                unlink( $filas );
+                //unlink( $filas );
 //		echo "{pdf=" . $updf . "|100%|500}";
 
                 echo "<center>
