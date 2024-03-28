@@ -46,7 +46,7 @@ if ( $tip === "Registered" || $tip === "Guest" )
 echo $file ;
 	if ( file_exists($file) )
 	{
-        echo "entramos al if"
+        echo "entramos al if";
 		//copy($file, $dirw . $hashced . ".pdf");
           //      $updf = JURI::base() . "pdfs/" . $hashced . ".pdf";
             //    unlink( $filas );
