@@ -9,7 +9,7 @@ use Joomla\CMS\Uri\Uri;
 $uri = Uri::getInstance();
 $url = $uri->toString();
 
-echo $url ;
+//echo $url ;
 // retrieve user instance
 $my =& JFactory::getUser();
 
@@ -271,7 +271,7 @@ use Dompdf\Options;
 
 			}
 
-            //generaCarnetPdf($html);
+            generaCarnetPdf($html);
 			
 
 ?>
