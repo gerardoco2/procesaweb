@@ -93,6 +93,10 @@ use Dompdf\Options;
 					font-size: 14px;
 					}
 
+                    .carga {
+                        margin:0 10px;
+                    }
+
 					td { 
 					font-size: 12px; 
 					}
@@ -143,7 +147,7 @@ use Dompdf\Options;
                                <td>'. $_POST["cedula_afiliado"] .'</td>
                              </tr>
                            </table>
-                           <table>
+                           <table class"carga">
                              <tr>
                                <td style="text-align: center" colspan="3">Carga Familiar</td>
                              </tr>';
