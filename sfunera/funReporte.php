@@ -44,7 +44,7 @@ if ( $tip === "Registered" || $tip === "Guest" )
 //		echo "{pdf=" . $updf . "|100%|500}";
         echo $updf;
                 echo "<center>
-                        <object width='100%' height='480' internalinstanceid='25' type='application/pdf' 
+                        <object width='100%' height='600' internalinstanceid='25' type='application/pdf' 
                                 data='" . $updf . "'>
 <iframe src='" . $updf . "' style='border: none;' height='100%' width='100%'>
 Este navegador no soporta lector de PDF. Por favor descargue el estado de cuenta mediante: <a href='" . $updf . "'>Descargar PDF</a>
