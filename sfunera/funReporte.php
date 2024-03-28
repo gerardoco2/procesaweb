@@ -47,7 +47,7 @@ echo $file ;
 	if ( file_exists($file) )
 	{
         echo "entramos al if <br>";
-		copy($file, $dirw);
+		copy($file, $dirw . "REPORTE.pdf");
              $updf = JURI::base() . "pdfs/REPORTE_FUNERA_AFIBENE.pdf";
             //    unlink( $filas );
                // $updf = JURI::base() . "pdfs/" . $hashced . ".pdf";
