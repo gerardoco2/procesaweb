@@ -10,11 +10,33 @@ if (empty($cedula) || empty($telefono) || empty($banco) || empty($token) ) {
   die('Por favor ingresa todos los datos');
 }
 
+{
+  "canal":"06",
+  "celular":"04241234128",
+  "banco":"0128",
+  "RIF":"J301578970",
+  "cedula":"V1234567",
+  "monto":"5000.00",
+  "token":"20191231",
+  "concepto": " paga",
+  "codAfiliado":"104663",
+  "comercio":""
 
-$apiUrl = 'api_url'; 
+}
+
+
+$apiUrl = 'http://190.202.9.207:8080/RestTesoro_C2P/com/services/botonDePago/pago'; 
 $postData = [
-  'cedula' => $name,
-  'telefono' => $id,
+  "canal"=>"06",
+  "celular"=>"04241234128",
+  "banco"=>"0128",
+  "RIF"=>"J301578970",
+  "cedula"=>"V1234567",
+  "monto"=>"5000.00",
+  "token"=>"20191231",
+  "concepto"=> " paga",
+  "codAfiliado"=>"104663",
+  "comercio"=>""
 ];
 
 $ch = curl_init($apiUrl);
