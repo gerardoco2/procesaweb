@@ -10,7 +10,7 @@ if (empty($cedula) || empty($telefono) || empty($banco) || empty($token) ) {
 }*/
 
 
-$apiUrl = 'http://190.202.9.207:8080/RestTesoro_C2P/com/services/botonDePago/pago'; 
+$apiUrl = 'http://190.202.9.207:8080/RestTesoro_C2P/com/services/bancos'; 
 $postData = [
   "canal"=>"06",
   "celular"=>"04241234128",
@@ -40,6 +40,9 @@ if (curl_errno($ch)) {
 
 $data = json_decode($response, true);
 
+foreach ($data as $key => $value) {
+  echo "Key: $key; Value: $value\n";
+}
 
 if (isset($data['error'])) {
   $result = 'API Error: ' . $data['error'];
