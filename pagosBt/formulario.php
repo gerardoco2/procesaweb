@@ -83,7 +83,9 @@ if ( $tip === "Guest" )
     </div>
   </div>
 
- 
+    <br>
+    <br>
+    <br>
 
         <button class="btn btn-primary" type="submit"> Enviar Pago </button>
     </form>
