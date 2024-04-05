@@ -38,6 +38,11 @@ if ( $tip === "Guest" )
         <label for="banco">Banco:</label>
         <input type="text" name="banco" >
 
+        <label for="bancos">Selecciona tu banco:</label>
+        <select id="bancosSelect">
+
+        </select>
+
         <label for="token">token:</label>
         <input type="text" name="token" >
 
@@ -45,4 +50,5 @@ if ( $tip === "Guest" )
     </form>
     <div id="result"></div>
 
-
+    
+    <script src="bt.js"></script>
