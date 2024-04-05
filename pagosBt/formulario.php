@@ -26,7 +26,7 @@ if ( $tip === "Guest" )
 
 
 ?>
-    <form action="./procesarPago.php" method="post">
+    <form action="index.php?option=com_content&view=article&id=185" method="post">
         <label for="cedula">Cedula:</label>
         <input type="text" name="cedula" >
 
