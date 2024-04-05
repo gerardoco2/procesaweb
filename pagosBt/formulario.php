@@ -50,5 +50,5 @@ if ( $tip === "Guest" )
     </form>
     <div id="result"></div>
 
-    
-    <script src="bt.js"></script>
+
+    <script src="./bt.js"></script>
