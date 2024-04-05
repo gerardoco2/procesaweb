@@ -43,21 +43,21 @@ if ( $tip === "Guest" )
 
   <br>  
 
-  <h2>Ingresa los datos para realizar el pago</h2>
+  <h4>Ingresa los datos para realizar el pago</h4>
 
 
   <div class="row">
-    <div class="md-4">
+    <div class="col-md-4">
     <label for="cedula">Cedula:</label>
         <input type="text" name="cedula" >
 
     </div>
-    <div class="md-4">
+    <div class="col-md-4">
     <label for="telefono">Telefono:</label>
         <input type="text" name="telefono" >
 
     </div>
-    <div class="md-4">
+    <div class="col-md-4">
     <label for="banco">Banco:</label>
         <input type="text" name="banco" >
 
