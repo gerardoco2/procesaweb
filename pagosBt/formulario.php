@@ -60,20 +60,32 @@ if ( $tip === "Guest" )
     <div class="col-md-4">
     <label for="banco">Banco:</label>
         <input type="text" name="banco" >
-
     </div>
   </div>
 
-
-        <label for="bancos">Selecciona tu banco:</label>
+  <div class="row">
+    <div class="col-md-4">
+    <label for="bancos">Selecciona tu banco:</label>
         <select id="bancosSelect">
-
         </select>
+    </div>
+    <div class="col-md-4">
 
-        <label for="token">token:</label>
+    <label for="token">token:</label>
         <input type="text" name="token" >
 
-        <button type="submit"> Enviar Pago </button>
+    </div>
+    <div class="col-md-4">
+
+
+    <label for="token">Monto a Pagar:</label>
+        <input type="text" name="monto" >
+    </div>
+  </div>
+
+ 
+
+        <button class="btn btn-primary" type="submit"> Enviar Pago </button>
     </form>
     <div id="result"></div>
 
