@@ -29,6 +29,21 @@ if ( $tip === "Guest" )
 
 
     <form action="/index.php?option=com_content&view=article&id=185" method="post">
+
+
+    
+
+    <p>Selecciona la cuota a pagar :</p>
+          <input type="radio" id="html" name="servFunerario" value="HTML">
+          <label for="html">Servicio Funerario </label><br>
+          <input type="radio" id="css" name="Prestamo Comercial" value="comercial">
+          <label for="comercial">Prestamo Comercial</label><br>
+          <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+          <label for="javascript">Ahorro Asociado</label>
+
+  <br>  
+
+
         <label for="cedula">Cedula:</label>
         <input type="text" name="cedula" >
 
