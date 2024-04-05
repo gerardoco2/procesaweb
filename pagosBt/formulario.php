@@ -10,7 +10,7 @@ $ced = $_REQUEST["ced"]; // usuario de la consulta
 $tip = $my->usertype; // tipo de usuario de la sesion activa
 
 $docr = $_SERVER['DOCUMENT_ROOT'];
-require_once($docr . '/phps/gestarchivo.php');
+ //require_once($docr . '/phps/gestarchivo.php');
 
 ////////////////////////////////////
 
@@ -26,7 +26,7 @@ if ( $tip === "Guest" )
 
 
 ?>
-    <form action="index.php?option=com_content&view=article&id=185" method="post">
+    <form action="/index.php?option=com_content&view=article&id=185" method="post">
         <label for="cedula">Cedula:</label>
         <input type="text" name="cedula" >
 
