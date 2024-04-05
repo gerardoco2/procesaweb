@@ -45,8 +45,10 @@ if (isset($data['error'])) {
   $result = 'API Error: ' . $data['error'];
 } else {
   $status = $data['status'] ? 'Active' : 'Inactive';
-  $result = "Name: {$data['name']}, ID: {$data['id']}, Status: {$status}";
+  $result = "Respuesta del banco: {$data['codres']}, resultado: {$data['descRes']}, Referencia: {$data['fecha']},
+   Monto operacion {$data['monto']} ";
 }
+
 
 
 echo <<<HTML
