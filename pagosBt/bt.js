@@ -1,4 +1,4 @@
-const citySelect = document.getElementById('bancosSelect');
+const bancosSelect = document.getElementById('bancosSelect');
 
 async function getBancos() {
   try {
@@ -15,7 +15,7 @@ async function getBancos() {
       const option = document.createElement('option');
       option.value = banco.codigo; // Set option value to banco ID
       option.textContent = banco.nombre; // Set option text content to city name
-      citySelect.appendChild(option);
+      bancosSelect.appendChild(option);
     });
 
   } catch (error) {
