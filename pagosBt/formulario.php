@@ -26,6 +26,8 @@ if ( $tip === "Guest" )
 
 
 ?>
+
+<!--
     <form action="/index.php?option=com_content&view=article&id=185" method="post">
         <label for="cedula">Cedula:</label>
         <input type="text" name="cedula" >
@@ -44,3 +46,4 @@ if ( $tip === "Guest" )
     <div id="result"></div>
 
 
+-->
