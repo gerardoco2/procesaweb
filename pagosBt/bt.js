@@ -2,11 +2,11 @@ const bancosSelect = document.getElementById('bancosSelect');
 
 async function getBancos() {
   try {
-  /*  const response = await fetch('http://190.202.9.207:8080/RestTesoro_C2P/com/services/bancos');
+   const response = await fetch('http://190.202.9.207:8080/RestTesoro_C2P/com/services/bancos');
 
     if (!response.ok) {
       throw new Error(`API Error: ${response.statusText}`);
-    }*/
+    }
 
     //const data = await response.json();
     //const bancos = data.bancos || data; // Adjust based on your API response structure
