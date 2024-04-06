@@ -2,15 +2,31 @@ const bancosSelect = document.getElementById('bancosSelect');
 
 async function getBancos() {
   try {
-   const response = await fetch('http://190.202.9.207:8080/RestTesoro_C2P/com/services/bancos');
+
+    const options = {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json',
+        }
+        };
+
+
+   const response = await fetch('http://190.202.9.207:8080/RestTesoro_C2P/com/services/bancos', options)
+   .then( data => {
+    return data.json();
+   })
+   then( bancos => {
+    console.log(bancos);
+   }
+   );
 
     if (!response.ok) {
       throw new Error(`API Error: ${response.statusText}`);
     }
 
-    //const data = await response.json();
-    //const bancos = data.bancos || data; // Adjust based on your API response structure
-    const bancos = [
+    const data = await response.json();
+    const bancos = data.bancos || data; // Adjust based on your API response structure
+    /*const bancos = [
         {
             "codigo": "0163",
             "nombre": "BANCO DEL TESORO,C.A BANCO U"
@@ -107,7 +123,7 @@ async function getBancos() {
             "codigo": "0156",
             "nombre": "100 % BANCO, BANCO COMERCIAL"
         }
-    ] ;
+    ] ;*/
 
 
     bancos.forEach(banco => {
