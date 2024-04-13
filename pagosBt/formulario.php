@@ -79,7 +79,7 @@ if ( $tip === "Guest" )
 
 
     <label for="token">Monto a Pagar:</label>
-        <input type="text" name="monto" >
+        <input type="text" name="monto" disabled >
     </div>
   </div>
 

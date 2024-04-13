@@ -1,6 +1,8 @@
 const bancosSelect = document.getElementById('bancosSelect');
 
 async function getBancos() {
+
+bancos = [];
   try {
 
     const options = {
@@ -15,8 +17,8 @@ async function getBancos() {
    .then( data => {
     return data.json();
    })
-   then( bancos => {
-    console.log(bancos);
+   .then( bancosApi => {
+     bancos = bancosApi;
    }
    );
 
@@ -26,7 +28,7 @@ async function getBancos() {
 
     const data = await response.json();
     const bancos = data.bancos || data; // Adjust based on your API response structure
-    /*const bancos = [
+    const bancos = [
         {
             "codigo": "0163",
             "nombre": "BANCO DEL TESORO,C.A BANCO U"
@@ -123,7 +125,7 @@ async function getBancos() {
             "codigo": "0156",
             "nombre": "100 % BANCO, BANCO COMERCIAL"
         }
-    ] ;*/
+    ] ;
 
 
     bancos.forEach(banco => {
