@@ -11,8 +11,8 @@
     </head>
     <body background="#d7d7d7" class="generic-template" style="-moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; background-color: #d7d7d7; margin: 0; padding: 0;">
         <!-- Header Start -->
-        <div class="bg-white header" bgcolor="#ffffff" style="background-color: white; width: 100%;">
-            <table align="center" bgcolor="#ffffff" style="border-left: 10px solid white; border-right: 10px solid white; max-width: 600px; width: 100%;">
+        <div class="bg-white header" background="#ffffff" style="background-color: white; width: 100%;">
+            <table align="center" background="#ffffff" style="border-left: 10px solid white; border-right: 10px solid white; max-width: 600px; width: 100%;">
                 <tr height="80">
                     <td align="left" class="vertical-align-middle" style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 16px; vertical-align: middle;">
                       
@@ -23,24 +23,24 @@
         <!-- Header End -->
 
         <!-- Content Start -->
-        <table cellpadding="0" cellspacing="0" cols="1" bgcolor="#d7d7d7" align="center" style="max-width: 600px;">
-            <tr bgcolor="#d7d7d7">
+        <table cellpadding="0" cellspacing="0" cols="1" background="#d7d7d7" align="center" style="max-width: 600px;">
+            <tr background="#d7d7d7">
                 <td height="50" style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 16px; vertical-align: top;"></td>
             </tr>
 
             <!-- This encapsulation is required to ensure correct rendering on Windows 10 Mail app. -->
-            <tr bgcolor="#d7d7d7">
+            <tr background="#d7d7d7">
                 <td style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 16px; vertical-align: top;">
                     <!-- Seperator Start -->
-                    <table cellpadding="0" cellspacing="0" cols="1" bgcolor="#d7d7d7" align="center" style="max-width: 600px; width: 100%;">
-                        <tr bgcolor="#d7d7d7">
+                    <table cellpadding="0" cellspacing="0" cols="1" background="#d7d7d7" align="center" style="max-width: 600px; width: 100%;">
+                        <tr background="#d7d7d7">
                             <td height="30" style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 16px; vertical-align: top;"></td>
                         </tr>
                     </table>
                     <!-- Seperator End -->
 
  <!-- Generic Pod Left Aligned with Price breakdown Start -->
-                    <table align="center" cellpadding="0" cellspacing="0" cols="3" bgcolor="white" class="bordered-left-right" style="border-left: 10px solid #d7d7d7; border-right: 10px solid #d7d7d7; max-width: 600px; width: 100%;">
+                    <table align="center" cellpadding="0" cellspacing="0" cols="3" background="white" class="bordered-left-right" style="border-left: 10px solid #d7d7d7; border-right: 10px solid #d7d7d7; max-width: 600px; width: 100%;">
                         <tr height="50"><td colspan="3" style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 16px; vertical-align: top;"></td></tr>
                         <tr align="center">
                             <td width="36" style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 16px; vertical-align: top;"></td>
