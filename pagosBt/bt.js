@@ -22,11 +22,12 @@ bancos = [];
    }
    );
 */
-    /*if (!response.ok) {
+   /* if (!response.ok) {
       throw new Error(`API Error: ${response.statusText}`);
-    }*/
+    }
 
-   // const data = await response.json();
+    const data = await response.json();
+    */
    // const bancos = data.bancos || data; // Adjust based on your API response structure
     const bancos = [
         {
@@ -132,8 +133,9 @@ bancos = [];
       const option = document.createElement('option');
       option.value = banco.codigo; // Set option value to banco ID
       option.textContent = banco.nombre; // Set option text content to city name
+      bancosSelect.appendChild(option);
     });
-    console.log("bancos", bancos);
+
   } catch (error) {
     console.error('Error:', error);
     // Handle errors by displaying an error message or disabling the select element
