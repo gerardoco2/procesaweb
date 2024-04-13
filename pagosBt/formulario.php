@@ -76,7 +76,7 @@ if ( $tip === "Guest" )
 
 
     <label for="token">Monto a Pagar:</label>
-        <input type="text" name="monto" disabled >
+        <input type="text" placeholder="95 bs" name="monto" disabled >
     </div>
   </div>
 
