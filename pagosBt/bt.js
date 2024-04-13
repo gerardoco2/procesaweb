@@ -22,9 +22,9 @@ bancos = [];
    }
    );
 */
-    if (!response.ok) {
+    /*if (!response.ok) {
       throw new Error(`API Error: ${response.statusText}`);
-    }
+    }*/
 
     const data = await response.json();
    // const bancos = data.bancos || data; // Adjust based on your API response structure
