@@ -256,7 +256,7 @@ use Dompdf\Options;
 
 				$stream = true;
 				// (Optional) Setup the paper size and orientation
-				$dompdf->setPaper('letter', 'portrait');
+				$dompdf->setPaper('A4', 'landscape');
 
 				// Render the HTML as PDF
 				$dompdf->render();
