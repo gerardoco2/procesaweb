@@ -132,7 +132,7 @@ bancos = [];
       const option = document.createElement('option');
       option.value = banco.codigo; // Set option value to banco ID
       option.textContent = banco.nombre; // Set option text content to city name
-      bancosSelect.appendChild(option);
+      document.getElementById("bancosSelect").appendChild(option);
     });
 
   } catch (error) {
