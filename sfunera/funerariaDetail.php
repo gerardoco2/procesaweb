@@ -54,7 +54,7 @@ if ( !empty($ced) )
 	{
 
 			$benef_arr = file(trim($filas));
-			
+			echo $benef_arr ;
 			echo "
 			<style>
 				table {
