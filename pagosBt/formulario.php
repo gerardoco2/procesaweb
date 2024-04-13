@@ -58,17 +58,14 @@ if ( $tip === "Guest" )
 
     </div>
     <div class="col-md-4">
-    <label for="banco">Banco:</label>
-        <input type="text" name="banco" >
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-4">
     <label for="bancos">Selecciona tu banco:</label>
         <select id="bancosSelect">
         </select>
     </div>
+  </div>
+
+  <div class="row">
+
     <div class="col-md-4">
 
     <label for="token">token:</label>
