@@ -1,15 +1,15 @@
 <?php 
-defined( '_JEXEC' ) or die( 'Restricted access' );
+//defined( '_JEXEC' ) or die( 'Restricted access' );
 
 global $app, $_SERVER;
 
 // retrieve user instance
-$my =& JFactory::getUser();
+//$my =& JFactory::getUser();
 
-$ced = $_REQUEST["ced"]; // usuario de la consulta
-$tip = $my->usertype; // tipo de usuario de la sesion activa
+//$ced = $_REQUEST["ced"]; // usuario de la consulta
+//$tip = $my->usertype; // tipo de usuario de la sesion activa
 
-$docr = $_SERVER['DOCUMENT_ROOT'];
+//$docr = $_SERVER['DOCUMENT_ROOT'];
  //require_once($docr . '/phps/gestarchivo.php');
 
 ////////////////////////////////////
@@ -22,24 +22,16 @@ if ( $tip === "Guest" )
 }
 
 
-
-
-
 ?>
 
-
     <form action="/index.php?option=com_content&view=article&id=185" method="post">
-
-
-    
-
     <p>Selecciona la cuota a pagar :</p>
-          <input type="radio" id="html" name="servFunerario" value="HTML">
-          <label for="html">Servicio Funerario </label><br>
-          <input type="radio" id="css" name="Prestamo Comercial" value="comercial">
-          <label for="comercial">Prestamo Comercial</label><br>
-          <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-          <label for="javascript">Ahorro Asociado</label>
+     <input type="radio" id="html" name="servFunerario" value="HTML">
+     <label for="html">Servicio Funerario </label><br>
+     <input type="radio" id="css" name="Prestamo Comercial" value="comercial">
+     <label for="comercial">Prestamo Comercial</label><br>
+     <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+     <label for="javascript">Ahorro Asociado</label>
 
   <br>  
 

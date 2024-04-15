@@ -13,7 +13,7 @@ bancos = [];
         };
 
 
-  /* const response = await fetch('http://190.202.9.207:8080/RestTesoro_C2P/com/services/bancos', options)
+   const response = await fetch('http://190.202.9.207:8080/RestTesoro_C2P/com/services/bancos', options)
    .then( data => {
     return data.json();
    })
@@ -21,15 +21,16 @@ bancos = [];
      bancos = bancosApi;
    }
    );
-*/
+
    /* if (!response.ok) {
       throw new Error(`API Error: ${response.statusText}`);
     }
 
     const data = await response.json();
     */
-   // const bancos = data.bancos || data; // Adjust based on your API response structure
-    const bancos = [
+    const data = await response.json();
+    const bancos = data.bancos || data; 
+    /*const bancos = [
         {
             "codigo": "0163",
             "nombre": "BANCO DEL TESORO,C.A BANCO U"
@@ -127,7 +128,7 @@ bancos = [];
             "nombre": "100 % BANCO, BANCO COMERCIAL"
         }
     ] ;
-
+*/
 
     bancos.forEach(banco => {
       const option = document.createElement('option');
@@ -142,4 +143,36 @@ bancos = [];
   }
 }
 
+
+async function procesarPago() {
+
+    const postData = {
+        "canal":"06",
+        "celular":"04241234128",
+        "banco":"0128",
+        "RIF":"J301578970",
+        "cedula":"V1234567",
+        "monto":"5000.00",
+        "token":"20191231",
+        "concepto": " paga",
+        "codAfiliado":"104663",
+        "comercio":""
+    };
+
+
+   const response = await fetch("http://190.202.9.207:8080/RestTesoro_C2P/com/services/botonDePago/pago", {
+    method: "POST",
+    body: JSON.stringify( postData ),
+    headers: {
+        "Content-type": "application/json; charset=UTF-8"
+    }
+    })
+    
+    return response.json();
+
+
+}
+
+
 getBancos();
+procesarPago();
