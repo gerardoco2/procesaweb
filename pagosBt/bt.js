@@ -2,7 +2,7 @@ const bancosSelect = document.getElementById('bancosSelect');
 
 async function getBancos() {
 
-bancos = [];
+    bancos = [];
   try {
 
     const options = {
@@ -10,17 +10,14 @@ bancos = [];
         headers: {
         'Content-Type': 'application/json',
         }
-        };
+    };
 
 
    const response = await fetch('http://190.202.9.207:8080/RestTesoro_C2P/com/services/bancos', options)
-   .then( data => {
-    return data.json();
+   .then( response => {
+    return response.json();
    })
-   .then( bancosApi => {
-     bancos = bancosApi;
-   }
-   );
+   .then( data => data);
 
    /* if (!response.ok) {
       throw new Error(`API Error: ${response.statusText}`);
@@ -28,8 +25,11 @@ bancos = [];
 
     const data = await response.json();
     */
-    const data = await response.json();
-    const bancos = data.bancos || data; 
+    //const data = await response.json();
+
+    const bancos =  response; 
+
+
     /*const bancos = [
         {
             "codigo": "0163",
@@ -132,47 +132,230 @@ bancos = [];
 
     bancos.forEach(banco => {
       const option = document.createElement('option');
-      option.value = banco.codigo; // Set option value to banco ID
-      option.textContent = banco.nombre; // Set option text content to city name
+      option.value = banco.codigo; 
+      option.textContent = banco.nombre; 
       bancosSelect.appendChild(option);
     });
 
   } catch (error) {
     console.error('Error:', error);
-    // Handle errors by displaying an error message or disabling the select element
+    
   }
 }
 
 
-async function procesarPago() {
+async function procesarPago(data) {
+    // event.preventDefault();
+    // let form_element = document.getElementsByClassName('form-data');
+    // let form_data = new FormData();
 
+    // console.log("form element: ", form_element);
+
+    // for(var count=0; count < form_element.length; count++) {
+    //     form_data.append(form_element[count].name , form_element[count].value);
+    // }
+
+    //document.getElementById('submit').disabled = true;
+
+
+    //console.log(form_data);
     const postData = {
         "canal":"06",
         "celular":"04241234128",
         "banco":"0128",
         "RIF":"J301578970",
         "cedula":"V1234567",
-        "monto":"5000.00",
+        "monto":"50.00",
         "token":"20191231",
-        "concepto": " paga",
+        "concepto": "paga",
         "codAfiliado":"104663",
         "comercio":""
     };
 
+    const monto = document.getElementById('monto');
+
+    const send = { 
+        "canal": "06",
+        "celular": "04241234128",
+        "banco": "0128",
+        "RIF": "J301578970",
+        "cedula": "V"+ String(cedula.value),
+        "monto": monto.value,
+        "token": "20191231",
+        "concepto": "paga",
+        "codAfiliado":"104663",
+        "comercio":""
+    };
+    console.log("se va a envair: ", data);
+    console.log("data needed: ", postData);
 
    const response = await fetch("http://190.202.9.207:8080/RestTesoro_C2P/com/services/botonDePago/pago", {
     method: "POST",
-    body: JSON.stringify( postData ),
+    body: JSON.stringify( data ),
     headers: {
-        "Content-type": "application/json; charset=UTF-8"
+        'Content-Type': 'application/json'
     }
-    })
-    
-    return response.json();
+    }).then(response => response.json())
+    .then(
+        data =>{
+        
+            if(data.codres === "C2P0000") {
+                console.log("transaccion aprobada",data)
+                //transaccion aprobada 
+                try{
+                    
+                    fetch("pagoExitoso.php", {
+                    'method': 'POST',
+                    'headers': {
+                    "Content-Type": "application/json;  charset=uft-8",
+                    },
+                    "body": JSON.stringify(data),
+                    }).then(response => response.text())
+                    .then(data => {
+                        console.log("respuesta :" ,data);
+                        document.getElementById('monto').textContent = data['monto'];
+                        document.getElementById('decPago');
+                        document.getElementById('refpago');
+                        
+                    });
+                }catch (error){
+                    alert("Se ha producido un error: ", error);
+                }
+                 const errorMessage = document.getElementById('alert'); 
+                 errorMessage.style.display = 'none';
+
+                document.getElementById('form-container').style.display = 'none';
+                document.getElementById('success-container').style.display = 'block';
+                
+            }else{
+                alert(`ERROR ${data.descRes} ` )
+                const errorMessage = document.getElementById('alert'); 
+                errorMessage.style.display = 'block';
+                errorMessage.textContent = data.descRes; 
 
 
+                setTimeout(() => {
+                    const errorMessage = document.getElementById('alert'); 
+                    errorMessage.style.display = 'none';
+
+                }, "5000");
+            }
+            
+        } 
+    )
 }
 
+function validateForm() {
+    let isValid = true;
+    const opcionApagar = document.getElementById('cuotaSelect');
+    const opcionApagarError = document.getElementById('cuotaSelectError');
+    const cedula = document.getElementById('cedula');
+    const telefono = document.getElementById('telefono');
+    const token = document.getElementById('token');
+    const cedulaError = document.getElementById('cedulaError');
+    const telefonoError = document.getElementById('telefonoError');
+    const tokenError = document.getElementById('tokenError');
+ 
+
+    // limpia mensajes de error
+    cedulaError.textContent = '';
+    telefonoError.textContent = '';
+    tokenError.textContent = '';
+
+    //valida couta
+    if (opcionApagar.value === '') {
+        opcionApagar.style.border = "1px solid red";
+        //opcionApagarError.textContent = 'Selecciona una opcion para pagar.';
+        isValid = false
+    }
+
+    // validar Cedula
+    if (cedula.value.trim() === '') {
+      cedulaError.textContent = 'La cedula es requerida.';
+      isValid = false;
+    } else if (isNaN(cedula.value)) {
+      cedulaError.textContent = 'La cedula debe ser un número.';
+      isValid = false;
+    }
+
+    // valida Telefono
+    if (telefono.value.trim() === '') {
+      telefonoError.textContent = 'El telefono es requerido.';
+      isValid = false;
+    } else if (isNaN(telefono.value)) {
+      telefonoError.textContent = 'El telefono debe ser un número.';
+      isValid = false;
+    }
+
+    // calida Token
+    if (token.value.trim() === '') {
+      tokenError.textContent = 'El token es requerido.';
+      isValid = false;
+    }
+
+    return isValid;
+  }
+
+  const opcionAPagar = document.getElementById("cuotaSelect");
+  opcionAPagar.addEventListener('change', (event) => {
+    document.getElementById('monto').value = opcionAPagar.value;
+  });
+
+  const bancoSeleccionado = document.getElementById('bancosSelect');
+   
+//   bancoSeleccionado.addEventListener('change', (event) => {
+//     console.log(bancoSeleccionado.value)
+//   });
+const opcionApagar = document.getElementById('cuotaSelect');
+    opcionAPagar.addEventListener('change', (event) => {
+        console.log("opcion a pagar", opcionAPagar.options[opcionAPagar.selectedIndex].text);
+    });
+  // Add event listener to submit button
+  const submitButton = document.getElementById('submit');
+  submitButton.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent default form submission
+
+    if (validateForm()) {
+        const monto = document.getElementById('monto');
+    // ejemplo de datos 
+    //   const data = { 
+    //         "canal": "06",
+    //         "celular": telefono.value,
+    //         "banco": "0128",
+    //         "RIF": "J301578970",
+    //         "cedula": "V1234567",
+    //         "monto": monto.value,
+    //         "token": token.value,
+    //         "concepto": "paga",
+    //         "codAfiliado":"104663",
+    //         "comercio":""
+    //     };
+
+
+        let data = { 
+            "canal": "06",
+            "celular": "04241234128",
+            "banco": bancoSeleccionado.value,
+            "RIF": "J301578970",
+            "cedula": "V"+cedula.value,
+            "monto": monto.value,
+            "token": "20191231",
+            "concepto": "paga",
+            "codAfiliado":"104663",
+            "comercio":""
+        }
+
+
+        procesarPago(data);
+
+      // Submit the form using Javascript (optional)
+      // You can use libraries like Axios or Fetch API for this
+      // document.getElementById('paymentForm').submit();
+
+      // Or let the browser handle the form submission
+      //alert( cedula.value);
+    }
+  });
 
 getBancos();
-procesarPago();
+//procesarPago();

@@ -73,10 +73,8 @@
                             <td style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 16px; vertical-align: top;">
                                 <p style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; margin: 0;">Hemos Recibido el pago de su cuota!</p>
                                 <br>
-                                <p style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; margin: 0; "><strong>Detalles del pago:</strong><br/>
-
-Monto: 95 Bs <br/>
-Detalle: Servicio Funerario Mes Abril.<br/></p>
+                                <p style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; margin: 0; ">
+                                <strong>Detalles del pago:</strong><br/>Monto: 95 Bs <br/>Detalle: Servicio Funerario Mes Abril.<br/></p>
                                     <br>
                                
                             </td>
