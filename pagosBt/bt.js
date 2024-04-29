@@ -27,7 +27,7 @@ async function getBancos() {
     */
     //const data = await response.json();
 
-    const bancos =  response; 
+    const bancos =  data; 
 
 
     /*const bancos = [
