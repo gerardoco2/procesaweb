@@ -94,7 +94,7 @@ if ( $tip === "Guest" )
         <button style="margin-top: 25px" class="btn btn-primary" type="submit" id="submit" > Enviar Pago </button>
     </form>
     
-    <div id="loader" style="display: none; text-align: center;"><img src="loader.gif" alt="Cargando..." /></div>
+    <div id="loader" style="display: none; text-align: center;"><img src="./loader.gif" alt="Cargando..." /></div>
     <div id="successMessage" style="display: none; color: green; text-align: center;"></div>
     </form>
 </div>
