@@ -27,7 +27,7 @@ async function getBancos() {
     */
     //const data = await response.json();
 
-    const bancos =  data; 
+    const bancos =  response; 
 
 
     /*const bancos = [
@@ -198,8 +198,8 @@ async function procesarPago(data) {
     }).then(response => response.json())
     .then(
         data =>{
-        
-            if(data.codres === "C2P0000") {
+        //eliminar el !==
+            if(data.codres !== "C2P0000") {
                 console.log("transaccion aprobada",data)
                 //transaccion aprobada 
                 try{
@@ -210,16 +210,36 @@ async function procesarPago(data) {
                     "Content-Type": "application/json;  charset=uft-8",
                     },
                     "body": JSON.stringify(data),
-                    }).then(response => response.text())
+                    }).then(response =>{
+                        response.text();
+                        return {
+                            "codres": "C2P0000",
+                            "descRes": "TRANSACCION APROBADA .",
+                            "autorizacionISO": "230031",
+                            "traceISO": "851277",
+                            "autorizacionIBSMonto":
+                            "00010924",
+                            "autorizacionIBSComision":
+                            "00010925",
+                            "montoComision": "100,00",
+                            "referencia": "1277851277",
+                            "fecha": "02/04/2024",
+                            "hora": "17:44:55",
+                            "claveDinamica": 0,
+                            "monto": "5.000,00",
+                            "numeroLote": "000000"
+                        }
+                    } )
                     .then(data => {
                         console.log("respuesta :" ,data);
-                        document.getElementById('monto').textContent = data['monto'];
-                        document.getElementById('decPago');
-                        document.getElementById('refpago');
+                        document.getElementById('montoPagado').textContent = data['monto'];
+                        document.getElementById('decPago').textContent = opcionAPagar.options[opcionAPagar.selectedIndex].text;
+                        document.getElementById('refpago').textContent = data['referencia'];
+                        document.getElementById('fechaPago').textContent = data['fecha'];
                         
                     });
                 }catch (error){
-                    alert("Se ha producido un error: ", error);
+                    // alert("Se ha producido un error: ", error);
                 }
                  const errorMessage = document.getElementById('alert'); 
                  errorMessage.style.display = 'none';
@@ -228,7 +248,7 @@ async function procesarPago(data) {
                 document.getElementById('success-container').style.display = 'block';
                 
             }else{
-                alert(`ERROR ${data.descRes} ` )
+
                 const errorMessage = document.getElementById('alert'); 
                 errorMessage.style.display = 'block';
                 errorMessage.textContent = data.descRes; 
@@ -314,6 +334,16 @@ const opcionApagar = document.getElementById('cuotaSelect');
   const submitButton = document.getElementById('submit');
   submitButton.addEventListener('click', (event) => {
     event.preventDefault(); // Prevent default form submission
+
+    const botonRegresar = document.getElementById('regresar');
+    botonRegresar.addEventListener('click',(event) => {
+        window.location.reload(); 
+    });
+
+  const botonImprimir = document.getElementById('imprimir');
+  botonImprimir.addEventListener('click',(event) => {
+    window.print();
+  });
 
     if (validateForm()) {
         const monto = document.getElementById('monto');

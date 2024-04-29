@@ -1,4 +1,4 @@
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
 <style>
 
@@ -6,11 +6,15 @@
         color: red;
     }
     #success-container {
-        display: block;
+        display: none;
     }
 
     #alert {
         display: none;
+    }
+    .logo {
+        max-width: 200px;
+        margin-bottom: 20px;
     }
 </style>
 
@@ -40,68 +44,77 @@ if ( $tip === "Guest" )
 
 
 ?>
+<div class="row">
 
-<div class="alert alert-danger" data-bs-dismiss="alert" role="alert" id="alert">
-  
-</div>
-<div id="form-container">
-    <form action="/index.php?option=com_content&view=article&id=185" method="post" >
-        <p>Selecciona la cuota a pagar :</p>
-        
-        <select name="cuota" id="cuotaSelect" class="form-control">
-            <option value=""></option>
-            <option value="134">Servicio Funerario</option>
-            <option value="95">Prestamo Comercial </option>
-            <option value="50">Pestamo Especial</option>
-            <option value="30">Cuota Ahorro Socio</option>
-        </select>
-        <span id="opcionApagarError" class="error"></span>
 
-        <h4>Ingresa los datos para realizar el pago</h4>
-
-        <div class="row">
-            <div class="col-md-4">
-                <label for="cedula">Cedula:</label>
-                <input type="text" name="cedula"  id='cedula' class="form-control form-data" required>
-                <span id="cedulaError" class="error"></span>
-            </div>
-
-            <div class="col-md-4">
-                <label for="telefono">Telefono:</label>
-                <input type="text" name="telefono" id="telefono" class="form-control form-data" required>
-                <span id="telefonoError" class="error"></span>
-            </div>
-
-            <div class="col-md-4">
-                <label for="bancosSelect">Selecciona tu banco:</label>
-                <select id="bancosSelect" name="bancosSelect" class="form-control form-data" >
-                </select>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-4">
-                <label for="token">token:</label>
-                <input type="text" name="token" id="token" class="form-control form-data" required>
-                <span id="tokenError" class="error"></span>
-            </div>
-            <div class="col-md-4">
-                <label for="monto">Monto a Pagar:</label>
-                <input type="text" name="monto" id="monto" disabled  class="form-control form-data">
-            </div>
-        </div>
-
-        <button style="margin-top: 25px" class="btn btn-primary" type="submit" id="submit" > Enviar Pago </button>
-    </form>
     
-    <div id="loader" style="display: none; text-align: center;"><img src="./loader.gif" alt="Cargando..." /></div>
-    <div id="successMessage" style="display: none; color: green; text-align: center;"></div>
-    </form>
-</div>
+    <div id="form-container" class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img class="logo" src="bt.png" alt="boton-pago-tesoro">
+            </div>
+        </div>
+        <div class="alert alert-danger" data-bs-dismiss="alert" role="alert" id="alert"></div>
+        <div class="row">
+            <div class="col-md-8">
+                <form  method="post" >
+                    <p>Selecciona la cuota a pagar :</p>
+                    
+                    <select name="cuota" id="cuotaSelect" class="form-control">
+                        <option value=""></option>
+                        <option value="134">Servicio Funerario</option>
+                        <option value="95">Prestamo Comercial </option>
+                        <option value="50">Pestamo Especial</option>
+                        <option value="30">Cuota Ahorro Socio</option>
+                    </select>
+                    <span id="opcionApagarError" class="error"></span>
+        
+                    <h4 style="margin-top:18px; margin-bottom:18px">Ingresa los datos para realizar el pago</h4>
+        
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="cedula">Cedula:</label>
+                            <input type="text" name="cedula"  id='cedula' class="form-control form-data" required>
+                            <span id="cedulaError" class="error"></span>
+                        </div>
+        
+                        <div class="col-md-4">
+                            <label for="telefono">Telefono:</label>
+                            <input type="text" name="telefono" id="telefono" class="form-control form-data" required>
+                            <span id="telefonoError" class="error"></span>
+                        </div>
+        
+                        <div class="col-md-4">
+                            <label for="bancosSelect">Selecciona tu banco:</label>
+                            <select id="bancosSelect" name="bancosSelect" class="form-control form-data" >
+                            </select>
+                        </div>
+                    </div>
+        
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="token">token:</label>
+                            <input type="text" name="token" id="token" class="form-control form-data" required>
+                            <span id="tokenError" class="error"></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="monto">Monto a Pagar:</label>
+                            <input type="text" name="monto" id="monto" disabled  class="form-control form-data">
+                        </div>
+                    </div>
+        
+                    <button style="margin-top: 25px" class="btn btn-primary" type="submit" id="submit" > Enviar Pago </button>
+                </form>
+            </div>
+        </div>
+        
+        <div id="loader" style="display: none; text-align: center;"><img src="./loader.gif" alt="Cargando..." /></div>
+        <div id="successMessage" style="display: none; color: green; text-align: center;"></div>
+    </div>
 
 <div id="success-container">
     <!-- Content Start -->
-    <table cellpadding="0" cellspacing="0" cols="1" background="#d7d7d7" align="center" style="max-width: 600px;">
+    <table cellpadding="0" cellspacing="0" cols="1" background="#d7d7d7" align="center" style="width: 100%;">
             <tr background="#d7d7d7">
                 <td height="50" style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 16px; vertical-align: top;"></td>
             </tr>
@@ -152,7 +165,7 @@ if ( $tip === "Guest" )
                                 <p style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; margin: 0;">Hemos Recibido el pago de su cuota!</p>
                                 <br>
                                 <p style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; margin: 0; ">
-                                <strong>Detalles del pago: </strong><br/>Monto: 95 <p id="monto"></p> Bs <br/>Detalle: Couta Especial<p id="decPago"></p>.<br/></p>
+                                <strong>Detalles del pago: </strong><br/>Monto: <span id="montoPagado"></span> Bs <br/>Detalle: <span id="decPago"></span>.<br/></p>
                                     <br>
                                
                             </td>
@@ -167,7 +180,8 @@ if ( $tip === "Guest" )
                         <tr align="center">
                             <td width="36" style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 16px; vertical-align: top;"></td>
                             <td style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 16px; vertical-align: top;">
-                                <p style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; margin: 0;"><strong> Referencia del Pago movil: 13182<p id="refpago"></p></strong></p>
+                                <p style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; margin: 0;"><strong> Referencia del Pago : <p id="refpago"></p></strong></p>
+                                <p style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; margin: 0;"><strong> Fecha : <p id="fechaPago"></p></strong></p>
              
                                 <p style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; margin: 0;"></p>
                             </td>
@@ -184,8 +198,9 @@ if ( $tip === "Guest" )
                 </td>
             </tr>
         </table>
-        <div class="btn-regresar" style="text-align: center">
-            <button class="btn btn-primary" id="regresar" >Regresar</button>     
+        <div class="btn-regresar" style="text-align: center; margin: 10px">
+            <button class="btn btn-primary" id="regresar">Regresar</button> 
+            <div class="btn btn-success" id="imprimir">Imprime o Descarga tu comprobante</div>    
         </div>
         
         <!-- Content End -->
@@ -193,6 +208,6 @@ if ( $tip === "Guest" )
 </div>
 
 
-
+</div>
 </div> 
 <script src="./bt.js"></script>
