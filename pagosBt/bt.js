@@ -189,6 +189,11 @@ async function procesarPago(data) {
     console.log("se va a envair: ", data);
     console.log("data needed: ", postData);
 
+    document.getElementById('montoPagado').textContent = data['monto'];
+    document.getElementById('decPago').textContent = opcionAPagar.options[opcionAPagar.selectedIndex].text;
+    document.getElementById('refpago').textContent = data['referencia'];
+    document.getElementById('fechaPago').textContent = data['fecha'];
+
    const response = await fetch("http://190.202.9.207:8080/RestTesoro_C2P/com/services/botonDePago/pago", {
     method: "POST",
     body: JSON.stringify( data ),
