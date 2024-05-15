@@ -69,7 +69,7 @@ if($ced) {
 
     $lineas = file($filas);
 
-    echo "printing  lineas array";
+    echo "<h1>printing  lineas array</h1>";
     echo var_dump($lineas) ;
 
 }
