@@ -44,8 +44,8 @@ if ( $tip === "Guest" )
 
 
 
-echo " voy a entrar con cedula";
-echo $my["username"];
+//echo " voy a entrar con cedula";
+echo $my->"username";
 
 
 if($ced) {
