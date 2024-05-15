@@ -189,11 +189,6 @@ async function procesarPago(data) {
     console.log("se va a envair: ", data);
     console.log("data needed: ", postData);
 
-    document.getElementById('montoPagado').textContent = data['monto'];
-    document.getElementById('decPago').textContent = opcionAPagar.options[opcionAPagar.selectedIndex].text;
-    document.getElementById('refpago').textContent = data['referencia'];
-    document.getElementById('fechaPago').textContent = data['fecha'];
-
    const response = await fetch("http://190.202.9.207:8080/RestTesoro_C2P/com/services/botonDePago/pago", {
     method: "POST",
     body: JSON.stringify( data ),
@@ -204,10 +199,15 @@ async function procesarPago(data) {
     .then(
         data =>{
         //eliminar el !==
-            if(data.codres !== "C2P0000") {
+            if(data.codres == "C2P0000") {
                 console.log("transaccion aprobada",data)
                 //transaccion aprobada 
-                try{
+
+                document.getElementById('montoPagado').textContent = data.monto;
+                document.getElementById('decPago').textContent = opcionAPagar.options[opcionAPagar.selectedIndex].text;
+                document.getElementById('refpago').textContent = data.referencia;
+                document.getElementById('fechaPago').textContent = data.fecha;
+               /* try{
                     
                     fetch("pagoExitoso.php", {
                     'method': 'POST',
@@ -215,29 +215,13 @@ async function procesarPago(data) {
                     "Content-Type": "application/json;  charset=uft-8",
                     },
                     "body": JSON.stringify(data),
-                    }).then(response =>{
-                        response.text();
-                        return {
-                            "codres": "C2P0000",
-                            "descRes": "TRANSACCION APROBADA .",
-                            "autorizacionISO": "230031",
-                            "traceISO": "851277",
-                            "autorizacionIBSMonto":
-                            "00010924",
-                            "autorizacionIBSComision":
-                            "00010925",
-                            "montoComision": "100,00",
-                            "referencia": "1277851277",
-                            "fecha": "02/04/2024",
-                            "hora": "17:44:55",
-                            "claveDinamica": 0,
-                            "monto": "5.000,00",
-                            "numeroLote": "000000"
-                        }
-                    } )
+                    }).then(response => response.json() )
                     .then(data => {
-                        console.log("respuesta :" ,data);
-                        document.getElementById('montoPagado').textContent = data['monto'];
+                        console.log('respuesta', data);
+                        console.log('el monto ', data.monto);
+                        var datos = data ;
+                        console.log(datos);
+                        document.getElementById('montoPagado').textContent = datos.monto;
                         document.getElementById('decPago').textContent = opcionAPagar.options[opcionAPagar.selectedIndex].text;
                         document.getElementById('refpago').textContent = data['referencia'];
                         document.getElementById('fechaPago').textContent = data['fecha'];
@@ -245,7 +229,7 @@ async function procesarPago(data) {
                     });
                 }catch (error){
                     // alert("Se ha producido un error: ", error);
-                }
+                }*/
                  const errorMessage = document.getElementById('alert'); 
                  errorMessage.style.display = 'none';
 
@@ -327,6 +311,7 @@ function validateForm() {
   });
 
   const bancoSeleccionado = document.getElementById('bancosSelect');
+
    
 //   bancoSeleccionado.addEventListener('change', (event) => {
 //     console.log(bancoSeleccionado.value)
@@ -369,13 +354,13 @@ const opcionApagar = document.getElementById('cuotaSelect');
 
         let data = { 
             "canal": "06",
-            "celular": "04241234128",
-            "banco": bancoSeleccionado.value,
+            "celular": telefono.value.trim(),
+            "banco": bancoSeleccionado.value.trim(),
             "RIF": "J301578970",
-            "cedula": "V"+cedula.value,
+            "cedula": "V"+cedula.value.trim(),
             "monto": monto.value,
-            "token": "20191231",
-            "concepto": "paga",
+            "token": token.value.trim(),
+            "concepto": opcionAPagar.options[opcionAPagar.selectedIndex].text,
             "codAfiliado":"104663",
             "comercio":""
         }
