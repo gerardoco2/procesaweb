@@ -27,7 +27,7 @@ global $app, $_SERVER;
 //retrieve user instance
 $my =& JFactory::getUser();
 
-$ced = $_REQUEST["ced"]; // usuario de la consulta
+$ced = $my->username; // usuario de la consulta
 $tip = $my->usertype; // tipo de usuario de la sesion activa
 
 $docr = $_SERVER['DOCUMENT_ROOT'];
@@ -41,11 +41,6 @@ if ( $tip === "Guest" )
               Favor contactar a un Autor, Editor, Publicador, Gestor o Administrador de la plataforma Web";
         die;
 }
-
-
-
-//echo " voy a entrar con cedula";
-echo $my->username;
 
 
 if($ced) {
