@@ -44,6 +44,8 @@ if ( $tip === "Guest" )
 
 
 
+echo " voy a entrar";
+
 
 if($ced) {
     $dirw = "/home/web/jcapunefm/pdfs/";
