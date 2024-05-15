@@ -45,7 +45,7 @@ if ( $tip === "Guest" )
 
 
 echo " voy a entrar con cedula";
-echo $my;
+echo var_dump($my);
 
 
 if($ced) {
