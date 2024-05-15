@@ -70,7 +70,7 @@ if($ced) {
     $lineas = file($filas);
 
 
-    echo(var_dump$lineas);
+    echo(var_dump($lineas));
 
 }
 
