@@ -13,7 +13,7 @@
         display: none;
     }
     .logo {
-        max-width: 300px;
+        max-width: 260px;
         margin-bottom: 20px;
     }
 </style>
@@ -69,8 +69,8 @@ if($ced) {
 
     $lineas = file($filas);
 
-
-    echo(var_dump($lineas));
+    echo "printing  lineas array";
+    echo var_dump($lineas) ;
 
 }
 
