@@ -64,6 +64,7 @@ if($ced) {
 
     $ejec = exec($raiz . $rdir . "ejec_pvx_rechazos 2>&1");
 
+    echo var_dump($lineas);
 
     $lineas = file($filas);
     // los campos son cedula;codigo contable;descripcion;fecha;monto;comprobante;linea
@@ -87,6 +88,10 @@ if($ced) {
                     <select name="cuota" id="cuotaSelect" class="form-control">
                         <option value=""></option>
                         <?php 
+                            for( $i = 0; $i < count($lineas) ; ++$i){
+                                echo "<option value=".$monto.">".$desc."</option>";
+                            }
+
                             foreach($lineas as $rechazo) {
                                 list($cedula, $codigo, $desc, $fecha, $monto, $comprobante, $linea) = explode(";", $rechazo);
                                 echo "<option value=".$monto.">".$desc."</option>";
