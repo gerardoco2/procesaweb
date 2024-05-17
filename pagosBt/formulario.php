@@ -69,6 +69,7 @@ if($ced) {
     // los campos son cedula;codigo contable;descripcion;fecha;monto;comprobante;linea
     echo var_dump($lineas);
 
+
 }
 
 ?>
@@ -89,9 +90,9 @@ if($ced) {
                     <select name="cuota" id="cuotaSelect" class="form-control">
                         <option value=""></option>
                         <?php 
-                            for( $i = 0; $i < count($lineas) ; ++$i){
-                                echo "<option value=".$monto.">".$desc."</option>";
-                            }
+                            // for( $i = 0; $i < count($lineas) ; ++$i){
+                            //     echo "<option value=".$monto.">".$desc."</option>";
+                            // }
 
                             foreach($lineas as $rechazo) {
                                 list($cedula, $codigo, $desc, $fecha, $monto, $comprobante, $linea) = explode(";", $rechazo);
