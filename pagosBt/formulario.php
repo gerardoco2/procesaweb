@@ -89,7 +89,7 @@ if($ced) {
                         <?php 
                             foreach($lineas as $rechazo) {
                                 list($cedula, $codigo, $desc, $fecha, $monto, $comprobante, $linea) = explode(";", $rechazo);
-                                echo "<option value=".$monto.">".$desc."</option>"
+                                echo "<option value=".$monto.">".$desc."</option>";
                             }
                         ?>
                     </select>
