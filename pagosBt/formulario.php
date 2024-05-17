@@ -64,10 +64,11 @@ if($ced) {
 
     $ejec = exec($raiz . $rdir . "ejec_pvx_rechazos 2>&1");
 
-    echo var_dump($lineas);
-
+  
     $lineas = file($filas);
     // los campos son cedula;codigo contable;descripcion;fecha;monto;comprobante;linea
+    echo var_dump($lineas);
+
 }
 
 ?>
