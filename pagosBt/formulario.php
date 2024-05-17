@@ -66,22 +66,11 @@ if($ced) {
 
 
     $lineas = file($filas);
-
-    echo "<h1>printing  lineas array</h1>";
-    echo var_dump($lineas) ;
-
+    // los campos son cedula;codigo contable;descripcion;fecha;monto;comprobante;linea
 }
-
-
-
-
-
 
 ?>
 <div class="row">
-
-
-    
     <div id="form-container" class="container">
         <div class="row">
             <div class="col-md-6">
@@ -97,10 +86,12 @@ if($ced) {
                     
                     <select name="cuota" id="cuotaSelect" class="form-control">
                         <option value=""></option>
-                        <option value="134">Servicio Funerario</option>
-                        <option value="95">Prestamo Comercial </option>
-                        <option value="50">Pestamo Especial</option>
-                        <option value="30">Cuota Ahorro Socio</option>
+                        <?php 
+                            foreach($lineas as $rechazo) {
+                                list($cedula, $codigo, $desc, $fecha, $monto, $comprobante, $linea) = explode(";", $rechazo);
+                                echo "<option value=".$monto.">".$desc."</option>"
+                            }
+                        ?>
                     </select>
                     <span id="opcionApagarError" class="error"></span>
         
