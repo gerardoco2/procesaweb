@@ -109,6 +109,9 @@ if($ced) {
                         <div class="col-md-4">
                             <label for="cedula">Cédula:</label>
                             <input type="text" name="cedula"  id='cedula' class="form-control form-data" required>
+                            <?php
+                                echo '<input type="hidden" name="cedula_asoc" id="cedula_asoc" value="'. $ced .'">'
+                            ?>
                             <span id="cedulaError" class="error"></span>
                         </div>
         
