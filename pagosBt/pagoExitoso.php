@@ -4,5 +4,14 @@
     $update = json_encode($data);
     echo $update;
 
+
+    $raiz = "/srv/www/htdocs";
+    $rdir = "/";
+
+    $filas = $raiz . $rdir . $ced . "_RECHAZOS.TXT";
+    $arreglo_lineas = file($filas);
+
+    
+
    }
 ?>

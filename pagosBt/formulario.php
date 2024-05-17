@@ -97,7 +97,7 @@ if($ced) {
                             foreach($lineas as $rechazo) {
                                 //list($cedula, $codigo, $desc, $fecha, $monto, $comprobante, $linea) = explode(";", $rechazo);
                                 $linea = explode(";", $rechazo);
-                                echo "<option value=".$linea.">".$linea[2]."</option>";
+                                echo "<option value=".json_encode($linea).">".$linea[2]."</option>";
                             }
                         ?>
                     </select>
