@@ -301,7 +301,7 @@ function validateForm() {
 
   const opcionAPagar = document.getElementById("cuotaSelect");
   opcionAPagar.addEventListener('change', (event) => {
-    document.getElementById('monto').value = opcionAPagar;
+    document.getElementById('monto').value = opcionAPagar.value;
   });
 
   const bancoSeleccionado = document.getElementById('bancosSelect');
