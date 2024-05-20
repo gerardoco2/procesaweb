@@ -94,7 +94,7 @@ if($ced) {
 
                              for( $i = 0; $i < count($lineas) ; ++$i){
                                 //list($cedula, $codigo, $desc, $fecha, $monto, $comprobante, $linea) = explode(";", $lineas[$i]);                                echo var_dump($linieas)
-                                echo '<option value="'.$lineas[4].'">'.$lineas[2].'</option>';
+                                echo '<option value="'.$lineas[4].'">'.$ced.'</option>';
                                 $linea_seleccionada = $i;
                             }
 
