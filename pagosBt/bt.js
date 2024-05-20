@@ -200,14 +200,8 @@ async function procesarPago(data) {
         data =>{
         //eliminar el !==
             if(data.codres == "C2P0000") {
-                console.log("transaccion aprobada",data)
-                //transaccion aprobada 
-
-                document.getElementById('montoPagado').textContent = data.monto;
-                document.getElementById('decPago').textContent = opcionAPagar.options[opcionAPagar.selectedIndex].text;
-                document.getElementById('refpago').textContent = data.referencia;
-                document.getElementById('fechaPago').textContent = data.fecha;
-               /* try{
+                console.log("transaccion aprobada",data);
+               try{
                     
                     fetch("pagoExitoso.php", {
                     'method': 'POST',
@@ -229,7 +223,7 @@ async function procesarPago(data) {
                     });
                 }catch (error){
                     // alert("Se ha producido un error: ", error);
-                }*/
+                }
                  const errorMessage = document.getElementById('alert'); 
                  errorMessage.style.display = 'none';
 
@@ -307,7 +301,7 @@ function validateForm() {
 
   const opcionAPagar = document.getElementById("cuotaSelect");
   opcionAPagar.addEventListener('change', (event) => {
-    document.getElementById('monto').value = opcionAPagar[4];
+    document.getElementById('monto').value = opcionAPagar;
   });
 
   const bancoSeleccionado = document.getElementById('bancosSelect');
@@ -316,6 +310,11 @@ function validateForm() {
 //   bancoSeleccionado.addEventListener('change', (event) => {
 //     console.log(bancoSeleccionado.value)
 //   });
+
+  //const coutaSelected = document.getElementById()
+
+
+
 const opcionApagar = document.getElementById('cuotaSelect');
     opcionAPagar.addEventListener('change', (event) => {
         console.log("opcion a pagar", opcionAPagar);
