@@ -317,7 +317,7 @@ function validateForm() {
 
 const opcionApagar = document.getElementById('cuotaSelect');
     opcionAPagar.addEventListener('change', (event) => {
-        console.log("opcion a pagar", opcionAPagar.selectedIndex);
+        console.log("opcion a pagar", opcionAPagar.options.selectedIndex);
     });
   // Add event listener to submit button
   const submitButton = document.getElementById('submit');
