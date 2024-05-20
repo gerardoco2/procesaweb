@@ -93,7 +93,7 @@ if($ced) {
                             $linea_seleccionada = null;
 
                              for( $i = 0; $i < count($lineas) ; ++$i){
-                                list($cedula, $codigo, $desc, $fecha, $monto, $comprobante, $linea) = explode(";", $rechazo);
+                                list($cedula, $codigo, $desc, $fecha, $monto, $comprobante, $linea) = explode(";", $lineas);
                                 echo "<option value=".$monto.">".$desc."</option>";
                                 $linea_seleccionada = $i;
                             }
@@ -102,12 +102,12 @@ if($ced) {
                             //     $linea = explode(";", $rechazo);
                             //     echo '<option value='.$linea[4].'>'.$linea[2].'</option>';
                             // }
-                            echo '<input type="hidden" name="cuota_selected" id="cuota_selected" value="'.$linea_seleccionada.'">';
                             ?>
                     </select>
                     <!-- guardar la opcion seleccionada -->
                     <span id="opcionApagarError" class="error"></span>
-        
+                    
+                    <input type="hidden" name="cuota_selected" id="cuota_selected" >
                     <h4 style="margin-top:18px; margin-bottom:18px">Ingresa los datos para realizar el pago</h4>
         
                     <div class="row">
