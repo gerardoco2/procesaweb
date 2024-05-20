@@ -311,13 +311,14 @@ function validateForm() {
 //     console.log(bancoSeleccionado.value)
 //   });
 
-  //const coutaSelected = document.getElementById()
+const coutaSelected = document.getElementById("cuota_selected")
 
 
 
 const opcionApagar = document.getElementById('cuotaSelect');
     opcionAPagar.addEventListener('change', (event) => {
         console.log("opcion a pagar", opcionAPagar.options.selectedIndex);
+        coutaSelected.value = opcionAPagar.options.selectedIndex;
     });
   // Add event listener to submit button
   const submitButton = document.getElementById('submit');
