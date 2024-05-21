@@ -295,7 +295,7 @@ const opcionApagar = document.getElementById('cuotaSelect');
     window.print();
   });
 
-    if (validateForm()) {
+   // if (validateForm()) {
         const monto = document.getElementById('monto');
     // ejemplo de datos 
     //   const data = { 
@@ -338,8 +338,8 @@ const opcionApagar = document.getElementById('cuotaSelect');
 
       // Or let the browser handle the form submission
       //alert( cedula.value);
-    }
-  });
+//    }
+ });
 
 getBancos();
 //procesarPago();
