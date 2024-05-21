@@ -316,7 +316,7 @@ const opcionApagar = document.getElementById('cuotaSelect');
 
         let dataCuota = {
             "cedula": cedula.value.trim(),
-            "lineaCuota" : coutaSelected
+            "lineaCuota" : coutaSelected.value
         };
 
         procesarPago(data, dataCuota);
