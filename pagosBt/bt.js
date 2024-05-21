@@ -295,22 +295,9 @@ const opcionApagar = document.getElementById('cuotaSelect');
     window.print();
   });
 
-   // if (validateForm()) {
+    if (validateForm()) {
         const monto = document.getElementById('monto');
-    // ejemplo de datos 
-    //   const data = { 
-    //         "canal": "06",
-    //         "celular": telefono.value,
-    //         "banco": "0128",
-    //         "RIF": "J301578970",
-    //         "cedula": "V1234567",
-    //         "monto": monto.value,
-    //         "token": token.value,
-    //         "concepto": "paga",
-    //         "codAfiliado":"104663",
-    //         "comercio":""
-    //     };
-
+ 
 
         let data = { 
             "canal": "06",
@@ -338,7 +325,7 @@ const opcionApagar = document.getElementById('cuotaSelect');
 
       // Or let the browser handle the form submission
       //alert( cedula.value);
-//    }
+    }
  });
 
 getBancos();
