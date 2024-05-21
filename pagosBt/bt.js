@@ -144,11 +144,12 @@ async function getBancos() {
 }
 
 
+
 async function procesarPago(data, lineaDeCuota) {
 
 
 // para prueba
-fetch("https://capunefm.com/index.php/procesapago.php", {
+fetch("https://capunefm.com/index.php/procesapago", {
     'method': 'POST',
     'headers': {
     "Content-Type": "application/json;  charset=uft-8",
@@ -157,6 +158,7 @@ fetch("https://capunefm.com/index.php/procesapago.php", {
     });
 
 //fin prueba
+
 
     const monto = document.getElementById('monto');
 
