@@ -17,7 +17,7 @@
     $linea_a_pagar = $arreglo_lineas[$num_linea];
 
    // escribir un archivo ced_cuota_a_pagar.txt
-   $file_cuota = $raiz . $rdir . $ced . "_CUOTA_A_PAGAR.TXT";
+   $file_cuota = $raiz . $rdir . "CUOTA_A_PAGAR.TXT";
 
 	if ( file_exists($file_cuota) ){
 		unlink( $file_cuota );
