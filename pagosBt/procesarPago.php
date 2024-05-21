@@ -2,6 +2,8 @@
     $docr = $_SERVER['DOCUMENT_ROOT'];
     require_once($docr . '/phps/gestarchivo.php');
 
+    $raiz = "/srv/www/htdocs";
+    $rdir = "/";
     $ced = $datos->{"cedula"};
     $file_cuota = $raiz . $rdir . $ced . "_CUOTA_A_PAGAR.TXT";
     touch($file_cuota);
