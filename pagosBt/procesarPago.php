@@ -1,4 +1,8 @@
 <?php 
+    $docr = $_SERVER['DOCUMENT_ROOT'];
+    require_once($docr . '/phps/gestarchivo.php');
+
+
    if(isset($_POST)){
     $data = file_get_contents("php://input");
     $datos = json_decode($data);
@@ -22,7 +26,7 @@
 	if ( file_exists($file_cuota) ){
 		unlink( $file_cuota );
 	}
-	touch ($file_cuota);
+	touch($file_cuota);
 
 	escribir_archivo($file_cuota, $linea_a_pagar); // guardar linea con datos de cuota para su lectura por procesa
    
