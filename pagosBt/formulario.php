@@ -66,8 +66,7 @@ if($ced) {
 
   
     $lineas = file($filas);
-    // los campos son cedula;codigo contable;descripcion;fecha;monto;comprobante;linea
-    echo var_dump($lineas);
+
 
 
 }
