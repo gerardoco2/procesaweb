@@ -144,7 +144,7 @@ async function getBancos() {
 }
 
 
-async function procesarPago(data) {
+async function procesarPago(data, lineaDeCuota) {
     // event.preventDefault();
     // let form_element = document.getElementsByClassName('form-data');
     // let form_data = new FormData();
@@ -202,24 +202,13 @@ async function procesarPago(data) {
             if(data.codres == "C2P0000") {
                 console.log("transaccion aprobada",data);
                try{
-                    
+                    // enviar la linea a mariano 
                     fetch("pagoExitoso.php", {
                     'method': 'POST',
                     'headers': {
                     "Content-Type": "application/json;  charset=uft-8",
                     },
-                    "body": JSON.stringify(data),
-                    }).then(response => response.json() )
-                    .then(data => {
-                        console.log('respuesta', data);
-                        console.log('el monto ', data.monto);
-                        var datos = data ;
-                        console.log(datos);
-                        document.getElementById('montoPagado').textContent = datos.monto;
-                        document.getElementById('decPago').textContent = opcionAPagar.options[opcionAPagar.selectedIndex].text;
-                        document.getElementById('refpago').textContent = data['referencia'];
-                        document.getElementById('fechaPago').textContent = data['fecha'];
-                        
+                    "body": JSON.stringify(lineaDeCuota)
                     });
                 }catch (error){
                     // alert("Se ha producido un error: ", error);
@@ -363,10 +352,14 @@ const opcionApagar = document.getElementById('cuotaSelect');
             "concepto": opcionAPagar.options[opcionAPagar.selectedIndex].text,
             "codAfiliado":"104663",
             "comercio":""
-        }
+        };
 
+        let dataCuota = {
+            "cedula": cedula.value.trim(),
+            "lineaCuota" : coutaSelected
+        };
 
-        procesarPago(data);
+        procesarPago(data, dataCuota);
 
       // Submit the form using Javascript (optional)
       // You can use libraries like Axios or Fetch API for this
