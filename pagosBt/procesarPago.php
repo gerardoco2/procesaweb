@@ -3,20 +3,6 @@
     require_once($docr . '/phps/gestarchivo.php');
 
 
-    // $data = file_get_contents("php://input");
-    // $datos = json_decode($data);
-    // $ced = $datos->cedula;
-    // $num_linea = $datos->lineaCuota;
-
-
-    $raiz = "/srv/www/htdocs";
-    $rdir = "/";
-   
-
-    $file_cuota = $raiz . $rdir . $ced . "_CUOTA_A_PAGAR.TXT";
-    touch($file_cuota);
-    escribir_archivo($file_cuota, "PRUEBA");
-
 
    if(isset($_POST)){
     $data = file_get_contents("php://input");
