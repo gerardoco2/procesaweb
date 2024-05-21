@@ -148,7 +148,7 @@ async function procesarPago(data, lineaDeCuota) {
 
 
 // para prueba
-fetch("pagoExitoso.php", {
+fetch("https://capunefm.com/index.php/procesapago.php", {
     'method': 'POST',
     'headers': {
     "Content-Type": "application/json;  charset=uft-8",
