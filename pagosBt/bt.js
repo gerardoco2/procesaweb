@@ -314,8 +314,10 @@ const opcionApagar = document.getElementById('cuotaSelect');
             "comercio":""
         };
 
+        cedula_asoc_logged = document.getElementById("cedula_asoc").value.trim();
+
         let dataCuota = {
-            "cedula": cedula.value.trim(),
+            "cedula": cedula_asoc_logged,
             "lineaCuota" : coutaSelected.value
         };
 
