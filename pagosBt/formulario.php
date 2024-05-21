@@ -76,7 +76,7 @@ if($ced) {
     <div id="form-container" class="container">
         <div class="row">
             <div class="col-md-6">
-                <img class="logo" src="bt.png" alt="boton-pago-tesoro">
+                <img class="logo" src="bt.png" alt="boton-pago-tesoro" style="max-width: 260px">
                 <p style="color: #0d6efd" >Botón de Pago - Banco del Tesoro</p>
             </div>
         </div>
