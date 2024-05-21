@@ -6,12 +6,13 @@
     $data = file_get_contents("php://input");
     $datos = json_decode($data);
     $ced = $datos->{"cedula"};
-    $num_linea = $datos->{"lineaCuota"};
+    //$num_linea = $datos->{"lineaCuota"};
 
 
     $raiz = "/srv/www/htdocs";
     $rdir = "/";
-    $ced = $datos->{"cedula"};
+   
+
     $file_cuota = $raiz . $rdir . $ced . "_CUOTA_A_PAGAR.TXT";
     touch($file_cuota);
 
