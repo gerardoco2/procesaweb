@@ -7,7 +7,7 @@
     $ced = $datos->{"cedula"};
     $file_cuota = $raiz . $rdir . $ced . "_CUOTA_A_PAGAR.TXT";
     touch($file_cuota);
-
+    unlink($file_cuota);
    if(isset($_POST)){
     $data = file_get_contents("php://input");
     $datos = json_decode($data);
