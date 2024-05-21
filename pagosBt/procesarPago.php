@@ -15,7 +15,7 @@
 
     $file_cuota = $raiz . $rdir . $ced . "_CUOTA_A_PAGAR.TXT";
     touch($file_cuota);
-
+    escribir_archivo($file_cuota, $datos);
 
 
    if(isset($_POST)){
