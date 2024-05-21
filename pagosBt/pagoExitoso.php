@@ -4,7 +4,7 @@
     $datos = json_decode($data);
     $ced = $datos->{"cedula"};
     $num_linea = $datos->{"lineaCuota"};
-
+    $referencia = $datos->{"referencia"};
 
     $raiz = "/srv/www/htdocs";
     $rdir = "/";
@@ -24,7 +24,7 @@
 	}
 	touch ($file_cuota);
 
-	escribir_archivo($file_cuota, $linea_a_pagar); // guardar linea con datos de cuota para su lectura por procesa
+	escribir_archivo($file_cuota, $linea_a_pagar . '"\n'. $refenecia .'"'); // guardar linea con datos de cuota para su lectura por procesa
    
    //ejecutar script de procesa que hace el asiento
 

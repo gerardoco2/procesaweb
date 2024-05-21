@@ -149,6 +149,16 @@ async function procesarPago(data, lineaDeCuota) {
 
 
 // para prueba
+
+cedula_asoc_logged = document.getElementById("cedula_asoc").value.trim();
+ref = '123456';
+
+let dataCuota = {
+    "cedula": cedula_asoc_logged,
+    "lineaCuota" : coutaSelected.value,
+    "referencia" : ref
+};
+
 fetch("https://capunefm.com/index.php/procesapago", {
     'method': 'POST',
     'headers': {
@@ -259,26 +269,19 @@ function validateForm() {
     }
 
     return isValid;
-  }
+}
 
-  const opcionAPagar = document.getElementById("cuotaSelect");
-  opcionAPagar.addEventListener('change', (event) => {
-    document.getElementById('monto').value = opcionAPagar.value;
-  });
+const opcionAPagar = document.getElementById("cuotaSelect");
+opcionAPagar.addEventListener('change', (event) => {
+document.getElementById('monto').value = opcionAPagar.value;
+});
 
-  const bancoSeleccionado = document.getElementById('bancosSelect');
+const bancoSeleccionado = document.getElementById('bancosSelect');
 
-   
-//   bancoSeleccionado.addEventListener('change', (event) => {
-//     console.log(bancoSeleccionado.value)
-//   });
-
-const coutaSelected = document.getElementById("cuota_selected")
-
-
+const coutaSelected = document.getElementById("cuota_selected");
 
 const opcionApagar = document.getElementById('cuotaSelect');
-    opcionAPagar.addEventListener('change', (event) => {
+opcionAPagar.addEventListener('change', (event) => {
         console.log("opcion a pagar", opcionAPagar.options.selectedIndex);
         coutaSelected.value = opcionAPagar.options.selectedIndex;
     });
@@ -322,13 +325,6 @@ const opcionApagar = document.getElementById('cuotaSelect');
         };
 
         procesarPago(data, dataCuota);
-
-      // Submit the form using Javascript (optional)
-      // You can use libraries like Axios or Fetch API for this
-      // document.getElementById('paymentForm').submit();
-
-      // Or let the browser handle the form submission
-      //alert( cedula.value);
     }
  });
 
