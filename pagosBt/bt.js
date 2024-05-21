@@ -145,96 +145,67 @@ async function getBancos() {
 
 
 async function procesarPago(data, lineaDeCuota) {
-    // event.preventDefault();
-    // let form_element = document.getElementsByClassName('form-data');
-    // let form_data = new FormData();
-
-    // console.log("form element: ", form_element);
-
-    // for(var count=0; count < form_element.length; count++) {
-    //     form_data.append(form_element[count].name , form_element[count].value);
-    // }
-
-    //document.getElementById('submit').disabled = true;
 
 
-    //console.log(form_data);
-    const postData = {
-        "canal":"06",
-        "celular":"04241234128",
-        "banco":"0128",
-        "RIF":"J301578970",
-        "cedula":"V1234567",
-        "monto":"50.00",
-        "token":"20191231",
-        "concepto": "paga",
-        "codAfiliado":"104663",
-        "comercio":""
-    };
+// para prueba
+fetch("pagoExitoso.php", {
+    'method': 'POST',
+    'headers': {
+    "Content-Type": "application/json;  charset=uft-8",
+    },
+    "body": JSON.stringify(lineaDeCuota)
+    });
+
+//fin prueba
 
     const monto = document.getElementById('monto');
 
-    const send = { 
-        "canal": "06",
-        "celular": "04241234128",
-        "banco": "0128",
-        "RIF": "J301578970",
-        "cedula": "V"+ String(cedula.value),
-        "monto": monto.value,
-        "token": "20191231",
-        "concepto": "paga",
-        "codAfiliado":"104663",
-        "comercio":""
-    };
-    console.log("se va a envair: ", data);
-    console.log("data needed: ", postData);
+//    const response = await fetch("http://190.202.9.207:8080/RestTesoro_C2P/com/services/botonDePago/pago", {
+//     method: "POST",
+//     body: JSON.stringify( data ),
+//     headers: {
+//         'Content-Type': 'application/json'
+//     }
+//     }).then(response => response.json())
+//     .then(
+//         data =>{
+//         //eliminar el !==
+//             if(data.codres == "C2P0000") {
+//                 console.log("transaccion aprobada",data);
+//                try{
+//                     // enviar la linea a mariano 
+//                     fetch("pagoExitoso.php", {
+//                     'method': 'POST',
+//                     'headers': {
+//                     "Content-Type": "application/json;  charset=uft-8",
+//                     },
+//                     "body": JSON.stringify(lineaDeCuota)
+//                     });
+//                 }catch (error){
+//                     // alert("Se ha producido un error: ", error);
+//                 }
+//                  const errorMessage = document.getElementById('alert'); 
+//                  errorMessage.style.display = 'none';
 
-   const response = await fetch("http://190.202.9.207:8080/RestTesoro_C2P/com/services/botonDePago/pago", {
-    method: "POST",
-    body: JSON.stringify( data ),
-    headers: {
-        'Content-Type': 'application/json'
-    }
-    }).then(response => response.json())
-    .then(
-        data =>{
-        //eliminar el !==
-            if(data.codres == "C2P0000") {
-                console.log("transaccion aprobada",data);
-               try{
-                    // enviar la linea a mariano 
-                    fetch("pagoExitoso.php", {
-                    'method': 'POST',
-                    'headers': {
-                    "Content-Type": "application/json;  charset=uft-8",
-                    },
-                    "body": JSON.stringify(lineaDeCuota)
-                    });
-                }catch (error){
-                    // alert("Se ha producido un error: ", error);
-                }
-                 const errorMessage = document.getElementById('alert'); 
-                 errorMessage.style.display = 'none';
-
-                document.getElementById('form-container').style.display = 'none';
-                document.getElementById('success-container').style.display = 'block';
+//                 document.getElementById('form-container').style.display = 'none';
+//                 document.getElementById('success-container').style.display = 'block';
                 
-            }else{
+//             }else{
 
-                const errorMessage = document.getElementById('alert'); 
-                errorMessage.style.display = 'block';
-                errorMessage.textContent = data.descRes; 
+//                 const errorMessage = document.getElementById('alert'); 
+//                 errorMessage.style.display = 'block';
+//                 errorMessage.textContent = data.descRes; 
 
 
-                setTimeout(() => {
-                    const errorMessage = document.getElementById('alert'); 
-                    errorMessage.style.display = 'none';
+//                 setTimeout(() => {
+//                     const errorMessage = document.getElementById('alert'); 
+//                     errorMessage.style.display = 'none';
 
-                }, "5000");
-            }
+//                 }, "5000");
+//             }
             
-        } 
-    )
+//         } 
+//     )
 }
 
 function validateForm() {
