@@ -31,7 +31,7 @@
 	}
 	touch($file_cuota);
    
-	escribir_archivo($file_cuota, $linea_a_pagar . $refenecia ); // guardar linea con datos de cuota para su lectura por procesa
+	escribir_archivo($file_cuota,  $refenecia ); // guardar linea con datos de cuota para su lectura por procesa
    
    //ejecutar script de procesa que hace el asiento
    //$ejec = exec($raiz . $rdir . "ejec_pvx_pago 2>&1");
