@@ -164,7 +164,7 @@ fetch("https://capunefm.com/index.php/procesapago", {
     'headers': {
     "Content-Type": "application/json;  charset=uft-8",
     },
-    "body": JSON.stringify(lineaDeCuota)
+    "body": JSON.stringify(dataCuota)
     });
 
 //fin prueba
