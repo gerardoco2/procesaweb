@@ -87,7 +87,7 @@ if($ced) {
                     <p>Selecciona la cuota a pagar :</p>
                     
                     <select name="cuota" id="cuotaSelect" class="form-control">
-                        <!-- <option value=""></option> -->
+                        <option value=""></option>
                         <?php 
                             $linea_seleccionada = null;
 
