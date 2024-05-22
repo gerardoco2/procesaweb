@@ -150,74 +150,90 @@ async function procesarPago(data, lineaDeCuota) {
 
 // para prueba
 
-cedula_asoc_logged = document.getElementById("cedula_asoc").value.trim();
-ref = '123456';
+//cedula_asoc_logged = document.getElementById("cedula_asoc").value.trim();
+// ref = '123456';
 
-let dataCuota = {
-    "cedula": cedula_asoc_logged,
-    "lineaCuota" : parseInt(coutaSelected.value)-1,
-    "referencia" : ref
-};
+// let dataCuota = {
+//     "cedula": cedula_asoc_logged,
+//     "lineaCuota" : parseInt(coutaSelected.value)-1,
+//     "referencia" : ref
+// };
 
-fetch("https://capunefm.com/index.php/procesapago", {
-    'method': 'POST',
-    'headers': {
-    "Content-Type": "application/json;  charset=uft-8",
-    },
-    "body": JSON.stringify(dataCuota)
-    });
+// fetch("https://capunefm.com/index.php/procesapago", {
+//     'method': 'POST',
+//     'headers': {
+//     "Content-Type": "application/json;  charset=uft-8",
+//     },
+//     "body": JSON.stringify(dataCuota)
+//     });
+
+//     const errorMessage = document.getElementById('alert'); 
+//     errorMessage.style.display = 'none';
+
+//     document.getElementById('form-container').style.display = 'none';
+//     document.getElementById('success-container').style.display = 'block';
 
 //fin prueba
 
 
     const monto = document.getElementById('monto');
 
-//    const response = await fetch("http://190.202.9.207:8080/RestTesoro_C2P/com/services/botonDePago/pago", {
-//     method: "POST",
-//     body: JSON.stringify( data ),
-//     headers: {
-//         'Content-Type': 'application/json'
-//     }
-//     }).then(response => response.json())
-//     .then(
-//         data =>{
-//         //eliminar el !==
-//             if(data.codres == "C2P0000") {
-//                 console.log("transaccion aprobada",data);
-//                try{
-//                     // enviar la linea a mariano 
-//                     fetch("pagoExitoso.php", {
-//                     'method': 'POST',
-//                     'headers': {
-//                     "Content-Type": "application/json;  charset=uft-8",
-//                     },
-//                     "body": JSON.stringify(lineaDeCuota)
-//                     });
-//                 }catch (error){
-//                     // alert("Se ha producido un error: ", error);
-//                 }
-//                  const errorMessage = document.getElementById('alert'); 
-//                  errorMessage.style.display = 'none';
+   const response = await fetch("https://tpmovil.bt.gob.ve/RestTesoro_C2P/com/services/botonDePago/pago", {
+    method: "POST",
+    body: JSON.stringify( data ),
+    headers: {
+        'Content-Type': 'application/json'
+    }
+    }).then(response => response.json())
+    .then(
+        data =>{
+        //eliminar el !==
+            if(data.codres == "C2P0000") {
+                console.log("transaccion aprobada",data);
+               try{
+                    // enviar la linea a mariano 
 
-//                 document.getElementById('form-container').style.display = 'none';
-//                 document.getElementById('success-container').style.display = 'block';
+                    cedula_asoc_logged = document.getElementById("cedula_asoc").value.trim();
+                    ref = data.referencia;
+
+                    let dataCuota = {
+                        "cedula": cedula_asoc_logged,
+                        "lineaCuota" : parseInt(coutaSelected.value)-1,
+                        "referencia" : ref
+                    };
+
+                    fetch("https://capunefm.com/index.php/procesapago", {
+                        'method': 'POST',
+                        'headers': {
+                        "Content-Type": "application/json;  charset=uft-8",
+                        },
+                        "body": JSON.stringify(dataCuota)
+                        });
+                }catch (error){
+                    // alert("Se ha producido un error: ", error);
+                }
+                 const errorMessage = document.getElementById('alert'); 
+                 errorMessage.style.display = 'none';
+
+                document.getElementById('form-container').style.display = 'none';
+                document.getElementById('success-container').style.display = 'block';
                 
-//             }else{
+            }else{
 
-//                 const errorMessage = document.getElementById('alert'); 
-//                 errorMessage.style.display = 'block';
-//                 errorMessage.textContent = data.descRes; 
+                const errorMessage = document.getElementById('alert'); 
+                errorMessage.style.display = 'block';
+                errorMessage.textContent = data.descRes; 
 
 
-//                 setTimeout(() => {
-//                     const errorMessage = document.getElementById('alert'); 
-//                     errorMessage.style.display = 'none';
+                setTimeout(() => {
+                    const errorMessage = document.getElementById('alert'); 
+                    errorMessage.style.display = 'none';
 
-//                 }, "5000");
-//             }
+                }, "5000");
+            }
             
-//         } 
-//     )
+        } 
+    )
 }
 
 function validateForm() {
@@ -313,7 +329,7 @@ opcionAPagar.addEventListener('change', (event) => {
             "monto": monto.value,
             "token": token.value.trim(),
             "concepto": opcionAPagar.options[opcionAPagar.selectedIndex].text,
-            "codAfiliado":"104663",
+            "codAfiliado":"010768",
             "comercio":""
         };
 
