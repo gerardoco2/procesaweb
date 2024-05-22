@@ -24,18 +24,21 @@
    // escribir un archivo ced_cuota_a_pagar.txt
    $file_cuota = $raiz . $rdir . "CUOTA_A_PAGAR.TXT";
 
+
+   
 	if ( file_exists($file_cuota) ){
-		unlink( $file_cuota );
+      unlink( $file_cuota );
 	}
 	touch($file_cuota);
-
+   
 	escribir_archivo($file_cuota, $linea_a_pagar . '"\n'. $refenecia .'"'); // guardar linea con datos de cuota para su lectura por procesa
    
    //ejecutar script de procesa que hace el asiento
+   $ejec = exec($raiz . $rdir . "ejec_pvx_pago 2>&1");
 
 
    // eliminar archivo ced_cuota_A_pagar
-   //unlink( $file_cuota );
+   unlink( $file_cuota );
     
 
    }
