@@ -34,11 +34,11 @@
 	escribir_archivo($file_cuota, $linea_a_pagar . $referencia ); // guardar linea con datos de cuota para su lectura por procesa
    
    //ejecutar script de procesa que hace el asiento
-   //$ejec = exec($raiz . $rdir . "ejec_pvx_pago 2>&1");
+   $ejec = exec($raiz . $rdir . "ejec_pvx_pago 2>&1");
 
 
    // eliminar archivo ced_cuota_A_pagar
-   //unlink( $file_cuota );
+   unlink( $file_cuota );
     
 
    }
