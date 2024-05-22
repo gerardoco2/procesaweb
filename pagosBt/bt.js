@@ -155,7 +155,7 @@ ref = '123456';
 
 let dataCuota = {
     "cedula": cedula_asoc_logged,
-    "lineaCuota" : coutaSelected.value,
+    "lineaCuota" : pareseInt(coutaSelected.value)-1,
     "referencia" : ref
 };
 
