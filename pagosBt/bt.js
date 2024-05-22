@@ -321,7 +321,7 @@ opcionAPagar.addEventListener('change', (event) => {
 
         let dataCuota = {
             "cedula": cedula_asoc_logged,
-            "lineaCuota" : coutaSelected.value-1
+            "lineaCuota" : coutaSelected.value
         };
 
         procesarPago(data, dataCuota);
