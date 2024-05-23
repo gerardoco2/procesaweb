@@ -15,6 +15,11 @@
     #success-container > td {
         border: none;
     }
+    table#success-table,
+    table#success-table td
+    {
+        border: none !important;
+    }
     #alert {
         display: none;
     }
@@ -161,7 +166,7 @@ if($ced) {
 
 <div id="success-container">
     <!-- Content Start -->
-    <table cellpadding="0" cellspacing="0" cols="1" background="#d7d7d7" align="center" style="width: 100%;">
+    <table id="success-table" cellpadding="0" cellspacing="0" cols="1" background="#d7d7d7" align="center" style="width: 100%;">
             <tr background="#d7d7d7">
                 <td height="50" style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 16px; vertical-align: top;"></td>
             </tr>
