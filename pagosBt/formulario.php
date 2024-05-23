@@ -6,7 +6,7 @@
         color: red;
     }
     #success-container {
-        display: block;
+        display: none;
         max-width: 60%;
     }
     #success-container > tr {
