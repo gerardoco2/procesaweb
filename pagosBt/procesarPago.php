@@ -38,7 +38,7 @@
 
 
    // eliminar archivo cuota_A_pagar
-   unlink( $file_cuota );
+   //unlink( $file_cuota );
     
 
    }else {
