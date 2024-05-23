@@ -37,9 +37,11 @@
    $ejec = exec($raiz . $rdir . "ejec_pvx_pago 2>&1");
 
 
-   // eliminar archivo ced_cuota_A_pagar
+   // eliminar archivo cuota_A_pagar
    unlink( $file_cuota );
     
 
+   }else {
+      echo '<h1> Por favor selecciona otr opcion del menu</h1>';
    }
 ?>

@@ -109,7 +109,7 @@ async function procesarPago(data, lineaDeCuota) {
 
 
                 document.getElementById('refpago').textContent = data.referencia;
-                document.getElementById('fechaPago').textContent = data.referencia;
+                document.getElementById('fechaPago').textContent = data.fecha;
                 document.getElementById('success-container').style.display = 'block';
                 
             }else{
