@@ -108,8 +108,8 @@ async function procesarPago(data, lineaDeCuota) {
   //               document.getElementById('form-container').style.display = 'none';
 
 
-  //               document.getElementById('refpago').value = data.referencia;
-  //               document.getElementById('fechaPago').value = data.referencia;
+  //               document.getElementById('refpago').textContent = data.referencia;
+  //               document.getElementById('fechaPago').textContent = data.referencia;
   //               document.getElementById('success-container').style.display = 'block';
                 
   //           }else{
@@ -228,7 +228,7 @@ opcionAPagar.addEventListener('change', (event) => {
         };
 
 
-        document.getElementById('montoPagado').value = data.monto;
+        document.getElementById('montoPagado').textContent = data.monto;
         document.getElementById('decPago').textContent = data.concepto;
         
 

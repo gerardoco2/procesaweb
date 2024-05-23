@@ -7,8 +7,14 @@
     }
     #success-container {
         display: block;
+        max-width: 60%;
     }
-
+    #success-container > tr {
+        border: none;
+    }
+    #success-container > td {
+        border: none;
+    }
     #alert {
         display: none;
     }
