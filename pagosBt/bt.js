@@ -229,7 +229,7 @@ opcionAPagar.addEventListener('change', (event) => {
 
 
         document.getElementById('montoPagado').value = data.monto;
-        document.getElementById('decPago').value = data.concepto;
+        document.getElementById('decPago') = data.concepto;
         
 
         cedula_asoc_logged = document.getElementById("cedula_asoc").value.trim();
