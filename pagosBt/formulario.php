@@ -104,7 +104,7 @@ if($ced) {
 
                              for( $i = 0; $i < count($lineas) ; ++$i){
                                 list($cedula, $codigo, $desc, $fecha, $monto, $comprobante, $linea) = explode(";", $lineas[$i]);
-                                echo '<option value="'. $monto .'">'. $desc . ' rechazada el: '. $fecha . 'por bs: ' .$monto. '</option>';
+                                echo '<option value="'. $monto .'">'. $desc . ' rechazada el: '. $fecha . ' por bs: ' .$monto. '</option>';
                                 $linea_seleccionada = $i;
                             }
 
@@ -159,14 +159,15 @@ if($ced) {
                 </form>
             </div>
         </div>
-        <div>
-            <p>INSTRUCCIONES:</p>
+        <div style='margin: 20px'>
+            <p><strong> INSTRUCCIONES: </strong></p>
             <ul>
                 <li>El la lista desplegable, se muestran las cuotas rechazadas que puede cancelar.</li>
                 <li>Seleccione la cuota rechazada que usted desea cancelar.</li>
                 <li>Una vez seleccionada, podra ver el monto a pagar en el campo correspondiente</li>
                 <li>Rellene el resto de los campos del formulario.</li>
                 <li>El campo TOKEN, es un codigo que debe ser generado desde la aplicacion disponible para el banco con el que usted desea pagar. Ejemplo: Banco Venezuela usa AMI, Banco del tesoro usa la aplicacion de pago movil opcion Codigo C2P </li>
+                <li>Su pago sera procesado inmediatamente por el sistema y sera reflejado en su estado de cuenta de CAPUNEFM.</li>
             </ul>
         </div>
         <div id="loader" style="display: none; text-align: center;"><img src="./loader.gif" alt="Cargando..." /></div>
