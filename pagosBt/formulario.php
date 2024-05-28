@@ -101,13 +101,14 @@ if($ced) {
                         <option value=""></option>
                         <?php 
                             $linea_seleccionada = null;
+                            if(count($lineas) > 0 ){
 
-                             for( $i = 0; $i < count($lineas) ; ++$i){
-                                list($cedula, $codigo, $desc, $fecha, $monto, $comprobante, $linea) = explode(";", $lineas[$i]);
-                                echo '<option value="'. $monto .'">'. $desc . ' rechazada el: '. $fecha . ' por bs: ' .$monto. '</option>';
-                                $linea_seleccionada = $i;
+                                for( $i = 0; $i < count($lineas) ; ++$i){
+                                    list($cedula, $codigo, $desc, $fecha, $monto, $comprobante, $linea) = explode(";", $lineas[$i]);
+                                    echo '<option value="'. $monto .'">'. $desc . ' rechazada el: '. $fecha . ' por bs: ' .$monto. '</option>';
+                                    $linea_seleccionada = $i;
+                                }
                             }
-
                             // foreach($lineas as $rechazo) {
                             //     $linea = explode(";", $rechazo);
                             //     echo '<option value='.$linea[4].'>'.$linea[2].'</option>';
