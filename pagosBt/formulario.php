@@ -101,7 +101,7 @@ if($ced) {
                         <option value=""></option>
                         <?php 
                             $linea_seleccionada = null;
-                            if(count($lineas) > 1 ){
+                            if(count($lineas) != 0 ){
 
                                 for( $i = 0; $i < count($lineas) ; ++$i){
                                     list($cedula, $codigo, $desc, $fecha, $monto, $comprobante, $linea) = explode(";", $lineas[$i]);
