@@ -95,7 +95,7 @@ if($ced) {
         <div class="row">
             <div class="col-md-8">
                 <form  method="post" >
-                    <p>Selecciona la cuota a pagar :</p>
+                    <p>Selecciona la Cuota Rechazada a Pagar :</p>
                     
                     <select name="cuota" id="cuotaSelect" class="form-control">
                         <option value=""></option>
@@ -104,7 +104,7 @@ if($ced) {
 
                              for( $i = 0; $i < count($lineas) ; ++$i){
                                 list($cedula, $codigo, $desc, $fecha, $monto, $comprobante, $linea) = explode(";", $lineas[$i]);
-                                echo '<option value="'. $monto .'">'.$desc.'</option>';
+                                echo '<option value="'. $monto .'">'. $desc . ' rechazada el: '. $fecha . 'por bs: ' .$monto. '</option>';
                                 $linea_seleccionada = $i;
                             }
 
@@ -159,7 +159,16 @@ if($ced) {
                 </form>
             </div>
         </div>
-        
+        <div>
+            <p>INSTRUCCIONES:</p>
+            <ul>
+                <li>El la lista desplegable, se muestran las cuotas rechazadas que puede cancelar.</li>
+                <li>Seleccione la cuota rechazada que usted desea cancelar.</li>
+                <li>Una vez seleccionada, podra ver el monto a pagar en el campo correspondiente</li>
+                <li>Rellene el resto de los campos del formulario.</li>
+                <li>El campo TOKEN, es un codigo que debe ser generado desde la aplicacion disponible para el banco con el que usted desea pagar. Ejemplo: Banco Venezuela usa AMI, Banco del tesoro usa la aplicacion de pago movil opcion Codigo C2P </li>
+            </ul>
+        </div>
         <div id="loader" style="display: none; text-align: center;"><img src="./loader.gif" alt="Cargando..." /></div>
         <div id="successMessage" style="display: none; color: green; text-align: center;"></div>
     </div>
