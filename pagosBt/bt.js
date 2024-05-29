@@ -215,7 +215,8 @@ opcionAPagar.addEventListener('change', (event) => {
 
     if (validateForm()) {
         const monto = document.getElementById('monto');
- 
+        const descCuota = opcionAPagar.options[opcionAPagar.selectedIndex].text;
+        const truncatedDesc = descCuota.length > 35 ? descCuota.substring(0,32) +"...": descCuota; 
 
         let data = { 
             "canal": "06",
@@ -225,9 +226,9 @@ opcionAPagar.addEventListener('change', (event) => {
             "cedula": "V"+cedula.value.trim(),
             "monto": monto.value,
             "token": token.value.trim(),
-            "concepto": opcionAPagar.options[opcionAPagar.selectedIndex].text,
+            "concepto": truncatedDesc.trum(),
             "codAfiliado":"010768",
-            "comercio":""
+            "comercio":"CAPUNEFM"
         };
 
 
