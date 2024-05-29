@@ -226,7 +226,7 @@ opcionAPagar.addEventListener('change', (event) => {
             "cedula": "V"+cedula.value.trim(),
             "monto": monto.value,
             "token": token.value.trim(),
-            "concepto": truncatedDesc.trum(),
+            "concepto": truncatedDesc.trim(),
             "codAfiliado":"010768",
             "comercio":"CAPUNEFM"
         };
