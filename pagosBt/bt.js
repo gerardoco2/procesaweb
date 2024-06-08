@@ -80,9 +80,9 @@ async function procesarPago(data, lineaDeCuota) {
     }
     }).then(response => response.json())
     .then(
-        data =>{
+        async data =>{
             if(data.codres == "C2P0000") {
-                console.log("transaccion aprobada",data);
+
                try{
                     // enviar la linea a procesa 
 
@@ -95,7 +95,7 @@ async function procesarPago(data, lineaDeCuota) {
                         "referencia" : ref
                     };
 
-                    fetch("https://capunefm.com/index.php/procesapago", {
+                    await fetch("https://capunefm.com/index.php/procesapago", {
                         'method': 'POST',
                         'headers': {
                         "Content-Type": "application/json;  charset=uft-8",
@@ -104,6 +104,18 @@ async function procesarPago(data, lineaDeCuota) {
                         });
                 }catch (error){
                     // alert("Se ha producido un error: ", error);
+                    let datosError = { 
+                      "errormsg": error
+                    }
+                    // reqistro de error en el fetch para hacer el registro en procesa
+                    fetch("https://capunefm.com/error/errorlogin.php", {
+                      'method': 'POST',
+                      'headers': {
+                      "Content-Type": "application/json;  charset=uft-8",
+                      },
+                      "body": JSON.stringify(error)
+                      });
+                    
                 }
                  const errorMessage = document.getElementById('alert'); 
                  errorMessage.style.display = 'none';
@@ -195,7 +207,7 @@ const coutaSelected = document.getElementById("cuota_selected");
 
 const opcionApagar = document.getElementById('cuotaSelect');
 opcionAPagar.addEventListener('change', (event) => {
-        console.log("opcion a pagar", opcionAPagar.options.selectedIndex);
+
         coutaSelected.value = opcionAPagar.options.selectedIndex;
     });
   // Add event listener to submit button

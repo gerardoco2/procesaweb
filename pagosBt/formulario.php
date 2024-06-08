@@ -163,7 +163,7 @@ if($ced) {
         <div style='margin: 20px'>
             <p><strong> INSTRUCCIONES: </strong></p>
             <ul>
-                <li>El la lista desplegable, se muestran las cuotas rechazadas que puede cancelar.</li>
+                <li>En la lista desplegable, se muestran las cuotas rechazadas que puede cancelar.</li>
                 <li>Seleccione la cuota rechazada que usted desea cancelar.</li>
                 <li>Una vez seleccionada, podra ver el monto a pagar en el campo correspondiente</li>
                 <li>Rellene el resto de los campos del formulario.</li>
@@ -263,7 +263,7 @@ if($ced) {
         </table>
         <div class="btn-regresar" style="text-align: center; margin: 10px">
             <button class="btn btn-primary" id="regresar">Regresar</button> 
-            <div class="btn btn-success" id="imprimir">Imprime o Descarga tu comprobante</div>    
+            <div class="btn btn-success"  onclick="printPdf()">Imprime o Descarga tu comprobante</div>    
         </div>
         
         <!-- Content End -->
@@ -274,3 +274,17 @@ if($ced) {
 </div>
 </div> 
 <script src="./bt.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script>
+    function printPdf() {
+        const doc = new jsPDF();
+        const source = window.document.getElementById("success-container");
+
+        doc.fromHTML(
+        source,
+        15,
+        15,
+        );
+        doc.save('comprobante.pdf');
+    }
+</script>
