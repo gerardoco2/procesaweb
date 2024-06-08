@@ -108,7 +108,7 @@ async function procesarPago(data, lineaDeCuota) {
                       "errormsg": error
                     }
                     // reqistro de error en el fetch para hacer el registro en procesa
-                    fetch("https://capunefm.com/error/errorlogin.php", {
+                   await fetch("https://capunefm.com/error/errorlogin.php", {
                       'method': 'POST',
                       'headers': {
                       "Content-Type": "application/json;  charset=uft-8",
