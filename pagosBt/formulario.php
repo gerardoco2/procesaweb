@@ -263,7 +263,7 @@ if($ced) {
         </table>
         <div class="btn-regresar" style="text-align: center; margin: 10px">
             <button class="btn btn-primary" id="regresar">Regresar</button> 
-            <div class="btn btn-success"  onclick="printPdf()">Imprime o Descarga tu comprobante</div>    
+            <div class="btn btn-success"  id="imprimir" />Imprime o Descarga tu comprobante</div>    
         </div>
         
         <!-- Content End -->
