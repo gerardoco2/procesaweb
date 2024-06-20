@@ -33,8 +33,7 @@ async function getBancos() {
 }
 
 async function procesarPago(data, lineaDeCuota) {
-  // para prueba
-
+  
   const monto = document.getElementById("monto");
 
   const response = await fetch(
