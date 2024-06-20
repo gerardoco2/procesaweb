@@ -56,18 +56,15 @@ async function procesarPago(data, lineaDeCuota) {
           cedula_asoc_logged = document
             .getElementById("cedula_asoc")
             .value.trim();
-          ref = data.referencia;
+          
 
           let dataCuota = {
             cedula: cedula_asoc_logged,
             lineaCuota: parseInt(coutaSelected.value) - 1,
-            referencia: ref,
+            referencia: data.referencia,
           };
-          setTimeout(() => {
-            console.log("enviando invo a porcesa dentro de 3 segundos");
-          }, 3000);
 
-          await fetch("https://capunefm.com/index.php/procesapago", {
+          await fetch("https://capunefm.com/procesarpagobt/procesarPago.php", {
             method: "POST",
             headers: {
               "Content-Type": "application/json;  charset=utf-8",
