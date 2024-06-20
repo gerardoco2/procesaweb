@@ -35,53 +35,6 @@ async function getBancos() {
 async function procesarPago(data, lineaDeCuota) {
   // para prueba
 
-  // try {
-  //   // enviar la linea a procesa
-
-  //   cedula_asoc_logged = document.getElementById("cedula_asoc").value.trim();
-  //   ref = 123456;
-
-  //   let dataCuota = {
-  //     cedula: cedula_asoc_logged,
-  //     lineaCuota: parseInt(coutaSelected.value) - 1,
-  //     referencia: ref,
-  //   };
-  //   setTimeout(() => {
-  //     console.log("enviando invo a porcesa dentro de 3 segundos");
-  //   }, 3000);
-
-  //   await fetch("https://capunefm.com/index.php/procesapago", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json;  charset=utf-8",
-  //     },
-  //     body: JSON.stringify(dataCuota),
-  //   });
-  // } catch (error) {
-  //   // alert("Se ha producido un error: ", error);
-  //   console.log("error", error);
-  //   let datosError = {
-  //     errormsg: error,
-  //   };
-  //   // reqistro de error en el fetch para hacer el registro en procesa
-  //   await fetch("https://capunefm.com/error/errorlogin.php", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json;  charset=utf-8",
-  //     },
-  //     body: JSON.stringify(error),
-  //   });
-  // }
-  // const errorMessage = document.getElementById("alert");
-  // errorMessage.style.display = "none";
-
-  // document.getElementById("form-container").style.display = "none";
-
-  // document.getElementById("refpago").textContent = data.referencia;
-  // document.getElementById("fechaPago").textContent = data.fecha;
-  // document.getElementById("success-container").style.display = "block";
-  //fin prueba
-
   const monto = document.getElementById("monto");
 
   const response = await fetch(
@@ -96,14 +49,14 @@ async function procesarPago(data, lineaDeCuota) {
   )
     .then((response) => response.json())
     .then(async (data) => {
-      if (data.codres == "C2P0000") {
+      if (data.codres === "C2P0000") {
         try {
           // enviar la linea a procesa
 
           cedula_asoc_logged = document
             .getElementById("cedula_asoc")
             .value.trim();
-          ref = 123456;
+          ref = data.referencia;
 
           let dataCuota = {
             cedula: cedula_asoc_logged,
