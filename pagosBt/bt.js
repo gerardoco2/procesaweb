@@ -64,7 +64,7 @@ async function procesarPago(data, lineaDeCuota) {
             referencia: data.referencia,
           };
 
-          await fetch("https://capunefm.com/procesarpagobt/procesarPago.php", {
+          await fetch("https://capunefm.com/index.php/procesarpago", {
             method: "POST",
             headers: {
               "Content-Type": "application/json;  charset=utf-8",
