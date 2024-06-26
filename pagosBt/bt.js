@@ -33,76 +33,123 @@ async function getBancos() {
 }
 
 async function procesarPago(data, lineaDeCuota) {
+  // para prueba
+  try {
+    // enviar la linea a procesa
+    const cedula_asoc_logged = document.getElementById("cedula_asoc").value.trim();
+    const referencia = 123;
+    const lineaCuota = parseInt(coutaSelected.value) - 1;
+
+    const dataCuota = {
+      cedula: cedula_asoc_logged,
+      lineaCuota,
+      referencia
+    };
+
+    fetch("https://capunefm.com/index.php/procesapago", {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json;  charset=utf-8",
+      },
+      body: JSON.stringify(dataCuota),
+    });
+
+     
+  } catch (error) {
+    // alert("Se ha producido un error: ", error);
+    console.log("error procesando pago:  ", error);
+    let datosError = {
+      errormsg: error,
+    };
+    // reqistro de error en el fetch para hacer el registro en procesa
+     fetch("https://capunefm.com/error/errorlogin.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;  charset=utf-8",
+      },
+      body: JSON.stringify(error),
+    });
+  }
+  const errorMessage = document.getElementById("alert");
+  errorMessage.style.display = "none";
+
+  document.getElementById("form-container").style.display = "none";
+
+  document.getElementById("refpago").textContent = referencia;
+  document.getElementById("fechaPago").textContent = 'fecha prueba';
+  document.getElementById("success-container").style.display = "block";
   
+  //fin prueba
+
   const monto = document.getElementById("monto");
 
-  await fetch(
-    "https://tpmovil.bt.gob.ve/RestTesoro_C2P/com/services/botonDePago/pago",
-    {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-      if (data.codres === "C2P0000") {
-        try {
-          // enviar la linea a procesa
-          const cedula_asoc_logged = document.getElementById("cedula_asoc").value.trim();
-          const referencia = data.referencia;
-          const lineaCuota = parseInt(coutaSelected.value) - 1;
+  // await fetch(
+  //   "https://tpmovil.bt.gob.ve/RestTesoro_C2P/com/services/botonDePago/pago",
+  //   {
+  //     method: "POST",
+  //     body: JSON.stringify(data),
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //     if (data.codres === "C2P0000") {
+  //       try {
+  //         // enviar la linea a procesa
+  //         const cedula_asoc_logged = document.getElementById("cedula_asoc").value.trim();
+  //         const referencia = data.referencia;
+  //         const lineaCuota = parseInt(coutaSelected.value) - 1;
 
-          const dataCuota = {
-            cedula: cedula_asoc_logged,
-            lineaCuota,
-            referencia
-          };
+  //         const dataCuota = {
+  //           cedula: cedula_asoc_logged,
+  //           lineaCuota,
+  //           referencia
+  //         };
 
-          fetch("https://capunefm.com/index.php/procesapago", {
-            method: 'POST',
-            headers: {
-              "Content-Type": "application/json;  charset=utf-8",
-            },
-            body: JSON.stringify(dataCuota),
-          });
+  //         fetch("https://capunefm.com/index.php/procesapago", {
+  //           method: 'POST',
+  //           headers: {
+  //             "Content-Type": "application/json;  charset=utf-8",
+  //           },
+  //           body: JSON.stringify(dataCuota),
+  //         });
 
            
-        } catch (error) {
-          // alert("Se ha producido un error: ", error);
-          console.log("error procesando pago:  ", error);
-          let datosError = {
-            errormsg: error,
-          };
-          // reqistro de error en el fetch para hacer el registro en procesa
-           fetch("https://capunefm.com/error/errorlogin.php", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json;  charset=utf-8",
-            },
-            body: JSON.stringify(error),
-          });
-        }
-        const errorMessage = document.getElementById("alert");
-        errorMessage.style.display = "none";
+  //       } catch (error) {
+  //         // alert("Se ha producido un error: ", error);
+  //         console.log("error procesando pago:  ", error);
+  //         let datosError = {
+  //           errormsg: error,
+  //         };
+  //         // reqistro de error en el fetch para hacer el registro en procesa
+  //          fetch("https://capunefm.com/error/errorlogin.php", {
+  //           method: "POST",
+  //           headers: {
+  //             "Content-Type": "application/json;  charset=utf-8",
+  //           },
+  //           body: JSON.stringify(error),
+  //         });
+  //       }
+  //       const errorMessage = document.getElementById("alert");
+  //       errorMessage.style.display = "none";
 
-        document.getElementById("form-container").style.display = "none";
+  //       document.getElementById("form-container").style.display = "none";
 
-        document.getElementById("refpago").textContent = data.referencia;
-        document.getElementById("fechaPago").textContent = data.fecha;
-        document.getElementById("success-container").style.display = "block";
-      } else {
-        const errorMessage = document.getElementById("alert");
-        errorMessage.style.display = "block";
-        errorMessage.textContent = data.descRes;
+  //       document.getElementById("refpago").textContent = data.referencia;
+  //       document.getElementById("fechaPago").textContent = data.fecha;
+  //       document.getElementById("success-container").style.display = "block";
+  //     } else {
+  //       const errorMessage = document.getElementById("alert");
+  //       errorMessage.style.display = "block";
+  //       errorMessage.textContent = data.descRes;
 
-        setTimeout(() => {
-          const errorMessage = document.getElementById("alert");
-          errorMessage.style.display = "none";
-        }, "5000");
-      }
-    });
+  //       setTimeout(() => {
+  //         const errorMessage = document.getElementById("alert");
+  //         errorMessage.style.display = "none";
+  //       }, "5000");
+  //     }
+  //   });
 }
 
 function validateForm() {
