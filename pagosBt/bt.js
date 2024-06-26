@@ -75,7 +75,7 @@ async function procesarPago(data, lineaDeCuota) {
 
   document.getElementById("form-container").style.display = "none";
 
-  document.getElementById("refpago").textContent = referencia;
+  document.getElementById("refpago").textContent = 123;
   document.getElementById("fechaPago").textContent = 'fecha prueba';
   document.getElementById("success-container").style.display = "block";
   
