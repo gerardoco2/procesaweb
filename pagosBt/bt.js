@@ -36,48 +36,47 @@ async function procesarPago(data, lineaDeCuota) {
   
   const monto = document.getElementById("monto");
 
-  const response = await fetch(
+  await fetch(
     "https://tpmovil.bt.gob.ve/RestTesoro_C2P/com/services/botonDePago/pago",
     {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
-    }
-  )
-    .then((response) => response.json())
-    .then(async (data) => {
+    })
+      .then((response) => response.json())
+      .then((data) => {
       if (data.codres === "C2P0000") {
         try {
           // enviar la linea a procesa
+          const cedula_asoc_logged = document.getElementById("cedula_asoc").value.trim();
+          const referencia = data.referencia;
+          const lineaCuota = parseInt(coutaSelected.value) - 1;
 
-          cedula_asoc_logged = document
-            .getElementById("cedula_asoc")
-            .value.trim();
-          
-
-          let dataCuota = {
+          const dataCuota = {
             cedula: cedula_asoc_logged,
-            lineaCuota: parseInt(coutaSelected.value) - 1,
-            referencia: data.referencia,
+            lineaCuota,
+            referencia
           };
 
-          await fetch("https://capunefm.com/index.php/procesarpago", {
-            method: "POST",
+          fetch("https://capunefm.com/index.php/procesapago", {
+            method: 'POST',
             headers: {
               "Content-Type": "application/json;  charset=utf-8",
             },
             body: JSON.stringify(dataCuota),
           });
+
+           
         } catch (error) {
           // alert("Se ha producido un error: ", error);
-          console.log("error", error);
+          console.log("error procesando pago:  ", error);
           let datosError = {
             errormsg: error,
           };
           // reqistro de error en el fetch para hacer el registro en procesa
-          await fetch("https://capunefm.com/error/errorlogin.php", {
+           fetch("https://capunefm.com/error/errorlogin.php", {
             method: "POST",
             headers: {
               "Content-Type": "application/json;  charset=utf-8",
@@ -169,20 +168,21 @@ const opcionApagar = document.getElementById("cuotaSelect");
 opcionAPagar.addEventListener("change", (event) => {
   coutaSelected.value = opcionAPagar.options.selectedIndex;
 });
+
+const botonRegresar = document.getElementById("regresar");
+botonRegresar.addEventListener("click", (event) => {
+  window.location.reload();
+});
+
+const botonImprimir = document.getElementById("imprimir");
+botonImprimir.addEventListener("click", (event) => {
+  window.print();
+});
+ 
 // Add event listener to submit button
 const submitButton = document.getElementById("submit");
 submitButton.addEventListener("click", (event) => {
   event.preventDefault(); // Prevent default form submission
-
-  const botonRegresar = document.getElementById("regresar");
-  botonRegresar.addEventListener("click", (event) => {
-    window.location.reload();
-  });
-
-  const botonImprimir = document.getElementById("imprimir");
-  botonImprimir.addEventListener("click", (event) => {
-    window.print();
-  });
 
   if (validateForm()) {
     const monto = document.getElementById("monto");

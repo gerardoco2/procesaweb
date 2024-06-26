@@ -39,6 +39,19 @@ async function getBancos() {
 async function procesarPago(data, lineaDeCuota) {
 
 
+
+const response = await fetch("https://tpmovil.bt.gob.ve/RestTesoro_C2P/com/services/botonDePago/pago", {
+  method: "POST",
+  body: JSON.stringify(data),
+  headers: {
+    'Content-Type': 'application/json'
+  }
+});
+
+const data = await response.json();
+
+
+
 // para prueba
 
 try{
