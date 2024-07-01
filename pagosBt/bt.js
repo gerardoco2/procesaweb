@@ -1,6 +1,7 @@
 const bancosSelect = document.getElementById("bancosSelect");
+getBancos();
 
-async function getBancos() {
+ function getBancos() {
   bancos = [
     {
         "codigo": "0163",
@@ -98,7 +99,7 @@ async function getBancos() {
 bancos.forEach((banco) => {
   const option = document.createElement("option");
   option.value = banco.codigo;
-  option.textContent = banco.nombre;
+  option.text = banco.nombre;
   bancosSelect.appendChild(option);
 });
 /*
@@ -364,5 +365,4 @@ submitButton.addEventListener("click", (event) => {
   }
 });
 
-getBancos();
 //procesarPago();
