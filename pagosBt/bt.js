@@ -1,7 +1,107 @@
 const bancosSelect = document.getElementById("bancosSelect");
 
 async function getBancos() {
-  bancos = [];
+  bancos = [
+    {
+        "codigo": "0163",
+        "nombre": "BANCO DEL TESORO,C.A BANCO U"
+    },
+    {
+        "codigo": "0172",
+        "nombre": "BANCAMIGA BANCO MICROFINANCIE"
+    },
+    {
+        "codigo": "0171",
+        "nombre": "BANCO ACTIVO"
+    },
+    {
+        "codigo": "0007",
+        "nombre": "BANCO BICENTENARIO"
+    },
+    {
+        "codigo": "0128",
+        "nombre": "BANCO CARONI, C.A BANCO UNIVE"
+    },
+    {
+        "codigo": "0102",
+        "nombre": "BANCO DE VENEZUELA, SACA BANC"
+    },
+    {
+        "codigo": "0114",
+        "nombre": "BANCO DEL CARIBE, C.A. BANCO"
+    },
+    {
+        "codigo": "0115",
+        "nombre": "BANCO EXTERIOR, C.A. BANCO UN"
+    },
+    {
+        "codigo": "0105",
+        "nombre": "BANCO MERCANTIL,C.A SACA BANC"
+    },
+    {
+        "codigo": "0191",
+        "nombre": "BANCO NACIONAL DE CREDITO C.A"
+    },
+    {
+        "codigo": "0116",
+        "nombre": "BANCO OCCIDENTAL DE DESCUENTO"
+    },
+    {
+        "codigo": "0138",
+        "nombre": "BANCO PLAZA, C.A"
+    },
+    {
+        "codigo": "0108",
+        "nombre": "BANCO PROVINCIAL,S.A BANCO UN"
+    },
+    {
+        "codigo": "0137",
+        "nombre": "BANCO SOFITASA BANCO UNIVERSA"
+    },
+    {
+        "codigo": "0104",
+        "nombre": "BANCO VENEZOLANO DE CREDITO,S"
+    },
+    {
+        "codigo": "0168",
+        "nombre": "BANCRECER SA BANCO DE DESARRO"
+    },
+    {
+        "codigo": "0134",
+        "nombre": "BANESCO BANCO UNIVERSAL, C.A"
+    },
+    {
+        "codigo": "0177",
+        "nombre": "BANFANB"
+    },
+    {
+        "codigo": "0174",
+        "nombre": "BANPLUS ENTIDAD DE AHORRO Y P"
+    },
+    {
+        "codigo": "0157",
+        "nombre": "DEL SUR BANCO UNIVERSAL C.A."
+    },
+    {
+        "codigo": "0151",
+        "nombre": "FONDO COMUN BANCO UNIVERSAL,C"
+    },
+    {
+        "codigo": "0169",
+        "nombre": "MI BANCO"
+    },
+    {
+        "codigo": "0156",
+        "nombre": "100 % BANCO, BANCO COMERCIAL"
+    }
+];
+bancos.forEach((banco) => {
+  const option = document.createElement("option");
+  option.value = banco.codigo;
+  option.textContent = banco.nombre;
+  bancosSelect.appendChild(option);
+});
+/*
   try {
     const options = {
       method: "POST",
@@ -29,7 +129,7 @@ async function getBancos() {
     });
   } catch (error) {
     console.error("Error:", error);
-  }
+  }*/
 }
 
 async function procesarPago(data, lineaDeCuota) {
