@@ -1,8 +1,9 @@
 const bancosSelect = document.getElementById("bancosSelect");
 getBancos();
 
- function getBancos() {
-  bancos = [
+ async function getBancos() {
+  let bancos = [];
+  /*[
     {
         "codigo": "0163",
         "nombre": "BANCO DEL TESORO,C.A BANCO U"
@@ -101,8 +102,8 @@ bancos.forEach((banco) => {
   option.value = banco.codigo;
   option.text = banco.nombre;
   bancosSelect.appendChild(option);
-});
-/*
+});*/
+
   try {
     const options = {
       method: "POST",
@@ -130,7 +131,7 @@ bancos.forEach((banco) => {
     });
   } catch (error) {
     console.error("Error:", error);
-  }*/
+  }
 }
 
 async function procesarPago(data, lineaDeCuota) {
