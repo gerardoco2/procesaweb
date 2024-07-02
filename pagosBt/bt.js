@@ -1,7 +1,7 @@
 const bancosSelect = document.getElementById("bancosSelect");
 getBancos();
 
- async function getBancos() {
+  function getBancos() {
   let bancos = [];
   /*[
     {
@@ -112,7 +112,7 @@ bancos.forEach((banco) => {
       },
     };
 
-    const response = await fetch(
+    const response =  fetch(
       "https://tpmovil.bt.gob.ve/RestTesoro_C2P/com/services/bancos",
       options
     )
