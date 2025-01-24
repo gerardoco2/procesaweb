@@ -81,7 +81,7 @@ Este navegador no soporta lector de PDF. Por favor descargue el estado de cuenta
 	$raiz = "/srv/www/htdocs";
 	$rdir = "/";
 	$file_rechazos = $raiz . $rdir . "RECHAZOS.TXT";
-	
+
 	// para cuotas rechazadas
 	if ( file_exists($file_rechazos) ){
 		unlink( $file_rechazos );
@@ -104,6 +104,7 @@ Este navegador no soporta lector de PDF. Por favor descargue el estado de cuenta
 	//fin para cuotas rechazadas
                     
                     if(count($lineas) > 0 ) { ?>
+					<div styles="margin-top: 12px" >
                     <h1>Presentas Cuotas Rechazadas</h1>
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
@@ -126,5 +127,6 @@ Este navegador no soporta lector de PDF. Por favor descargue el estado de cuenta
                         </tbody>
 
                     </table>
+					</div>
                 <?php }?>
                     
