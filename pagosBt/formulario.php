@@ -117,6 +117,7 @@ if($ced) {
                     </select>
                     
                     <?php 
+                    echo count($lineas) ;
                     if(count($lineas) <= 0 )  ?>
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
