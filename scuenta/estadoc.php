@@ -21,6 +21,7 @@ if ( !empty($ced) )
 	$raiz = "/srv/www/htdocs";
 	$rdir = "/";
 	$file_socio = $raiz . $rdir . "SOCIO.TXT";
+	$file_rechazos = $raiz . $rdir . "RECHAZOS.TXT";
 
 	if ( file_exists($file_socio) ){
 		unlink( $file_socio );
@@ -36,6 +37,28 @@ if ( !empty($ced) )
 
 	$ejec = exec($raiz . $rdir . "ejec_pvx_estado 2>&1");
 
+
+	// para cuotas rechazadas
+	if ( file_exists($file_rechazos) ){
+		unlink( $file_rechazos );
+	}
+	touch ($file_rechazos);
+
+	escribir_archivo($file_rechazos, $ced); // guardar id usuario para su lectura por procesa
+
+	$filas = $raiz . $rdir . $ced . "_RECHAZOS.TXT"; // archivo resultante
+
+    if ( file_exists($filas) ) {
+		unlink( $filas );
+	}
+
+    $ejec = exec($raiz . $rdir . "ejec_pvx_rechazos 2>&1");
+
+  
+    $lineas = file($filas);
+
+	//fin para cuotas rechazadas
+
 	if ( file_exists($filas) )
 	{
                 $hashced = substr(hash_hmac('sha256', $ced, md5(microtime())), 0, 32);
@@ -44,7 +67,6 @@ if ( !empty($ced) )
 		unlink( $filas );
 		
 //                echo "{pdf=" . $updf . "|100%|500}";
-echo "este eso";
                 echo "<center>
                         <object width='100%' height='480' internalinstanceid='25' type='application/pdf' 
                                 data='" . $updf . "'>
@@ -68,6 +90,36 @@ Este navegador no soporta lector de PDF. Por favor descargue el estado de cuenta
 		solventar su caso a la brevedad posible</p>";
 	}
 
+
+	
+
 } // fin - al consultar un asociado
 
 ?>
+<?php 
+                    
+                    if(count($lineas) > 0 ) { ?>
+                    <h1>Presentas Cuotas Rechazadas</h1>
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                               
+                               <th>Fecha</th>
+                                <th>Descripcion</th>
+                                <th>Monto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php for($i = 0; $i < count($lineas) ; ++$i) {
+                                 list($cedula, $codigo, $desc, $fecha, $monto, $comprobante, $linea) = explode(";", $lineas[$i]);
+                                echo '<tr>
+                                    <td>'.$fecha.'</td>
+                                    <td>'.$desc.'</td>
+                                    <td>'.$monto.'</td>
+                                </tr>';
+                            } ?> 
+                        </tbody>
+
+                    </table>
+                <?php }?>
+                    
