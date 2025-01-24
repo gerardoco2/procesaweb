@@ -48,7 +48,7 @@ if ( !empty($ced) )
 		
 //                echo "{pdf=" . $updf . "|100%|500}";
                 echo "<center>
-                        <object width='100%' height='1000' internalinstanceid='25' type='application/pdf' 
+                        <object width='100%' height='1000px' internalinstanceid='25' type='application/pdf' 
                                 data='" . $updf . "'>
 <iframe src='" . $updf . "' style='border: none;' height='100%' width='100%'>
 Este navegador no soporta lector de PDF. Por favor descargue el estado de cuenta mediante: <a href='" . $updf . "'>Descargar PDF</a>
