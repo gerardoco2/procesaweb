@@ -128,6 +128,9 @@ Este navegador no soporta lector de PDF. Por favor descargue el estado de cuenta
                         </tbody>
 
                     </table>
-					
+					<p>POR FAVOR DIRIJASE A LA
+						OPCION DE PAGO DE CUOTAS RECHAZADAS ONLINE PARA SU CANCELACION y ACTUALIZACION DE SU ESTADO DE CUENTA, PARA MAYOR
+						INFORMACION, FAVOR COMUNICARSE A TRAVES DE NUESTROS CANALES OFICIALES:
+						infocapunefm@gmail.com ó POR WHATSAPP 0424-6071800</p>
                 <?php }?>
                     
