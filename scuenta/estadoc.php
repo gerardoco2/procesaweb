@@ -136,6 +136,6 @@ Este navegador no soporta lector de PDF. Por favor descargue el estado de cuenta
 						INFORMACION, FAVOR COMUNICARSE A TRAVES DE NUESTROS CANALES OFICIALES:
 						infocapunefm@gmail.com ó POR WHATSAPP 0424-6071800</blockquote>
                 <?php } else {?>
-					<h3>FELICIDADES!!! NO Presentas Cuotas Rechazadas.</h3><span>El Ahorro es la llave de las oportunidades!!!</span>
+					<h3>FELICIDADES!!! NO Presentas Cuotas Rechazadas.</h3><h4>El Ahorro es la llave de las oportunidades!!!</h4>
 				<?php }?>
                     
