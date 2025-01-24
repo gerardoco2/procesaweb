@@ -21,7 +21,7 @@ if ( !empty($ced) )
 	$raiz = "/srv/www/htdocs";
 	$rdir = "/";
 	$file_socio = $raiz . $rdir . "SOCIO.TXT";
-	$file_rechazos = $raiz . $rdir . "RECHAZOS.TXT";
+	
 
 	if ( file_exists($file_socio) ){
 		unlink( $file_socio );
@@ -38,26 +38,6 @@ if ( !empty($ced) )
 	$ejec = exec($raiz . $rdir . "ejec_pvx_estado 2>&1");
 
 
-	// para cuotas rechazadas
-	if ( file_exists($file_rechazos) ){
-		unlink( $file_rechazos );
-	}
-	touch ($file_rechazos);
-
-	escribir_archivo($file_rechazos, $ced); // guardar id usuario para su lectura por procesa
-
-	$filas = $raiz . $rdir . $ced . "_RECHAZOS.TXT"; // archivo resultante
-
-    if ( file_exists($filas) ) {
-		unlink( $filas );
-	}
-
-    $ejec = exec($raiz . $rdir . "ejec_pvx_rechazos 2>&1");
-
-  
-    $lineas = file($filas);
-
-	//fin para cuotas rechazadas
 
 	if ( file_exists($filas) )
 	{
@@ -97,6 +77,31 @@ Este navegador no soporta lector de PDF. Por favor descargue el estado de cuenta
 
 ?>
 <?php 
+	$dirw = "/home/web/jcapunefm/pdfs/";
+	$raiz = "/srv/www/htdocs";
+	$rdir = "/";
+	$file_rechazos = $raiz . $rdir . "RECHAZOS.TXT";
+	
+	// para cuotas rechazadas
+	if ( file_exists($file_rechazos) ){
+		unlink( $file_rechazos );
+	}
+	touch ($file_rechazos);
+
+	escribir_archivo($file_rechazos, $ced); // guardar id usuario para su lectura por procesa
+
+	$filas = $raiz . $rdir . $ced . "_RECHAZOS.TXT"; // archivo resultante
+
+    if ( file_exists($filas) ) {
+		unlink( $filas );
+	}
+
+    $ejec = exec($raiz . $rdir . "ejec_pvx_rechazos 2>&1");
+
+  
+    $lineas = file($filas);
+
+	//fin para cuotas rechazadas
                     
                     if(count($lineas) > 0 ) { ?>
                     <h1>Presentas Cuotas Rechazadas</h1>
