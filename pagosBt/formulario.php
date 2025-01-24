@@ -115,6 +115,32 @@ if($ced) {
                             // }
                             ?>
                     </select>
+                    
+                    <?php 
+                    if(count($lineas) != 0 )  ?>
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                               
+                               <th>Fecha</th>
+                                <th>Descripcion</th>
+                                <th>Monto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php for($i = 0; $i < count($lineas) ; ++$i) {
+                                 list($cedula, $codigo, $desc, $fecha, $monto, $comprobante, $linea) = explode(";", $lineas[$i]);
+                                echo '<tr>
+                                    <td>'.$fecha.'</td>
+                                    <td>'.$desc.'</td>
+                                    <td>'.$monto.'</td>
+                                </tr>';
+                            } ?> 
+                        </tbody>
+
+                    </table>
+
+                    
                     <!-- guardar la opcion seleccionada -->
                     <span id="opcionApagarError" class="error"></span>
                     
