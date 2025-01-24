@@ -118,7 +118,7 @@ if($ced) {
                     
                     <?php 
                     echo count($lineas) ;
-                    if(count($lineas) > 0 )  ?>
+                    if(count($lineas) > 0 ) { ?>
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
                             <tr>
@@ -140,7 +140,7 @@ if($ced) {
                         </tbody>
 
                     </table>
-
+                <?php }?>
                     
                     <!-- guardar la opcion seleccionada -->
                     <span id="opcionApagarError" class="error"></span>
