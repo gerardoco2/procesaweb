@@ -87,7 +87,7 @@ if($ced) {
     <div id="form-container" class="container">
         <div class="row">
             <div class="col-md-6">
-                <img class="logo" src="bt.png" alt="boton-pago-tesoro" style="max-width: 260px">
+                <img class="logo" src="bt.jpeg" alt="boton-pago-tesoro" style="max-width: 260px">
                 <p style="color: #0d6efd" >Botón de Pago - Banco del Tesoro</p>
             </div>
         </div>
@@ -170,6 +170,18 @@ if($ced) {
                 <li>Rellene el resto de los campos del formulario.</li>
                 <li>El campo TOKEN, es un codigo que debe ser generado desde la aplicacion disponible para el banco con el que usted desea pagar. Ejemplo: Banco Venezuela usa AMI, Banco del tesoro usa la aplicacion de pago movil opcion Codigo C2P </li>
                 <li>Su pago sera procesado inmediatamente por el sistema y sera reflejado en su estado de cuenta de CAPUNEFM.</li>
+            </ul>
+            <p><strong> Como solicitar Token para realizar pagos CSP via BT Movil ?: </strong></p>
+            <ul>
+                <li>Ingresa a BT Movil</li>
+                <li>Despliega las opciones en el menu y selecciona Cobro C2P.</li>
+                <li>Obten el codigo o token para finalizar la operacion de cobro C2P . Y listo!</li>
+                <li>Rellene el resto de los campos del formulario.</li>
+            </ul>
+            <p><strong> Como solicitar Token para realizar pagos CSP via SMS ?: </strong></p>
+            <ul>
+                <li>Envia un mensaje de texto al 2383, escribe la palabra comercio, seguido de un espacion V/E y el numero de cedula.</li>
+                <li>Recibiras un SMS con la clave o token de compras</li>
             </ul>
         </div>
         <div id="loader" style="display: none; text-align: center;"><img src="./loader.gif" alt="Cargando..." /></div>
